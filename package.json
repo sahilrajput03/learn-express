@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/sahilrajput03/learning_expressjs/issues"
   },
-  "homepage": "https://github.com/sahilrajput03/learning_expressjs#readme"
+  "homepage": "https://github.com/sahilrajput03/learning_expressjs#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
 }
