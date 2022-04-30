@@ -1,0 +1,8 @@
+### Request at /api/
+get http://localhost:8080/b
+Content-Type: application/json
+
+{
+  "car": 10,
+  "bikes": 30
+}

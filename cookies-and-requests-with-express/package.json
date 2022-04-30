@@ -1,0 +1,22 @@
+{
+	"name": "cookies-and-requests-with-express",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"start": "run-p app**",
+		"app0": "nodemon -q server.js 8080",
+		"app1": "parcel serve index.html --port 8081 --open",
+		"app2": "parcel serve index.html --port 8082 --open"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"description": "",
+	"dependencies": {
+		"cookie-parser": "^1.4.5",
+		"nodemon": "^2.0.7",
+		"npm-run-all": "^4.1.5",
+		"parcel-bundler": "^1.12.5",
+		"serve": "^11.3.2"
+	}
+}

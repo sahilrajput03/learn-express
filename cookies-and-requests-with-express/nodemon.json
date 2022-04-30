@@ -1,0 +1,10 @@
+{
+	"events": {
+		"start": "reset || cls",
+		"myComment": "https://github.com/remy/nodemon/blob/master/doc/cli/config.txt",
+		"myComment2": "https://github.com/remy/nodemon#config-files",
+		"myComment3": "Global config file placed @ C:\\msys64\\home\\chetan\\nodemon.json",
+		"myComment3_cont": "Or: You can simply use `cp nodemon.json ~/nodemon.json` to copy/overwrite to global config file.",
+		"myComment3_cont2": "Use `subl ~/nodemon.json` to edit nodemon global config file."
+	}
+}

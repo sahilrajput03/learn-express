@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Testing cookies..</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<style>
+			h1,
+			h2,
+			h3 {
+				text-align: center;
+			}
+		</style>
+		<h1>Testing cookies</h1>
+		<br />
+		<h3>Fetch Requests</h3>
+		<button class="with-cookie-button">
+			1. POST request at (WITH 🍪︎ cookie) `localhost:8080/checkCookie` with
+			fetch
+		</button>
+		<button class="without-cookie-button">
+			2. POST request at (without🥝︎ cookie) `localhost:8080/checkCookie` with
+			fetch
+		</button>
+		<br />
+		<br />
+		<h3>Axios Requests</h3>
+		<button class="with-cookie-button-axios">
+			3. POST request at (WITH 🍪︎ cookie) `localhost:8080/checkCookie` with
+			axios
+		</button>
+		<button class="without-cookie-button-axios">
+			4. POST request at (without🥝︎ cookie) `localhost:8080/checkCookie` with
+			axios
+		</button>
+
+		<script>
+			let {log} = console
+			// log(axios) // axios is imported.
+
+			// below requests are with fetch.
+			// 1:: addEventListener to with-cookie-button
+			document
+				.querySelector('.with-cookie-button')
+				.addEventListener('click', () => {
+					fetch('http://localhost:8080/checkCookie', {
+						// 🍪︎ Address of the target server.
+						method: 'POST',
+						credentials: 'include', // 🍪︎ Note: It is important to use ``credentials true`` to be able to send the cookies to the express server.
+					})
+						.then((result) => {
+							// alert(JSON.stringify(result))
+							return result.json()
+						})
+						.then((json) => {
+							alert(JSON.stringify(json, null, 2))
+						})
+						.catch((e) => {
+							alert('error::', e)
+						})
+				})
+			// 2︎:: addEventListener to without-cookie-button
+			document
+				.querySelector('.without-cookie-button')
+				.addEventListener('click', () => {
+					fetch('http://localhost:8080/checkCookie', {
+						// 🍪︎ Address of the target server.
+						method: 'POST',
+						//// credentials: 'include', // 🍪︎ Note: Intentionally not sending cookie.
+					})
+						.then((result) => {
+							// alert(JSON.stringify(result))
+							return result.json()
+						})
+						.then((json) => {
+							alert(JSON.stringify(json, null, 2))
+						})
+						.catch((e) => {
+							log('error::', e)
+						})
+				})
+
+			//
+			// below requests are made with axios.
+			// 💝︎💝︎ You can use below statement to include withCredential flag in every axios request, yikes!!
+			// axios.defaults.withCredentials = true
+
+			// 3:: addEventListener to with-cookie-button
+			document
+				.querySelector('.with-cookie-button-axios')
+				.addEventListener('click', () => {
+					axios
+						.post('http://localhost:8080/checkCookie', {
+							withCredentials: true, // default is false.
+						})
+						.then((res) => {
+							alert(JSON.stringify(res.data, null, 2))
+						})
+						.catch((e) => {
+							alert(JSON.stringify(e))
+						})
+				})
+			// 4:: addEventListener to without-cookie-button
+			document
+				.querySelector('.without-cookie-button-axios')
+				.addEventListener('click', () => {
+					axios
+						.post('http://localhost:8080/checkCookie')
+						.then((res) => {
+							alert(JSON.stringify(res.data, null, 2))
+						})
+						.catch((e) => {
+							alert(JSON.stringify(e))
+						})
+				})
+		</script>
+	</body>
+</html>
