@@ -7,6 +7,7 @@
 - Added `expressReqBodyWithTypeGuarding` repo.
 - Added `express-testing-middlwares-with-nextCalls` repo.
 - Added `cookies-and-requests-with-express`
-- Added `react-express` repo
+- Added `react-express` repo.
+- Added `jwt-secure-authorization` repo.
 
 **Sample server code for code structure reference @ https://www.digitalocean.com/community/tutorials/test-a-node-restful-api-with-mocha-and-chai**
