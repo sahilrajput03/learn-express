@@ -1,7 +1,12 @@
+// Why you SHOULD NEVER use axios way of testing?
+// withAxios.test.js suite will fail if you don't have server running up (at right port).
+
+// ALERT: I am intentionally keeeping this axios test file and adding `.skip` to the tests to prevet them form running.
+
 const {rootRequest, aEndpointRequest} = require('../../requests/requests')
 let {log} = console
 
-test('Check root endpoint', async () => {
+test.skip('Check root endpoint', async () => {
 	const response = await rootRequest()
 
 	const received = response.data
@@ -12,7 +17,7 @@ test('Check root endpoint', async () => {
 	expect(response.status).toBe(200)
 })
 
-test('Check /a endpoint', async () => {
+test.skip('Check /a endpoint', async () => {
 	const response = await aEndpointRequest()
 
 	const received = response.data
@@ -22,5 +27,3 @@ test('Check /a endpoint', async () => {
 	// check status as well.
 	expect(response.status).toBe(201)
 })
-
-
