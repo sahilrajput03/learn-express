@@ -34,23 +34,4 @@ app.get('/b', (req, res) => {
 	return res.status(203).send(req.body) // You don't need res.json to serialize js object to json, express does this on its own🤺︎.
 })
 
-app.get('/c', (req, res) => {
-	return res.send(req.query)
-})
-
-app.get('/d', (req, res) => {
-	// 🔽︎ send status 200 by default.
-	return res.end()
-})
-
-app.get('/e', (req, res) => {
-	// 🔽︎ send status 200 by default.
-	return res.end('You can pass some text data.')
-})
-
-app.get('/f', (req, res) => {
-	// 🔽︎ send custom status code and can also send objects as well but you need to serialize object first.
-	return res.status(207).end(JSON.stringify({cars: 21}))
-})
-
 module.exports = {app} // for testing with supertest as kalle said, supertest is actually nice!

@@ -59,3 +59,20 @@ alias twa='npm run test:watchAll --'
 const log = console.debug
 log('hey ..')
 ```
+
+## Debugging experience with jest
+
+Super amazing coz with my vscode nodemon `auto-attacher`, debugger attach itself on each restart of test at the time of we save any file. Yo!
+
+For debugging,
+
+```bash
+# Usage:
+twd
+# this is alias, i.e
+alias twd='npm run test:watch:debug --'
+
+# npm script in package.json file:
+# "test:watch:debug": "cross-env NODE_ENV=test node --inspect node_modules/.bin/jest --verbose --watch"
+# ^^ FYI: This you don't need nodemon in above script.
+```
