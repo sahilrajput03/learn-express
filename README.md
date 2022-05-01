@@ -32,26 +32,22 @@ Read [here](https://stackoverflow.com/a/19041848/10012446).
 
 **1. Create a file `.vscode/launch.json` in root folder.**
 
-```
+```json
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "type": "pwa-node",
-            "request": "attach",
-            // ^^ note that this is a of type attach and we have specified to `restart` via the restart option below to reattch to that process and pick the new processid automatically, yikes!
-            "name": "Attach to node process((hint: which has ``node --inpect``))",
-            "processId": "${command:PickProcess}",
-            "restart": true,
-            "protocol": "inspector",
-            "envFile": "${workspaceFolder}/.env"
-           // Our .env file is loaded simply (no need of cross-env), also the terminal would pick the values of `.env` file once you attach the debugger. Yikes!
-        }
-    ]
-}
+  // Q. What process to attach with this debugger ???
+  // ANSWER. Select this setting in the debugger dropdown first then press f5 key (or use the green play button) (use shift+f5 to stop debugger anytime later) in vscode and in command pallete entries or processes you need to select the entry with text `nodemon --inspect app.js` or `nodemon --inspect-brk app.js`. ROCKON!
+  "name": "Attach to nodemon process ~Sahil",
+  "type": "pwa-node",
+  "request": "attach",
+  // ^^ note that this is a of type attach and we have specified to `restart` via the restart option below to reattch to that process and pick the new processid automatically, yikes!
+  // Get debugger select-dropdown with f5 key (use shift+f5 to stop debugger) in vscode and select the entry with text nodemon --inspect app.js or nodemon --inspect-brk app.js in the list of processes in there. ROCKON!
+  "processId": "${command:PickProcess}",
+  "restart": true,
+  "protocol": "inspector"
+  // "envFile": "${workspaceFolder}/.env"
+  // ^^^ This is not required at all when we are using dotenv to load .env file, 1 May, 2022.
+  // Our .env file is loaded simply (no need of cross-env), also the terminal would pick the values of `.env` file once you attach the debugger. Yikes!
+},
 
 ```
 
