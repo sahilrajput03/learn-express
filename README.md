@@ -17,3 +17,5 @@
 ![](./debug1.jpeg)
 
 
+
+**FYI: For loading env from a file using command line env-cmd is an amazing tool: https://www.npmjs.com/package/env-cmd**
