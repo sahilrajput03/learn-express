@@ -66,3 +66,7 @@ Read [here](https://stackoverflow.com/a/19041848/10012446).
 - _Loading .env file in the debugging mode. [Src](https://code.visualstudio.com/docs/nodejs/nodejs-debugging#_load-environment-variables-from-external-file)_
 
 - Remote debugging applications: [@nodejs docs](https://nodejs.org/en/docs/guides/debugging-getting-started/#enabling-remote-debugging-scenarios), [@vscode docs](https://code.visualstudio.com/docs/editor/debugging#_remote-debugging).
+
+## Phenomenal hot-module-replacement with node
+
+![](./img-phenomenal-hot-replacement-rocks.jpeg)
