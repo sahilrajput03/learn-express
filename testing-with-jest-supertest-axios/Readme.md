@@ -47,19 +47,6 @@ alias tw='npm run test:watch --'
 alias twa='npm run test:watchAll --'
 ```
 
-# Important and sad, Printing to console with jest is painful
-
-```js
-// ? YOU SHOULD NEVER USE `console.log` with jest but `console.debug` to print something to console with jest:
-// const console = console
-// console.log('some text')
-// process.stdout.write('hello')
-
-// Instead you can use below statements which works real good:
-const log = console.debug
-log('hey ..')
-```
-
 ## Debugging experience with jest
 
 Super amazing coz with my vscode nodemon `auto-attacher`, debugger attach itself on each restart of test at the time of we save any file. Yo!
@@ -67,9 +54,11 @@ Super amazing coz with my vscode nodemon `auto-attacher`, debugger attach itself
 For debugging,
 
 ```bash
-# Usage:
+# Run below command:
 twd
-# this is alias, i.e
+# Now, start the debugger(only need to start the debugger for once, yo!)
+
+# Fyi: it is an alias, i.e
 alias twd='npm run test:watch:debug --'
 
 # npm script in package.json file:

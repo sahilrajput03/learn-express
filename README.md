@@ -11,3 +11,9 @@
 - Added `jwt-secure-authorization` repo.
 
 **Sample server code for code structure reference @ https://www.digitalocean.com/community/tutorials/test-a-node-restful-api-with-mocha-and-chai**
+
+- FYI: We can put break point on the end of the function to check the value of last variable in the fuction as well.
+
+![](./debug1.jpeg)
+
+

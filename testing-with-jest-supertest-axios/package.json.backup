@@ -4,14 +4,12 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"start": "cp envs/env.prod .env; nodemon server.js",
-		"prodDebug": "cp envs/env.prod .env && nodemon --inspect server.js",
-		"dev": "cp envs/env.dev .env && nodemon --inspect server.js",
+		"start": "cross-env NODE_ENV=production nodemon --inspect server.js",
 		"test": "jest",
-		"test:watch": "jest --verbose --watch",
-		"test:watchAll": "jest --verbose --watchAll",
-		"test:watch:debug": "node --inspect node_modules/.bin/jest --watch",
-		"test:watch:debugBrk": "node --inspect-brk node_modules/.bin/jest --watch"
+		"test:watch": "cross-env NODE_ENV=test jest --verbose --watch",
+		"test:watchAll": "cross-env NODE_ENV=test jest --verbose --watchAll",
+		"test:watch:debug": "cross-env NODE_ENV=test node --inspect node_modules/.bin/jest --verbose --watch",
+		"test:watch:debugBrk": "cross-env NODE_ENV=test node --inspect-brk node_modules/.bin/jest --verbose --watch"
 	},
 	"keywords": [],
 	"author": "",
@@ -21,7 +19,6 @@
 		"axios": "^0.21.1",
 		"cors": "^2.8.5",
 		"cross-env": "^7.0.3",
-		"dotenv": "^16.0.0",
 		"env-cmd": "^10.1.0",
 		"express": "^4.17.1",
 		"handlebars": "^4.7.7",
