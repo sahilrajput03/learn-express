@@ -3,9 +3,14 @@
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
+	"scriptsComments": {
+		"prodTemporaryDebug": "This is a very special command coz in the end you can see that I have put `|| cp envs/env.dev .env` that means anytime you stop the server it'll copy env.dev file to .env file. So is to ensure that later anytime when you run server with `npm start` script.. you won't accidentally run the production server in any circumstances.",
+		"Idea for this type of comments?": "src: https://stackoverflow.com/a/45815391/10012446",
+		"test*": "Learn: All test commands (test, test:watch, test:watchAll, test:watch:debug, test:watch:debugBrk) will load `.env.test` file using `require('dotenv').config({path: 'envs/env.test'})` instruction we defined in withSupertest.test.js file."
+	},
 	"scripts": {
 		"start": "nodemon server.js",
-		"prodLocalDebug": "cp envs/env.prod .env && nodemon --inspect server.js || cp envs/env.dev .env",
+		"prodTemporaryDebug": "cp envs/env.prod .env && nodemon --inspect server.js || cp envs/env.dev .env",
 		"dev": "cp envs/env.dev .env && nodemon --inspect server.js",
 		"test": "jest",
 		"test:watch": "jest --verbose --watch",

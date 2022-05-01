@@ -45,6 +45,8 @@ t -h
 alias t='npm run test --'
 alias tw='npm run test:watch --'
 alias twa='npm run test:watchAll --'
+# For debugging
+alias twd='npm run test:watch:debug --'
 ```
 
 ## Debugging experience with jest
@@ -67,3 +69,7 @@ alias twd='npm run test:watch:debug --'
 ```
 
 **FYI: Changing value in the time of execution works amazingly well with debugger as well.**
+
+## Running production locally for urgently critical case?
+
+Read the _scriptsComments_ key in `package.json` file.
