@@ -76,3 +76,5 @@ alias twd='npm run test:watch:debug --'
 # "test:watch:debug": "cross-env NODE_ENV=test node --inspect node_modules/.bin/jest --verbose --watch"
 # ^^ FYI: This you don't need nodemon in above script.
 ```
+
+**FYI: Changing value in the time of execution works amazingly well with debugger as well.**

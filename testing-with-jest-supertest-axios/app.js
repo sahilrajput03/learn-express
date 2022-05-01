@@ -34,4 +34,4 @@ app.get('/b', (req, res) => {
 	return res.status(203).send(req.body) // You don't need res.json to serialize js object to json, express does this on its own🤺︎.
 })
 
-module.exports = {app} // for testing with supertest as kalle said, supertest is actually nice!
+module.exports = app // for testing with supertest as kalle said, supertest is actually nice!

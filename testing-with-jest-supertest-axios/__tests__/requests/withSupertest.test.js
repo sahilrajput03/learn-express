@@ -2,7 +2,7 @@
 // Reason for advantage of using superagent in frontend is that you might get advantage of similar api structure in frontend as you have in below tests.
 
 const supertest = require('supertest')
-const {app} = require('../../app')
+const app = require('../../app')
 const api = supertest(app)
 const log = console.debug
 const debug = console.debug
@@ -22,7 +22,7 @@ test('Check root endpoint, #supertest', async () => {
 		.expect(expectedStatus, expectedBody)
 		.expect('Content-Type', /text\/html/) // 🎁︎ With regex we are trying to match "text/html; charset=utf-8" text.
 
-	log('Response: ', {a: 10})
+	log('Response: ', response.body) // this would be possibly {}
 })
 
 test('Check /b endpoint, #supertest', async () => {
