@@ -1,0 +1,37 @@
+{
+	"name": "express-api-testint-with-jest-axios",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test:watch": "nodemon ./__tests__/index.js"
+	},
+	"OLDSCRIPTS": {
+		"start": "nodemon server.js",
+		"prodTemporaryDebug": "cp envs/env.prod .env && nodemon --inspect server.js || cp envs/env.dev .env",
+		"dev": "cp envs/env.dev .env && nodemon --inspect server.js",
+		"test": "jest",
+		"test:watch": "jest --verbose --watch",
+		"test:watchAll": "jest --verbose --watchAll",
+		"test:watch:debug": "node --inspect node_modules/.bin/jest --watch",
+		"test:watch:debugBrk": "node --inspect-brk node_modules/.bin/jest --watch"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@types/jest": "^26.0.23",
+		"axios": "^0.21.1",
+		"cors": "^2.8.5",
+		"cross-env": "^7.0.3",
+		"dotenv": "^16.0.0",
+		"env-cmd": "^10.1.0",
+		"express": "^4.17.1",
+		"handlebars": "^4.7.7",
+		"nodemon": "^2.0.7",
+		"supertest": "^6.1.3"
+	},
+	"devDependencies": {
+		"jest": "^28.0.3"
+	}
+}

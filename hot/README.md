@@ -19,3 +19,5 @@ code in `me_nestedHotWithChokidar`
 **Inspiration (I copied 99% code): https://codeburst.io/dont-use-nodemon-there-are-better-ways-fc016b50b45e**
 
 He also recommends to checkout: https://github.com/glenjamin/ultimate-hot-reloading-example/
+
+- Stackoverflow thread: https://stackoverflow.com/questions/1972242/how-to-auto-reload-files-in-node-js

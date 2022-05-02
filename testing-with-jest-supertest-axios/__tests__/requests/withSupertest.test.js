@@ -24,7 +24,6 @@ let log = console.log
 //? IMPORTANT: **Although its tempting to use `supertest` for making requests but its absolutely phenomental to make *pure functions* to make use of while making request functions with `axios` coz that empowers us code-reusability feature and that is super super cool.
 
 // console.debug(process.env.NODE_ENV) // Output: "test"
-// You don't need to install dotenv at all.
 jest.setTimeout(10 * 60 * 1_000) // timeout set to 10 minutes(coz sometimes while debugging user might be doing self assisted execution).
 test('Check root endpoint, #supertest', async () => {
 	const expectedBody = "You made a get request on '/' endpoint."
