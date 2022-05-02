@@ -1,3 +1,5 @@
+console.log('---> Starting test suite <---')
+
 const tests = []
 
 const test = (name, cb) => {
@@ -27,10 +29,10 @@ const runTests = async () => {
 
 // What is global in nodejs?
 // Ans. https://stackoverflow.com/a/66293366/10012446
+
 global.a = 20
-global.m = 10 // This will be avaialble everywhere now!
-global.log = console.log // This will be avaialble everywhere now!
+global.m = 10
+global.log = console.log
+
 global.test = test
-global.tetts = tests
-global.testRunner = tests
 global.runTests = runTests
