@@ -12,6 +12,8 @@ I forked above repo at my https://github.com/sahilrajput03/hot-module-replacemen
 
 ## Amazing article which I used to make my own hot-reloading utility
 
+**What is `require.cache` ? Find in [nodejs docs](https://nodejs.org/api/modules.html#requirecache).**
+
 code in `me_nestedHotWithChokidar`
 
 **Inspiration (I copied 99% code): https://codeburst.io/dont-use-nodemon-there-are-better-ways-fc016b50b45e**
