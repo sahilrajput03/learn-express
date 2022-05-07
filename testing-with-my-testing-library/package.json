@@ -6,16 +6,6 @@
 	"scripts": {
 		"test:watch": "nodemon ./__tests__/index.js"
 	},
-	"OLDSCRIPTS": {
-		"start": "nodemon server.js",
-		"prodTemporaryDebug": "cp envs/env.prod .env && nodemon --inspect server.js || cp envs/env.dev .env",
-		"dev": "cp envs/env.dev .env && nodemon --inspect server.js",
-		"test": "jest",
-		"test:watch": "jest --verbose --watch",
-		"test:watchAll": "jest --verbose --watchAll",
-		"test:watch:debug": "node --inspect node_modules/.bin/jest --watch",
-		"test:watch:debugBrk": "node --inspect-brk node_modules/.bin/jest --watch"
-	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
