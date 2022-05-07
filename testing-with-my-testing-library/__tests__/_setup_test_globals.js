@@ -1,6 +1,6 @@
 console.log('---> Starting test suite <---')
 
-const tests = []
+let tests = []
 
 const test = (name, cb) => {
 	tests.push({name, cb})
@@ -21,6 +21,8 @@ const runTests = async () => {
 	for await (const test of tests) {
 		await testRunner(test)
 	}
+
+	tests = [] // IMPORTANT: Empty the tests array so later when we re-run the tests it won't rerun older queued tests.
 }
 
 // This doesn't work man idk why!
