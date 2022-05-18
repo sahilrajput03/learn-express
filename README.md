@@ -1,5 +1,7 @@
 # Learn Express
 
+For full *hot+flash+database_connected* please refer to `testing-hot-flash` directory in this repo.
+
 **Please keep below text for future references of offline repos to be trackable back to this repo.**
 
 - Added `test-quokkajs-with-express` repo.
