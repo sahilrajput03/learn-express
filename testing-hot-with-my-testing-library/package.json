@@ -4,8 +4,9 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"test": "env-cmd -f .env.test fr ./__tests__/withSupertest.js",
-		"test:watch": "env-cmd -f .env.test fr -w ./__tests__/withSupertest.js"
+		"start": "node server.js",
+		"test": "fr ./__tests__/withSupertest.js",
+		"test:watch": "fr -w ./__tests__/withSupertest.js"
 	},
 	"old:scripts": {
 		"test:watch": "nodemon ./__tests__/index.js"

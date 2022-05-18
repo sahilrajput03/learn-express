@@ -1,4 +1,8 @@
-require('dotenv').config({path: 'envs/env.test'})
+//? Use .env.test file for environment.
+const path = require('path')
+
+const dotenv = require('dotenv')
+dotenv.config({path: path.join(__dirname, '..', '.env.test')}) // Joining path using path.join and __dirname allows us to execute files withSupertest using `fr withSupertest` from inside __tests__ folder and from the root folder as well.
 
 const supertest = require('supertest')
 const app = require('../app')
@@ -7,7 +11,6 @@ const {expect} = require('expect')
 const mongoose = require('mongoose')
 
 // ???????
-// 1. what env file does fr uses??, imo it should use env.test file automatically by default..!
 // 2. what is usage of expressasyncerror or mongoose-async-error they used in fso?
 
 // withSupertest.test

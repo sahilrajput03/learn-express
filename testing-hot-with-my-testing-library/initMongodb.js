@@ -6,8 +6,7 @@ set('returnOriginal', false) //This makes returning of new updated object instea
 // set('debug', true)
 // ^^ This to enable mongoose debug mode.
 
-const DB_NAME = 'testdb'
-const DB_URI = 'mongodb://localhost/' + DB_NAME
+const DB_URI = process.env.DB_URI
 const PERSON_COLLECTION = 'persons' //* You should use pluras names, otherwise mongodb will itself change the name to plurals.
 const GADGET_COLLECTION = 'gadgets' //* You should use pluras names, otherwise mongodb will itself change the name to plurals.
 
@@ -47,4 +46,3 @@ global.personModel = personModel
 global.gadgetModel = gadgetModel
 global.GADGET_COLLECTION_NAME = GADGET_COLLECTION
 global.PERSON_COLLECTION_NAME = PERSON_COLLECTION
-global.DB_NAME = DB_NAME

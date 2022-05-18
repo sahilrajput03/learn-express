@@ -25,10 +25,14 @@ const errorHandler = (error, request, response, next) => {
 			break
 	}
 
-	if (process.env.NODE_ENV !== 'test') {
+	log('KKKKKKKKKKk', process.env.NODE_ENV)
+	if (process.env.NODE_ENV === 'test') {
 		// ! Caution here for test mode!
 		// Only uncomment below line if you want errors in test mode.
 		// Since at times we want to read error messages in express server so we would need to uncomment below line to read such errors else it the errors won't show  in the terminal at all.
+		// next(error)
+	} else {
+		// LEARN: Enable errors logging for dev and production environment by default!
 		next(error)
 	}
 }
