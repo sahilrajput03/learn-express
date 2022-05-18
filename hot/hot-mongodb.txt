@@ -1,1 +1,0 @@
-Refer the repo @ https://github.com/sahilrajput03/learning-monogo-and-mongoosejs/tree/master/hot-mongodb
