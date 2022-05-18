@@ -1,7 +1,5 @@
 # Readme
 
-I am using this `my-testing-library` @ `learning-monogo-and-mongoosejs/hot-mongodb/hot-mongodb-with-my-testing-library` repo.
-
 Motivation: TRY IMPLEMENTING YOUR OWN CUSTOM TESTING LIBRARY INSTEAD OF JEST(COS THAT'LL BE BLAZING FAST ~ THANKS TO KENT) AND ALSO ADD THE HOT MODULE REPLACEMENT THING TO SAVE CONNECTION. YIKES!!. ITS GOING TO BE LOVE!.;
 
 To run tests with my custom library you can use `tw` i.e., npm script `"test:watch": "nodemon ./__tests__/index.js"`.
