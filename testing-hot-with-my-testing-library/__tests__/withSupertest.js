@@ -6,6 +6,10 @@ const api = supertest(app)
 const {expect} = require('expect')
 const mongoose = require('mongoose')
 
+// ???????
+// 1. what env file does fr uses??, imo it should use env.test file automatically by default..!
+// 2. what is usage of expressasyncerror or mongoose-async-error they used in fso?
+
 // withSupertest.test
 connectToDb(async () => {
 	await require('../initMongodb.js')
@@ -44,9 +48,6 @@ test('Check /b endpoint, #supertest', async () => {
 })
 
 test('database request', async () => {
-	// TODO
-	// 1. TO FIX: - Make test refresh on server routes code change anyhow!
-	// 2. Handle if backend throws error in in api then you should handle that somehow so that hotmodule replacement works with file save again.
 	const expectedBody = {
 		name: 'Bruno Mars',
 		phoneNumber: 123456789,
@@ -56,11 +57,21 @@ test('database request', async () => {
 	const expectedStatus = 200
 
 	// Never await api call if you are using .end function on the api call.
-	const response = await api.post('/c').send(expectedBody) //🔥︎ This is how you send data.
+	const res = await api.post('/c').send(expectedBody).expect(expectedStatus) //🔥︎ This is how you send data.
 	// .expect('Content-Type', /application\/json/) // this fails the request.
 
-	expect(response.body).toMatchObject(expectedBody)
-	expect(response.body).toHaveProperty('_id')
+	expect(res.body).toMatchObject(expectedBody)
+	expect(res.body).toHaveProperty('_id')
+})
+
+test('bad request ', async () => {
+	// Please read code of ``CAUTION`` in `middleware/errorHandler` function to know why I have disabled error logging for `test` mode in backend by default but still you can enable it very easily enable it.
+	let expectedError
+	const res = await api.get('/bugged_api')
+	// log({body: res.body})
+
+	expect(res.body.error).toBeDefined()
+	expect(res.body.error).toBe('Some stupid error..')
 })
 
 //? Add below thing as important..!

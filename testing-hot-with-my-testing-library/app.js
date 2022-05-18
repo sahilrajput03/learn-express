@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 
 let router = require('./routes')
+const middleware = require('./utils/middleware')
 
 const cors = require('cors')
 const egRouter = require('./routers/eg')
@@ -25,5 +26,8 @@ app.use((req, res, next) => {
 app.use('/', function (req, res, next) {
 	router(req, res, next)
 })
+
+app.use(middleware.unknownEndpoint)
+app.use(middleware.errorHandler)
 
 module.exports = app // for testing with supertest as kalle said, supertest is actually nice!
