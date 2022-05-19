@@ -12,6 +12,15 @@ For full *hot+flash+database_connected* please refer to `testing-hot-flash` dire
 - Added `react-express` repo.
 - Added `jwt-secure-authorization` repo.
 
+**What is the use of `express-async-errors` npm package**
+
+Source: [express-async-errors@github](https://github.com/davidbanham/express-async-errors), [Fullstackopen.com](https://fullstackopen.com/en/part4/testing_the_backend#eliminating-the-try-catch).
+
+![image](https://user-images.githubusercontent.com/31458531/169242782-fd1012ab-a53b-495f-856d-03b2489c55c8.png)
+![image](https://user-images.githubusercontent.com/31458531/169242898-7cacd7d4-563a-4f71-9aca-e750e6df1d6a.png)
+![image](https://user-images.githubusercontent.com/31458531/169243043-329fe030-3c9e-42ad-a7b3-1c9276ab7c44.png)
+
+
 **Sample server code for code structure reference @ https://www.digitalocean.com/community/tutorials/test-a-node-restful-api-with-mocha-and-chai**
 
 - FYI: We can put break point on the end of the function to check the value of last variable in the fuction as well.
