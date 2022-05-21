@@ -1,0 +1,16 @@
+{
+  "name": "nodejs-with-docker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "debug": "nodemon --inspect=0.0.0.0 index.js",
+	"NOTE": "echo Without --inpect=0.0.0.0 VSCODE DEBUGGER ISN'T ABLE TO DETECT AT ALL."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

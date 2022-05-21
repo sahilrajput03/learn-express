@@ -1,0 +1,24 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	// FYI: ~Sahil, I have put belo configuration in my settings.json file so I don't neet to put this manually in any project though.
+	// BUT ^^ Since the remote root could be different so its better recommendation to have project's own launch.json file so it won't mess with other globally editing practises and workdir is mostly project dependent.
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Docker: AutoAttacher to Node ~Sahil WORKS WITH NODEMON VERY WELL with same commands we used without docker.",
+			"type": "node",
+			"request": "attach",
+			"port": 9229,
+			"address": "localhost",
+			"localRoot": "${workspaceFolder}",
+			// IMPORATNT: ALERT: WARNING: LOOK OUT: You would need to change below /mydir to your specified app in you have in the container mounted.
+			"remoteRoot": "/mydir",
+			"protocol": "inspector",
+			// processId is not required for the docker way, and it works without it and restart works very well too!
+			// "processId": "${command:PickProcess}",
+			"restart": true
+		}
+	]
+}
