@@ -32,6 +32,10 @@ Source: [express-async-errors@github](https://github.com/davidbanham/express-asy
 
 **FYI: For loading env from a file using command line env-cmd is an amazing tool: https://www.npmjs.com/package/env-cmd**
 
+## Using morgan coz morgan is supported by express only! Yo!
+
+Source: https://github.com/expressjs/morgan
+
 ## Difference b/w res.send and res.json ?
 
 Read [here](https://stackoverflow.com/a/19041848/10012446).
