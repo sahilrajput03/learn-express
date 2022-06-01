@@ -17,7 +17,8 @@ For full *hot+flash+database_connected* please refer to `testing-hot-flash` dire
 - Added `learning_javascript_nodejs` repo.
 - Added `node-testing-dhanur-rakesh learn-nodejs-testing-with-jest` and renamed to `learn-testing-assertions-with-jest` repo.
 - Added `custom-NODE_PATH` repo.
-- Added ` ecma-wonder-in-node` repo.
+- Added `ecma-wonder-in-node` repo.
+- Added `learn-assertions` repo.
 
 **What is the use of `express-async-errors` npm package**
 
