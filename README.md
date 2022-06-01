@@ -12,7 +12,8 @@ For full *hot+flash+database_connected* please refer to `testing-hot-flash` dire
 - Added `react-express` repo.
 - Added `jwt-secure-authorization` repo.
 - Added `nodejs-development-in-docker-container` repo.
-- Adde `node-hot-api-testing/` repo.
+- Added `node-hot-api-testing` repo.
+- Added `node-modules-concept` repo.
 
 **What is the use of `express-async-errors` npm package**
 
