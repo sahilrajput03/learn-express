@@ -14,6 +14,7 @@ For full *hot+flash+database_connected* please refer to `testing-hot-flash` dire
 - Added `nodejs-development-in-docker-container` repo.
 - Added `node-hot-api-testing` repo.
 - Added `node-modules-concept` repo.
+- Added `learning_javascript_nodejs` repo.
 
 **What is the use of `express-async-errors` npm package**
 
