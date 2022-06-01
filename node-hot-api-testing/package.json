@@ -1,0 +1,25 @@
+{
+  "name": "with-live-browser",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "bw": "npm run browser:watch",
+    "browser:watch": "live-server --port=8080 --no-browser",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "express": "^4.17.2",
+    "l": "file:sahil/l.js",
+    "log-mw": "file:sahil/logmw.js",
+    "sample": "file:sahil/sampleData.js"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}
