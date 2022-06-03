@@ -1,42 +1,46 @@
-const express = require("express");
-const webpush = require("web-push");
-const bodyParser = require("body-parser");
-const path = require("path");
+const express = require('express')
+const webpush = require('web-push')
+const bodyParser = require('body-parser')
+const path = require('path')
 
-const app = express();
+const app = express()
 
 // Set static path
-app.use(express.static(path.join(__dirname, "client")));
+app.use(express.static(path.join(__dirname, 'client')))
 
-app.use(bodyParser.json());
+app.use(bodyParser.json())
 
-const publicVapidKey =
-  "BJthRQ5myDgc7OSXzPCMftGw-n16F7zQBEN7EUD6XxcfTTvrLGWSIG7y_JxiWtVlCFua0S8MTB5rPziBqNx1qIo";
-const privateVapidKey = "3KzvKasA2SoCxsp0iIG_o9B0Ozvl1XDwI63JRKNIWBM";
+const publicVapidKey = 'BJthRQ5myDgc7OSXzPCMftGw-n16F7zQBEN7EUD6XxcfTTvrLGWSIG7y_JxiWtVlCFua0S8MTB5rPziBqNx1qIo'
+const privateVapidKey = '3KzvKasA2SoCxsp0iIG_o9B0Ozvl1XDwI63JRKNIWBM'
 
-webpush.setVapidDetails(
-  "mailto:test@test.com",
-  publicVapidKey,
-  privateVapidKey
-);
+// This identify who's sending the push notification
+webpush.setVapidDetails('mailto:test@test.com', publicVapidKey, privateVapidKey)
 
 // Subscribe Route
-app.post("/subscribe", (req, res) => {
-  // Get pushSubscription object
-  const subscription = req.body;
+app.post('/subscribe', (req, res) => {
+	// Get pushSubscription object
+	const subscription = req.body
 
-  // Send 201 - resource created
-  res.status(201).json({});
+	// SHAPE of subscription object (got from network requests in browser). This is different for every service worker registered @ see code in client.js file in `client` directory to know more!
+	//   {
+	//   "endpoint": "https://fcm.googleapis.com/fcm/send/dotnldXWqrk:APA91bGzN4T6VjR3VxfTg6mI9XoAiqszwFhWumJ4HdrR8Bw7Ol77TqsZucy1hTv9qIDMEMKIiXIZNE8offwgTg_APPpWQctRPg0OmOmQpVDvGJOgQzzZx-MzBHUbZE1tgm5YIMl5aVTx",
+	//   "expirationTime": null,
+	//   "keys": {
+	//       "p256dh": "BP0YVfYzk9LGhj15hpoR1T9J7Q0eVnNfN3RBUxoXu7DrEANJHBjIrWJXpN5Sf8bzr0lXuWSatPKEWAXnxXy0JRI",
+	//       "auth": "_dVtFQVkQomkKNktJUxpVw"
+	//   }
+	// }
 
-  // Create payload
-  const payload = JSON.stringify({ title: "Push Test" });
+	// Send 201 - resource created
+	res.status(201).json({})
 
-  // Pass object into sendNotification
-  webpush
-    .sendNotification(subscription, payload)
-    .catch(err => console.error(err));
-});
+	// Create payload
+	const payload = JSON.stringify({title: 'Push Test'})
 
-const port = 5000;
+	// Pass object into sendNotification
+	webpush.sendNotification(subscription, payload).catch((err) => console.error(err))
+})
 
-app.listen(port, () => console.log(`Server started on port ${port}`));
+const port = 5000
+
+app.listen(port, () => console.log(`Server started on port ${port}`))

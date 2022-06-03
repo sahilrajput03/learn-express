@@ -1,5 +1,11 @@
 # README
 
+Generate vapid keys:
+
+```bash
+./node_modules/.bin/web-push generate-vapid-keys
+```
+
 Src: Push Notifications Using Node.js & Service Worker ~ Brad Traversy https://youtu.be/HlYFW2zaYQM
 
 - Github: https://github.com/bradtraversy/node_push_notifications
