@@ -20,6 +20,10 @@ For full *hot+flash+database_connected* please refer to `testing-hot-flash` dire
 - Added `ecma-wonder-in-node` repo.
 - Added `learn-assertions` repo.
 
+**PUT vs. PATCH in http requests**
+
+*The main difference between the PUT and PATCH method is that the PUT method uses the request URI to supply a modified version of the requested resource which replaces the original version of the resource, whereas the PATCH method supplies a set of instructions to modify the resource.*
+
 **What is the use of `express-async-errors` npm package**
 
 - FYI: express-async-errors also prevents server crasing if any route throws some error as well(***this is really very IMPORTANT in production server that one bad endpoint doesn't cause entire server to go down***). I.e., ![image](https://user-images.githubusercontent.com/31458531/172602435-12c370ed-c162-4541-931a-5e3451042032.png)
