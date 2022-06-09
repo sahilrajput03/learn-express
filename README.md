@@ -26,7 +26,7 @@ For full *hot+flash+database_connected* please refer to `testing-hot-flash` dire
 
 **What is the use of `express-async-errors` npm package**
 
-- ALERT: You must have error printing `console.log(error)` in some of your middleware to print the db errors else you won't see db errors in your server terminal at all. For exact usage refer projects [here](https://github.com/sahilrajput03/learning_sql/tree/main/fso-part13).
+- ALERT: You must have error printing `console.log(error)` in any of your middleware to print the db errors else you won't see db errors in your server terminal at all. For exact usage instruction refer projects [here](https://github.com/sahilrajput03/learning_sql/tree/main/fso-part13).
 
 - FYI: express-async-errors also prevents server crasing if any route throws some error as well(***this is really very IMPORTANT in production server that one bad endpoint doesn't cause entire server to go down***). I.e., ![image](https://user-images.githubusercontent.com/31458531/172602435-12c370ed-c162-4541-931a-5e3451042032.png)
 
