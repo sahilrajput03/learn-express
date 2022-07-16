@@ -3,6 +3,7 @@
 Inspiration: [Click here](https://github.com/visionmedia/supertest/blob/master/lib/test.js#L8)
 
 ```js
+// http is a builtin library in nodejs
 const { STATUS_CODES } = require('http');
 console.log(STATUS_CODES['100']) // 'continue'
 console.log(STATUS_CODES)
