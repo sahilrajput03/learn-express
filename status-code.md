@@ -4,6 +4,7 @@ Inspiration: [Click here](https://github.com/visionmedia/supertest/blob/master/l
 
 ```js
 const { STATUS_CODES } = require('http');
+console.log(STATUS_CODES['100']) // 'continue'
 console.log(STATUS_CODES)
 /* Ouput:
 {
@@ -72,5 +73,4 @@ console.log(STATUS_CODES)
   '511': 'Network Authentication Required'
 }
 */
-console.log(STATUS_CODES['100']) // 'continue'
 ```
