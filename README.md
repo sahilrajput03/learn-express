@@ -20,6 +20,10 @@ For full *hot+flash+database_connected* please refer to `testing-hot-flash` dire
 - Added `ecma-wonder-in-node` repo.
 - Added `learn-assertions` repo.
 
+**Using `sahilrajput03-logger`:** 
+
+*PLEASE READ ITS README*: https://github.com/sahilrajput03/logger-npm#readme
+
 **Status Codes for http:** [Click here](status-code.md)
 
 **PUT vs. PATCH in http requests**
