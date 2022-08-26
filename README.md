@@ -20,6 +20,44 @@ For full *hot+flash+database_connected* please refer to `testing-hot-flash` dire
 - Added `ecma-wonder-in-node` repo.
 - Added `learn-assertions` repo.
 
+## Expressjs starter in typescript
+
+- Dev.to Article: [Click here](https://dev.to/codeoz/express-with-typescript-starter-explained-fast-4dn7)
+- Github Repo linked in above article: [Click here](https://github.com/Code-Oz/basic-express-typescript)
+
+DIY:
+
+Two step process:
+
+1. First Step: Create a `src/app.ts` file:
+
+```js
+import express, { Application, Request, Response } from 'express'
+
+const app: Application = express()
+
+const port: number = 3001
+
+app.get('/toto', (req: Request, res: Response) => {
+    res.send('Hello toto')
+})
+
+app.listen(port, function () {
+    console.log(`App is listening on port ${port} !`)
+})
+```
+
+2. Install dependencies:
+
+```bash
+npm i express
+npm i -D typescript ts-node @types/node @types/express nodemon
+tsc --init
+# Add script to `package.json`:  "dev": "nodemon src/app.ts"
+# run the dev server
+npm run dev
+```
+
 ## What just happened to expressjs?
 
 ![image](https://user-images.githubusercontent.com/31458531/185786759-47b3711a-f113-42fa-b853-0c592141768a.png)
