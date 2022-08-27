@@ -27,7 +27,7 @@ For full *hot+flash+database_connected* please refer to `testing-hot-flash` dire
 
 DIY:
 
-Two step process:
+Three step process:
 
 1. First Step: Create a `src/app.ts` file:
 
@@ -52,9 +52,18 @@ app.listen(port, function () {
 ```bash
 npm i express
 npm i -D typescript ts-node @types/node @types/express nodemon
+
 tsc --init
-# Add script to `package.json`:  "dev": "nodemon src/app.ts"
-# run the dev server
+# Now, in tsconfig.json file, you must change values like:
+# "rootDir": "./src" /* Specify the root folder within your source files. */,
+# "outDir": "./dist" /* Specify an output folder for all emitted files. */,
+
+# Add script to `package.json`:
+# "dev": "nodemon src/app.ts"
+# "prestart": "tsc"
+# "start": "node dist/app.js"
+
+# Run the dev server
 npm run dev
 ```
 
