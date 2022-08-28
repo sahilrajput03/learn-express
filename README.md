@@ -58,10 +58,10 @@ tsc --init
 # "rootDir": "./src" /* Specify the root folder within your source files. */,
 # "outDir": "./dist" /* Specify an output folder for all emitted files. */,
 
-# Add script to `package.json`:
-# "dev": "nodemon src/app.ts"
-# "prestart": "tsc"
-# "start": "node dist/app.js"
+# Add below scripts to `package.json`:
+#		"build": "tsc",
+#		"start": "node dist/app.js",
+#		"dev": "nodemon src/app.ts"
 
 # Run the dev server
 npm run dev
