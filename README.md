@@ -22,6 +22,8 @@ For full *hot+flash+database_connected* please refer to `testing-hot-flash` dire
 
 ## Testing with axiosist seems really awesome
 
+Source of Inspiration: https://github.com/axios/axios/blob/main/ECOSYSTEM.md
+
 - Axiosist on npm: http://npm.im/axiosist
 - Github/Docs: https://github.com/Gerhut/axiosist
 
