@@ -27,7 +27,7 @@ Source of Inspiration: https://github.com/axios/axios/blob/main/ECOSYSTEM.md
 - Axiosist on npm: http://npm.im/axiosist
 - Github/Docs: https://github.com/Gerhut/axiosist
 
-```
+```js
 const axios = require('axios')
 const axiosist = require('axiosist')
 const express = require('express')
