@@ -20,6 +20,52 @@ For full *hot+flash+database_connected* please refer to `testing-hot-flash` dire
 - Added `ecma-wonder-in-node` repo.
 - Added `learn-assertions` repo.
 
+## Testing with axiosist seems really awesome
+
+Source of Inspiration: https://github.com/axios/axios/blob/main/ECOSYSTEM.md
+
+- Axiosist on npm: http://npm.im/axiosist
+- Github/Docs: https://github.com/Gerhut/axiosist
+
+```js
+const axios = require('axios')
+const axiosist = require('axiosist')
+const express = require('express')
+const app = express()
+
+app.use(express.json())
+
+app.get('/host', (req, res) => res.send(req.get('host')))
+app.get('/name', (req, res) => res.send({name: 'john'}))
+app.post('/user', (req, res) => res.send({...req.body}))
+
+const server = axiosist(app) // equivalent to below
+// const server = axios.create({adapter: axiosist.createAdapter(app)})
+
+void (async () => {
+	const response = await server.get('/host')
+	console.log('got resp.data', response.data)
+})()
+
+void (async () => {
+	const response = await server.get('/name')
+	console.log('name?', response.data)
+})()
+
+// Axiosist will keep the host header of the request, for example
+void (async () => {
+	const response = await server.get('https://loveapi.ml/host')
+	if (response.data !== 'loveapi.ml') throw new Error('failed.')
+})()
+
+void (async () => {
+	const usr = {name: 'Sahil', age: 10}
+	const {data} = await server.post('/user', usr)
+
+	if (data.name !== usr.name || data.age !== usr.age) throw new Error('user requets failed')
+})()
+```
+
 ## Expressjs starter in typescript
 
 - Dev.to Article: [Click here](https://dev.to/codeoz/express-with-typescript-starter-explained-fast-4dn7)
