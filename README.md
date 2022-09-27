@@ -20,6 +20,10 @@ For full *hot+flash+database_connected* please refer to `testing-hot-flash` dire
 - Added `ecma-wonder-in-node` repo.
 - Added `learn-assertions` repo.
 
+## mongodb - connection states
+
+![image](https://user-images.githubusercontent.com/31458531/192446672-e1d27156-5e62-49ec-a8b5-6732fe673067.png)
+
 ## Testing with axiosist seems really awesome
 
 Source of Inspiration: https://github.com/axios/axios/blob/main/ECOSYSTEM.md
