@@ -1,0 +1,13 @@
+// make sure you have .vscode at the root of the opened folder in vscode, else you won't be able to select the environemnt variables for rest client.
+// Use ctrl+alt+e or lower right corner to switch the rest client environment.
+{
+  "rest-client.environmentVariables": {
+    "development": {
+      "url": "http://localhost:3000",
+      "tokenKyle": ""
+    },
+    "production": {
+      "url": "http://localhost:80"
+    }
+  }
+}
