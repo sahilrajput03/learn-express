@@ -1,0 +1,11 @@
+{
+  "rest-client.environmentVariables": {
+    "development": {
+      "url": "http://localhost:3000",
+      "tokenKyle": ""
+    },
+    "production": {
+      "url": "http://localhost:80"
+    }
+  }
+}
