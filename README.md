@@ -4,6 +4,7 @@ For full *hot+flash+database_connected* please refer to `testing-hot-flash` dire
 
 **Please keep below text for future references of offline repos to be trackable back to this repo.**
 
+- Added `async-config-in-servers` mini-setup done with Lalit @blulabs
 - Added `test-quokkajs-with-express` repo.
 - Added `express-api-testing-with-jest-supertest-axios` repo.
 - Added `expressReqBodyWithTypeGuarding` repo.
