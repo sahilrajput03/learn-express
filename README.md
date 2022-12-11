@@ -21,6 +21,10 @@ For full *hot+flash+database_connected* please refer to `testing-hot-flash` dire
 - Added `ecma-wonder-in-node` repo.
 - Added `learn-assertions` repo.
 
+## throttle requets for say DDos Attack or server crashin due to memory overflow maybe?
+
+Get my guide and links by [clicking here](https://github.com/sahilrajput03/sahilrajput03/blob/master/learn-axios.md#make-server-to-limit-the-total-number-of-requets-to-be-handled-at-a-given-point-and-make-a-robust-client-side-mechanism-to-deal-with-such-error-in-a-sophisticated-manner).
+
 ## http status codes in code and sipmly refer to them when using these codes
 
 ```js
