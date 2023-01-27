@@ -134,7 +134,7 @@ void (async () => {
 
 - Dev.to Article: [Click here](https://dev.to/codeoz/express-with-typescript-starter-explained-fast-4dn7)
 - Github Repo linked in above article: [Click here](https://github.com/Code-Oz/basic-express-typescript)
-- My latest `ts-node-dev` example: [Click here](-)
+- My latest `ts-node-dev` example: [Click here](https://github.com/sahilrajput03/learn-express/tree/main/with-typescript)
 DIY:
 
 Three step process:
