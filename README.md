@@ -134,26 +134,27 @@ void (async () => {
 
 - Dev.to Article: [Click here](https://dev.to/codeoz/express-with-typescript-starter-explained-fast-4dn7)
 - Github Repo linked in above article: [Click here](https://github.com/Code-Oz/basic-express-typescript)
-- My latest `ts-node-dev` example: [Click here](-)
+- My latest `ts-node-dev` example: [Click here](https://github.com/sahilrajput03/learn-express/tree/main/with-typescript)
 DIY:
 
-Three step process:
+Two step process:
 
 1. First Step: Create a `src/app.ts` file:
 
-```js
-import express, { Application, Request, Response } from 'express'
+```ts
+import express from 'express'
+import type { Application, Request, Response } from 'express'
 
 const app: Application = express()
 
-const port: number = 3001
+const port = 3001
 
 app.get('/toto', (req: Request, res: Response) => {
-    res.send('Hello toto')
+  res.send('Hello toto')
 })
 
 app.listen(port, function () {
-    console.log(`App is listening on port ${port} !`)
+  console.log(`App is listening on port ${port} !`)
 })
 ```
 
