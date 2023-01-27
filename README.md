@@ -137,7 +137,7 @@ void (async () => {
 - My latest `ts-node-dev` example: [Click here](https://github.com/sahilrajput03/learn-express/tree/main/with-typescript)
 DIY:
 
-Three step process:
+Two step process:
 
 1. First Step: Create a `src/app.ts` file:
 
