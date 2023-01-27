@@ -21,6 +21,10 @@ For full *hot+flash+database_connected* please refer to `testing-hot-flash` dire
 - Added `ecma-wonder-in-node` repo.
 - Added `learn-assertions` repo.
 
+## throttle requets for say DDos Attack or server crashin due to memory overflow maybe?
+
+Get my guide and links by [clicking here](https://github.com/sahilrajput03/sahilrajput03/blob/master/learn-axios.md#make-server-to-limit-the-total-number-of-requets-to-be-handled-at-a-given-point-and-make-a-robust-client-side-mechanism-to-deal-with-such-error-in-a-sophisticated-manner).
+
 ## http status codes in code and sipmly refer to them when using these codes
 
 ```js
@@ -130,7 +134,7 @@ void (async () => {
 
 - Dev.to Article: [Click here](https://dev.to/codeoz/express-with-typescript-starter-explained-fast-4dn7)
 - Github Repo linked in above article: [Click here](https://github.com/Code-Oz/basic-express-typescript)
-
+- My latest `ts-node-dev` example: [Click here](-)
 DIY:
 
 Three step process:
@@ -156,21 +160,24 @@ app.listen(port, function () {
 2. Install dependencies:
 
 ```bash
+npm init -y
 npm i express
-npm i -D typescript ts-node @types/node @types/express nodemon
+npm i -D typescript ts-node ts-node-dev @types/node @types/express
 
-tsc --init
+# Generate tsconfig file
+npx tsc --init
 # Now, in tsconfig.json file, you must change values like:
 # "rootDir": "./src" /* Specify the root folder within your source files. */,
 # "outDir": "./dist" /* Specify an output folder for all emitted files. */,
 
 # Add below scripts to `package.json`:
-#		"build": "tsc",
-#		"start": "node dist/app.js",
-#		"dev": "nodemon src/app.ts"
+#    "start": "npm run start:dev",
+#    "start:dev": "ts-node-dev --respawn --transpile-only --clear src/app.ts",
+#    "start:debug": "ts-node-dev --inspect --respawn --transpile-only --clear src/app.ts"
+
 
 # Run the dev server
-npm run dev
+npm start
 ```
 
 ## What just happened to expressjs?
