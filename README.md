@@ -142,18 +142,19 @@ Two step process:
 1. First Step: Create a `src/app.ts` file:
 
 ```js
-import express, { Application, Request, Response } from 'express'
+import express from 'express'
+import type { Application, Request, Response } from 'express'
 
 const app: Application = express()
 
-const port: number = 3001
+const port = 3001
 
 app.get('/toto', (req: Request, res: Response) => {
-    res.send('Hello toto')
+  res.send('Hello toto')
 })
 
 app.listen(port, function () {
-    console.log(`App is listening on port ${port} !`)
+  console.log(`App is listening on port ${port} !`)
 })
 ```
 
