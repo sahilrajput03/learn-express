@@ -141,7 +141,7 @@ Two step process:
 
 1. First Step: Create a `src/app.ts` file:
 
-```js
+```ts
 import express from 'express'
 import type { Application, Request, Response } from 'express'
 
