@@ -1,4 +1,6 @@
 // Inspired from: https://stackoverflow.com/a/64488474/10012446
+// Typescript eslint rules: https://typescript-eslint.io/rules/no-extra-semi/
+
 module.exports = {
   env: {
     browser: true,
