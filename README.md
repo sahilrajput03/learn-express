@@ -6,7 +6,6 @@ For full *hot+flash+database_connected* please refer to `testing-hot-flash` dire
 
 - Added `async-config-in-servers` mini-setup done with Lalit @blulabs
 - Added `test-quokkajs-with-express` repo.
-- Added `express-api-testing-with-jest-supertest-axios` repo.
 - Added `expressReqBodyWithTypeGuarding` repo.
 - Added `express-testing-middlwares-with-nextCalls` repo.
 - Added `cookies-and-requests-with-express`
@@ -16,7 +15,6 @@ For full *hot+flash+database_connected* please refer to `testing-hot-flash` dire
 - Added `node-hot-api-testing` repo.
 - Added `node-modules-concept` repo.
 - Added `learning_javascript_nodejs` repo.
-- Added `node-testing-dhanur-rakesh learn-nodejs-testing-with-jest` and renamed to `learn-testing-assertions-with-jest` repo.
 - Added `custom-NODE_PATH` repo.
 - Added `ecma-wonder-in-node` repo.
 - Added `learn-assertions` repo.
