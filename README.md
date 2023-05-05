@@ -23,6 +23,10 @@ For full *hot+flash+database_connected* please refer to `testing-hot-flash` dire
 
 [Click here](https://www.makeuseof.com/heroku-alternatives-free-full-stack-hosting/)
 
+## Why do people use refresh token mechanisms?
+
+![image](https://user-images.githubusercontent.com/31458531/236434262-e260a058-1882-4c1e-a043-ae494a3adad6.png)
+
 ## throttle requets for say DDos Attack or server crashin due to memory overflow maybe?
 
 Get my guide and links by [clicking here](https://github.com/sahilrajput03/sahilrajput03/blob/master/learn-axios.md#make-server-to-limit-the-total-number-of-requets-to-be-handled-at-a-given-point-and-make-a-robust-client-side-mechanism-to-deal-with-such-error-in-a-sophisticated-manner).
