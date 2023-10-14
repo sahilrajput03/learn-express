@@ -21,9 +21,10 @@ For full *hot+flash+database_connected* please refer to `testing-hot-flash` dire
 
 ## MDN docs suggests to use `express-async-handler`
 
-- Github: [express-async-handler](https://github.com/Abazhenov/express-async-handler#readme)
-- Npm: [Click here](https://www.npmjs.com/package/express-async-handler)
 - MDN Docs: [Click here](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/routes)
+- `express-async-handler`
+	- Github: [express-async-handler](https://github.com/Abazhenov/express-async-handler#readme)
+	- Npm: [Click here](https://www.npmjs.com/package/express-async-handler)
 
 ![image](https://github.com/sahilrajput03/learn-express/assets/31458531/0c714da7-f1dc-4853-8930-cfeec2b089df)
 
