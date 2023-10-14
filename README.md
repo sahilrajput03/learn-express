@@ -19,6 +19,26 @@ For full *hot+flash+database_connected* please refer to `testing-hot-flash` dire
 - Added `ecma-wonder-in-node` repo.
 - Added `learn-assertions` repo.
 
+## MDN docs suggests to use `express-async-handler`
+
+- Github: [express-async-handler](https://github.com/Abazhenov/express-async-handler#readme)
+- Npm: [Click here](https://www.npmjs.com/package/express-async-handler)
+- MDN Docs: [Click here](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/routes)
+
+![image](https://github.com/sahilrajput03/learn-express/assets/31458531/0c714da7-f1dc-4853-8930-cfeec2b089df)
+
+## Monitor the memory usage of Node.js
+
+Source - [Click here](https://stackoverflow.com/a/30087518/10012446)
+
+```js
+node --expose-gc
+
+process.memoryUsage();
+
+// or may be can do Import process from 'node/process???'
+```
+
 ## Free fullstack hosting - heroku alternates
 
 [Click here](https://www.makeuseof.com/heroku-alternatives-free-full-stack-hosting/)
