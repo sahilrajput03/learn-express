@@ -19,6 +19,9 @@ For full *hot+flash+database_connected* please refer to `testing-hot-flash` dire
 - Added `ecma-wonder-in-node` repo.
 - Added `learn-assertions` repo.
 
+**Quick Links:**
+- Learn limiting concurrent requests with [`queue()`](https://caolan.github.io/async/v3/docs.html#queue) of [`async`](https://caolan.github.io/async/v3/) library (awesome): [Click here](learn-limiting-concurrent-requests.md)
+
 ## MDN docs suggests to use `express-async-handler`
 
 - MDN Docs: [Click here](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/routes)
