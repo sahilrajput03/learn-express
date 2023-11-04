@@ -13,8 +13,8 @@ const async = require('async');
 const URLs = ['url-1', 'url-2', 'url-3', 'url-4', 'url-5'];
 const CONCURRENCY = 2; // Adjust this number to control the concurrency level.
 
-const API_LATENCY = 1_000; // Tip: Increase this value to test the concurrency.
 const callFakeApi = (url) => new Promise((res, rej) => {
+  const API_LATENCY = 1_000; // Tip: Increase this value to test the concurrency.
   console.log(`                            --> request @ ${url}`);
   setTimeout(() => {
     if (url.includes(4)) {
