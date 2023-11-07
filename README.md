@@ -31,6 +31,12 @@ For full *hot+flash+database_connected* please refer to `testing-hot-flash` dire
 
 ![image](https://github.com/sahilrajput03/learn-express/assets/31458531/0c714da7-f1dc-4853-8930-cfeec2b089df)
 
+
+## should we maintiain categories in database or in backend database as enums
+
+![image](https://github.com/sahilrajput03/learn-express/assets/31458531/52d3f8ac-bb2b-483e-b727-391fd89022a0)
+
+
 ## Monitor the memory usage of Node.js
 
 Source - [Click here](https://stackoverflow.com/a/30087518/10012446)
