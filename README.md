@@ -22,6 +22,10 @@ For full *hot+flash+database_connected* please refer to `testing-hot-flash` dire
 **Quick Links:**
 - Learn limiting concurrent requests with [`queue()`](https://caolan.github.io/async/v3/docs.html#queue) of [`async`](https://caolan.github.io/async/v3/) library (awesome): [Click here](learn-limiting-concurrent-requests.md)
 
+## jwt, access_token, cookies
+
+![image](https://github.com/sahilrajput03/learn-express/assets/31458531/3e659d26-2238-43da-a95f-b5962eaf2e0e)
+
 ## Using cookies with ExpressJs
 
 ![image](https://github.com/sahilrajput03/learn-express/assets/31458531/663767fd-b693-496b-9642-9439440e01e5)
