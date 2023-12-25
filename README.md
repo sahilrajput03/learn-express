@@ -25,19 +25,27 @@ For full *hot+flash+database_connected* please refer to `testing-hot-flash` dire
 ## Using cookies in expressjs
 
 ```ts
-  const expires = new Date(Date.now() + cookieExpireValue * 24 * 60 * 60 * 1000)
-
   // From abhinav
+  // console.log('req.headers.origin?', req?.headers.origin)
+  // OUTPUT:  https://staging-bscl.lucify.in
+
   const pdomain = req?.headers.origin?.split('.').splice(1, 2).join('.')
   // OUTPUT: lucify.in 		(for request from frontned having url: https://staging-bscl.lucify.in/
+
   const domain = isProduction ? pdomain : 'localhost'
   // const domain = isProduction ? '.lucify.in' : 'localhost'
+
+  // TESTED: Below code works:
+  // backend: https://bscl-staging-backend.onrender.com/
+  // frontend: https://staging-bscl.lucify.in/
+
+  const expires = new Date(Date.now() + cookieExpireValue * 24 * 60 * 60 * 1000)
 
   const cookieConfig: CookieOptions = {
     expires,
     secure: !!isProduction,
     sameSite: isProduction ? 'none' : false,
-    // For production we might want to use:
+    // TODO: In future, we might want to use below fields for production when we have backend and frontend on same top level domain i.e., lucify.in:
     // httpOnly: true,
     // domain
   }
