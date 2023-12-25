@@ -22,6 +22,35 @@ For full *hot+flash+database_connected* please refer to `testing-hot-flash` dire
 **Quick Links:**
 - Learn limiting concurrent requests with [`queue()`](https://caolan.github.io/async/v3/docs.html#queue) of [`async`](https://caolan.github.io/async/v3/) library (awesome): [Click here](learn-limiting-concurrent-requests.md)
 
+## Using cookies in expressjs
+
+```ts
+  const expires = new Date(Date.now() + cookieExpireValue * 24 * 60 * 60 * 1000)
+
+  // From abhinav
+  const pdomain = req?.headers.origin?.split('.').splice(1, 2).join('.')
+  // OUTPUT: lucify.in 		(for request from frontned having url: https://staging-bscl.lucify.in/
+  const domain = isProduction ? pdomain : 'localhost'
+
+  const cookieConfig: CookieOptions = {
+    expires,
+    secure: !!isProduction,
+    sameSite: isProduction ? 'none' : false,
+    // For production we might want to use:
+    // httpOnly: true,
+    // domain
+  }
+  return res
+    .status(statusCode)
+    .cookie('token', token, cookieConfig)
+    .json({
+      success: true,
+      user,
+      token,
+    })
+}
+```
+
 ## jwt, access_token, cookies
 
 ![image](https://github.com/sahilrajput03/learn-express/assets/31458531/3e659d26-2238-43da-a95f-b5962eaf2e0e)
