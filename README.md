@@ -31,6 +31,7 @@ For full *hot+flash+database_connected* please refer to `testing-hot-flash` dire
   const pdomain = req?.headers.origin?.split('.').splice(1, 2).join('.')
   // OUTPUT: lucify.in 		(for request from frontned having url: https://staging-bscl.lucify.in/
   const domain = isProduction ? pdomain : 'localhost'
+  // const domain = isProduction ? '.lucify.in' : 'localhost'
 
   const cookieConfig: CookieOptions = {
     expires,
