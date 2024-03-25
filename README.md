@@ -60,6 +60,17 @@ For full *hot+flash+database_connected* please refer to `testing-hot-flash` dire
 }
 ```
 
+Other suggestions from chatgpt for setting `domain` property: 
+
+way1
+
+![image](https://github.com/sahilrajput03/learn-express/assets/31458531/f63d6825-0bb7-4763-9106-4dd435f640fa)
+
+OR way2:
+
+![image](https://github.com/sahilrajput03/learn-express/assets/31458531/17f0b256-ad06-4658-91a1-7c000ae769d7)
+
+
 ## jwt, access_token, cookies
 
 ![image](https://github.com/sahilrajput03/learn-express/assets/31458531/3e659d26-2238-43da-a95f-b5962eaf2e0e)
