@@ -4,7 +4,7 @@ Two step process:
 
 1. Create a folder `my-expressjs-typescript` and then run following commands inside the folder:
 
-```ts
+```bash
 mkdir src
 
 cat <<EOF > src/app.ts
