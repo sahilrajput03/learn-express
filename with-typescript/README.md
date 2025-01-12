@@ -40,8 +40,7 @@ sed -i -r '/^[ \t]*\//d; /^[[:space:]]*$/d; s/\/\*(.*?)\*\///g; s/[[:blank:]]+$/
 2. Manually update `tsconfig.ts` fand `package.json` files:
 
 ```bash
-# In tsconfig.json file, you must copy-paste below two lines inside "compilerOptions" key:
-"rootDir": "./src" /* Specify the root folder within your source files. */,
+# In tsconfig.json file, you must copy-paste below line inside "compilerOptions" key:
 "outDir": "./dist" /* Specify an output folder for all emitted files. */,
 
 
@@ -49,7 +48,8 @@ sed -i -r '/^[ \t]*\//d; /^[[:space:]]*$/d; s/\/\*(.*?)\*\///g; s/[[:blank:]]+$/
 # In `package.json` remove "test" script and copy-paste below three scripts:
 "start": "npm run start:dev",
 "start:dev": "ts-node-dev --respawn --transpile-only --clear src/app.ts",
-"start:debug": "ts-node-dev --inspect --respawn --transpile-only --clear src/app.ts"
+"start:debug": "ts-node-dev --inspect --respawn --transpile-only --clear src/app.ts",
+"build": "rm -rf dist && npx tsc"
 
 
 
