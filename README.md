@@ -2,6 +2,8 @@
 
 For full *hot+flash+database_connected* please refer to `testing-hot-flash` directory in this repo.
 
+⭐❤️Svelte + Expressjs: [sahilrajput03/svelte-express](https://github.com/sahilrajput03/svelte-express)
+
 **Please keep below text for future references of offline repos to be trackable back to this repo.**
 
 - Added `async-config-in-servers` mini-setup done with Lalit @blulabs
