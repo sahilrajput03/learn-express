@@ -24,7 +24,7 @@ For full *hot+flash+database_connected* please refer to `testing-hot-flash` dire
 
 ## ❤️  Expressjs starter in typescript (always keep this post to top of this file for easy reference)
 
-- My Expressjs + Typescript Example Project: `ts-node-dev` example: [Click here](https://github.com/sahilrajput03/learn-express/tree/main/with-typescript)
+- My Expressjs + Typescript Example Project: `ts-node-dev` example: ⭐[Click here](https://github.com/sahilrajput03/learn-express/tree/main/with-typescript)⭐
 	- Check readme in above folder to see instructions for creating from scratch.
 - Article: Dev.to Article: [Click here](https://dev.to/codeoz/express-with-typescript-starter-explained-fast-4dn7) - [Github Repo](https://github.com/Code-Oz/basic-express-typescript)
 
