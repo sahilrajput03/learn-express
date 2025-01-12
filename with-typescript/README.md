@@ -39,7 +39,7 @@ sed -i -r '/^[ \t]*\//d; /^[[:space:]]*$/d; s/\/\*(.*?)\*\///g; s/[[:blank:]]+$/
 2. Manually update `tsconfig.ts` fand `package.json` files:
 
 ```bash
-# In tsconfig.json file, you must copy-paste below two lines:
+# In tsconfig.json file, you must copy-paste below two lines inside "compilerOptions" key:
 "rootDir": "./src" /* Specify the root folder within your source files. */,
 "outDir": "./dist" /* Specify an output folder for all emitted files. */,
 
