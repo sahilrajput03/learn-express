@@ -49,7 +49,8 @@ sed -i -r '/^[ \t]*\//d; /^[[:space:]]*$/d; s/\/\*(.*?)\*\///g; s/[[:blank:]]+$/
 "start": "npm run start:dev",
 "start:dev": "ts-node-dev --respawn --transpile-only --clear src/app.ts",
 "start:debug": "ts-node-dev --inspect --respawn --transpile-only --clear src/app.ts",
-"build": "rm -rf dist && npx tsc"
+"build": "rm -rf dist && npx tsc",
+"start:prod": "node dist/app.js"
 
 
 
