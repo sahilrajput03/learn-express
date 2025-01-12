@@ -31,16 +31,19 @@ npm i -D typescript ts-node ts-node-dev @types/node @types/express
 # Generate tsconfig file
 npx tsc --init
 # To remove all comments tsconfig.ts file you can use below command: [source - https://stackoverflow.com/a/74414298/10012446 ]
-# sed -i -r '/^[ \t]*\//d; /^[[:space:]]*$/d; s/\/\*(.*?)\*\///g; s/[[:blank:]]+$//' tsconfig.json
+sed -i -r '/^[ \t]*\//d; /^[[:space:]]*$/d; s/\/\*(.*?)\*\///g; s/[[:blank:]]+$//' tsconfig.json
 
 # In tsconfig.json file, you must copy-paste below two lines:
 "rootDir": "./src" /* Specify the root folder within your source files. */,
 "outDir": "./dist" /* Specify an output folder for all emitted files. */,
 
+
+
 # In `package.json` remove "test" script and copy-paste below three scripts:
 "start": "npm run start:dev",
 "start:dev": "ts-node-dev --respawn --transpile-only --clear src/app.ts",
 "start:debug": "ts-node-dev --inspect --respawn --transpile-only --clear src/app.ts"
+
 
 
 # Run the dev server
