@@ -30,7 +30,10 @@ npm i -D typescript ts-node ts-node-dev @types/node @types/express
 
 # Generate tsconfig file
 npx tsc --init
-# Now, in tsconfig.json file, you must change values like:
+# To remove all comments tsconfig.ts file you can use below command: [source - https://stackoverflow.com/a/74414298/10012446 ]
+# sed -i -r '/^[ \t]*\//d; /^[[:space:]]*$/d; s/\/\*(.*?)\*\///g; s/[[:blank:]]+$//' tsconfig.json
+
+# Now, in tsconfig.json file, you must add these lines:
 # "rootDir": "./src" /* Specify the root folder within your source files. */,
 # "outDir": "./dist" /* Specify an output folder for all emitted files. */,
 
