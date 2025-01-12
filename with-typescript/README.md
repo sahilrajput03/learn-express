@@ -20,13 +20,14 @@ app.get('/', (req: Request, res: Response) => {
 })
 
 app.listen(port, function () {
-  console.log(\`App is listening on port \${port} !\`)
+  console.log(\`App is listening on port \${port}\`)
 })
 EOF
 
 
 # Install dependencies:
 npm init -y
+node -v > .nvmrc
 npm i express
 npm i -D typescript ts-node ts-node-dev @types/node @types/express
 
