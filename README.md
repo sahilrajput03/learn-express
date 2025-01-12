@@ -22,6 +22,12 @@ For full *hot+flash+database_connected* please refer to `testing-hot-flash` dire
 **Quick Links:**
 - Learn limiting concurrent requests with [`queue()`](https://caolan.github.io/async/v3/docs.html#queue) of [`async`](https://caolan.github.io/async/v3/) library (awesome): [Click here](learn-limiting-concurrent-requests.md)
 
+## Expressjs starter in typescript (always keep this post to top of this file for easy reference)
+
+- ❤️ My Expressjs + Typescript Example Project: `ts-node-dev` example: [Click here](https://github.com/sahilrajput03/learn-express/tree/main/with-typescript)
+	- Check readme in above folder to see instructions for creating from scratch.
+- Article: Dev.to Article: [Click here](https://dev.to/codeoz/express-with-typescript-starter-explained-fast-4dn7) - [Github Repo](https://github.com/Code-Oz/basic-express-typescript)
+
 ## Using cookies in expressjs
 
 ```ts
@@ -216,57 +222,6 @@ void (async () => {
 
 	if (data.name !== usr.name || data.age !== usr.age) throw new Error('user requets failed')
 })()
-```
-
-## Expressjs starter in typescript
-
-- Dev.to Article: [Click here](https://dev.to/codeoz/express-with-typescript-starter-explained-fast-4dn7)
-- Github Repo linked in above article: [Click here](https://github.com/Code-Oz/basic-express-typescript)
-- My latest `ts-node-dev` example: [Click here](https://github.com/sahilrajput03/learn-express/tree/main/with-typescript)
-DIY:
-
-Two step process:
-
-1. First Step: Create a `src/app.ts` file:
-
-```ts
-import express from 'express'
-import type { Application, Request, Response } from 'express'
-
-const app: Application = express()
-
-const port = 3001
-
-app.get('/toto', (req: Request, res: Response) => {
-  res.send('Hello toto')
-})
-
-app.listen(port, function () {
-  console.log(`App is listening on port ${port} !`)
-})
-```
-
-2. Install dependencies:
-
-```bash
-npm init -y
-npm i express
-npm i -D typescript ts-node ts-node-dev @types/node @types/express
-
-# Generate tsconfig file
-npx tsc --init
-# Now, in tsconfig.json file, you must change values like:
-# "rootDir": "./src" /* Specify the root folder within your source files. */,
-# "outDir": "./dist" /* Specify an output folder for all emitted files. */,
-
-# Add below scripts to `package.json`:
-#    "start": "npm run start:dev",
-#    "start:dev": "ts-node-dev --respawn --transpile-only --clear src/app.ts",
-#    "start:debug": "ts-node-dev --inspect --respawn --transpile-only --clear src/app.ts"
-
-
-# Run the dev server
-npm start
 ```
 
 ## What just happened to expressjs?
