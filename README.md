@@ -2,7 +2,7 @@
 
 For full *hot+flash+database_connected* please refer to `testing-hot-flash` directory in this repo.
 
-⭐❤️Svelte + Expressjs: [sahilrajput03/svelte-express](https://github.com/sahilrajput03/svelte-express)
+- **(Failue attempt to help share common files b/w frontend and backend)** Svelte + Expressjs: [sahilrajput03/svelte-express](https://github.com/sahilrajput03/svelte-express)
 
 **Please keep below text for future references of offline repos to be trackable back to this repo.**
 
