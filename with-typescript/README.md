@@ -37,10 +37,10 @@ npx tsc --init
 # "rootDir": "./src" /* Specify the root folder within your source files. */,
 # "outDir": "./dist" /* Specify an output folder for all emitted files. */,
 
-# Add below scripts to `package.json`:
-#    "start": "npm run start:dev",
-#    "start:dev": "ts-node-dev --respawn --transpile-only --clear src/app.ts",
-#    "start:debug": "ts-node-dev --inspect --respawn --transpile-only --clear src/app.ts"
+# Remove "test" script and add below scripts to `package.json`:
+"start": "npm run start:dev",
+"start:dev": "ts-node-dev --respawn --transpile-only --clear src/app.ts",
+"start:debug": "ts-node-dev --inspect --respawn --transpile-only --clear src/app.ts"
 
 
 # Run the dev server
