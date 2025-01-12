@@ -1,6 +1,6 @@
 # Creating a expressjs + typescript project
 
-Three step process:
+Two step process:
 
 1. Create a folder `my-expressjs-typescript` and then run following commands inside the folder:
 
