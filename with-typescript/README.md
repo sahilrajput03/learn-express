@@ -2,9 +2,14 @@
 
 Two step process:
 
-1. First Step: Create a `src/app.ts` file:
+1. Run following commands:
 
 ```ts
+
+mkdir my-expressjs-typescript && cd my-expressjs-typescript
+mkdir src
+
+cat <<EOF > src/app.ts
 import express from 'express'
 import type { Application, Request, Response } from 'express'
 
@@ -17,8 +22,10 @@ app.get('/toto', (req: Request, res: Response) => {
 })
 
 app.listen(port, function () {
-  console.log(`App is listening on port ${port} !`)
+  console.log(\`App is listening on port \${port} !\`)
 })
+EOF
+
 ```
 
 2. Install dependencies:
