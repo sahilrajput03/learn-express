@@ -32,7 +32,7 @@ npm i -D typescript ts-node ts-node-dev @types/node @types/express
 
 # Generate tsconfig.json file
 npx tsc --init
-# To remove all comments tsconfig.json file you can use below command: [source - https://stackoverflow.com/a/74414298/10012446 ]
+# Remove all comments tsconfig.json for a cleaner view: [source - https://stackoverflow.com/a/74414298/10012446 ]
 sed -i -r '/^[ \t]*\//d; /^[[:space:]]*$/d; s/\/\*(.*?)\*\///g; s/[[:blank:]]+$//' tsconfig.json
 ```
 
