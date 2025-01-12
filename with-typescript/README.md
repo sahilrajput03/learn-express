@@ -15,8 +15,8 @@ const app: Application = express()
 
 const port = 3001
 
-app.get('/toto', (req: Request, res: Response) => {
-  res.send('Hello toto')
+app.get('/', (req: Request, res: Response) => {
+  res.send('Hello from express + typescript')
 })
 
 app.listen(port, function () {
