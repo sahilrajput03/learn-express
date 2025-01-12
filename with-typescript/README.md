@@ -1,12 +1,10 @@
 # Creating a expressjs + typescript project
 
-Two step process:
+Three step process:
 
-1. Run following commands:
+1. Create a folder `my-expressjs-typescript` and then run following commands inside the folder:
 
 ```ts
-
-mkdir my-expressjs-typescript && cd my-expressjs-typescript
 mkdir src
 
 cat <<EOF > src/app.ts
@@ -26,11 +24,8 @@ app.listen(port, function () {
 })
 EOF
 
-```
 
-2. Install dependencies:
-
-```bash
+# Install dependencies:
 npm init -y
 npm i express
 npm i -D typescript ts-node ts-node-dev @types/node @types/express
@@ -39,7 +34,11 @@ npm i -D typescript ts-node ts-node-dev @types/node @types/express
 npx tsc --init
 # To remove all comments tsconfig.json file you can use below command: [source - https://stackoverflow.com/a/74414298/10012446 ]
 sed -i -r '/^[ \t]*\//d; /^[[:space:]]*$/d; s/\/\*(.*?)\*\///g; s/[[:blank:]]+$//' tsconfig.json
+```
 
+2. Manually update `tsconfig.ts` fand `package.json` files:
+
+```bash
 # In tsconfig.json file, you must copy-paste below two lines:
 "rootDir": "./src" /* Specify the root folder within your source files. */,
 "outDir": "./dist" /* Specify an output folder for all emitted files. */,
