@@ -29,6 +29,7 @@ EOF
 npm init -y
 node -v > .nvmrc
 echo node_modules >> .gitignore
+echo dist >> .gitignore
 npm i express
 npm i -D typescript ts-node ts-node-dev @types/node @types/express
 
