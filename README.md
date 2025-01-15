@@ -33,6 +33,10 @@ For full *hot+flash+database_connected* please refer to `testing-hot-flash` dire
 ## Using cookies in expressjs - 1/n
 
 ```js
+import cookieParser from 'cookie-parser'
+app.use(cookieParser()); // Use cookie-parser middleware
+
+
 app.get('/u1', async (req: Request, res: Response) => {
   res.cookie('name', 'Sahil Rajput', { maxAge: 900000 }); // "maxAge": Lifetime of the cookie in milliseconds
   res.redirect('/get-cookie');
