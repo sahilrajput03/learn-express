@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "npm run debug",
     "debug": "nodemon --inspect=0.0.0.0 index.js",
-	"NOTE": "echo Without --inpect=0.0.0.0 VSCODE DEBUGGER ISN'T ABLE TO DETECT AT ALL."
+    "NOTE": "echo Without --inpect=0.0.0.0 VSCODE DEBUGGER ISN'T ABLE TO DETECT AT ALL."
   },
   "keywords": [],
   "author": "",
