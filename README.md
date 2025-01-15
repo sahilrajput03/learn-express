@@ -30,6 +30,18 @@ For full *hot+flash+database_connected* please refer to `testing-hot-flash` dire
 	- Check readme in above folder to see instructions for creating from scratch.
 - Article: Dev.to Article: [Click here](https://dev.to/codeoz/express-with-typescript-starter-explained-fast-4dn7) - [Github Repo](https://github.com/Code-Oz/basic-express-typescript)
 
+## Since which version we can use .env file using builtin node way?
+
+Starting with Node.js v20.6.0, the ability to load .env files into the process.env object using the built-in dotenv loader was introduced.
+
+```bash
+node --dotenv index.js
+
+# you can specify a custom .env file path by setting the NODE_ENV_FILE environment variable before running your application. Here's how you can do it:
+NODE_ENV_FILE=./config/custom.env node --dotenv index.js
+```
+
+
 ## Using cookies in expressjs - 1/n
 
 ```js
