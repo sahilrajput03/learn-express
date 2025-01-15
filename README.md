@@ -30,7 +30,7 @@ For full *hot+flash+database_connected* please refer to `testing-hot-flash` dire
 	- Check readme in above folder to see instructions for creating from scratch.
 - Article: Dev.to Article: [Click here](https://dev.to/codeoz/express-with-typescript-starter-explained-fast-4dn7) - [Github Repo](https://github.com/Code-Oz/basic-express-typescript)
 
-## Using cookies in expressjs
+## Using cookies in expressjs - 1/3
 
 ```ts
   // From abhinav
@@ -78,11 +78,11 @@ OR way2:
 
 ![image](https://github.com/sahilrajput03/learn-express/assets/31458531/17f0b256-ad06-4658-91a1-7c000ae769d7)
 
-## Using cookies with ExpressJs - 1/2
+## Using cookies with ExpressJs - 2/3
 
 ![image](https://github.com/sahilrajput03/learn-express/assets/31458531/663767fd-b693-496b-9642-9439440e01e5)
 
-## jwt vs. access_token, cookies - 2/2
+## jwt vs. access_token, cookies - 3/3
 
 ![image](https://github.com/sahilrajput03/learn-express/assets/31458531/3e659d26-2238-43da-a95f-b5962eaf2e0e)
 
