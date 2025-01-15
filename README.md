@@ -78,14 +78,13 @@ OR way2:
 
 ![image](https://github.com/sahilrajput03/learn-express/assets/31458531/17f0b256-ad06-4658-91a1-7c000ae769d7)
 
-
-## jwt, access_token, cookies
-
-![image](https://github.com/sahilrajput03/learn-express/assets/31458531/3e659d26-2238-43da-a95f-b5962eaf2e0e)
-
-## Using cookies with ExpressJs
+## Using cookies with ExpressJs - 1/2
 
 ![image](https://github.com/sahilrajput03/learn-express/assets/31458531/663767fd-b693-496b-9642-9439440e01e5)
+
+## jwt vs. access_token, cookies - 2/2
+
+![image](https://github.com/sahilrajput03/learn-express/assets/31458531/3e659d26-2238-43da-a95f-b5962eaf2e0e)
 
 ## Should we maintiain categories in database or in backend database as enums
 
