@@ -13,14 +13,14 @@ import type { Application, Request, Response } from 'express'
 
 const app: Application = express()
 
-const port = 3001
+const port = 8080
 
 app.get('/', (req: Request, res: Response) => {
   res.send('Hello from express + typescript')
 })
 
 app.listen(port, function () {
-  console.log(\`App is listening on port \${port}\`)
+  console.log(`App running on: http://localhost:${port}`)
 })
 EOF
 
@@ -51,7 +51,7 @@ sed -i -r '/^[ \t]*\//d; /^[[:space:]]*$/d; s/\/\*(.*?)\*\///g; s/[[:blank:]]+$/
 "start": "npm run start:dev",
 "start:dev": "ts-node-dev --respawn --transpile-only --clear src/app.ts",
 "start:debug": "ts-node-dev --inspect --respawn --transpile-only --clear src/app.ts",
-"build": "rm -rf dist && npx tsc",
+"build": "rm -rf dist && tsc",
 "start:prod": "node dist/app.js"
 
 
