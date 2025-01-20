@@ -34,6 +34,12 @@ For full *hot+flash+database_connected* please refer to `testing-hot-flash` dire
 
 [Source](https://chatgpt.com/c/67879293-1418-8007-8bd1-ca21d1d9e25d)
 
+```js
+# NOTE: I tested using `ts-node-dev --respawn --transpile-only --clear --dotenv src/app.ts` but I get following error in a recent qr-project:
+ts-node-dev: no script to run provided
+# Result: I am using `dotenv` again. LOL
+```
+
 Starting with Node.js v20.6.0, the ability to load .env files into the process.env object using the built-in dotenv loader was introduced.
 
 ```bash
