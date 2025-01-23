@@ -1,29 +1,43 @@
-// Why you SHOULD NEVER use axios way of testing?
-// withAxios.test.js suite will fail if you don't have server running up (at right port).
+const axios = require('axios');
+const app = require('../../app');
 
-// ALERT: I am intentionally keeeping this axios test file and adding `.skip` to the tests to prevet them form running.
+const PORT = 4000;
+const api = axios.create({
+	baseURL: `http://localhost:${PORT}`,
+});
 
-const {rootRequest, aEndpointRequest} = require('../../requests/requests')
-let {log} = console
+describe.only('with axios', () => {
+	let server;
 
-test.skip('Check root endpoint', async () => {
-	const response = await rootRequest()
+	beforeAll((done) => {
+		server = app.listen(PORT, () => {
+			// console.log('Test server running...');
+			done();
+		});
+	});
+	afterAll(() => {
+		server.close();
+	});
 
-	const received = response.data
-	const expected = "You made a get request on '/' endpoint."
-	expect(received).toBe(expected)
+	test('Check root endpoint', async () => {
+		const response = await api.get('/');
 
-	// check status as well.
-	expect(response.status).toBe(200)
-})
+		const received = response.data;
+		const expected = "You made a get request on '/' endpoint.";
+		expect(received).toBe(expected);
 
-test.skip('Check /a endpoint', async () => {
-	const response = await aEndpointRequest()
+		// check status as well.
+		expect(response.status).toBe(200);
+	});
 
-	const received = response.data
-	const expected = "You made get request on '/a' endpoint."
-	expect(received).toBe(expected)
+	test('Check /a endpoint', async () => {
+		const response = await api.get('/a');
 
-	// check status as well.
-	expect(response.status).toBe(201)
-})
+		const received = response.data;
+		const expected = "You made get request on '/a' endpoint.";
+		expect(received).toBe(expected);
+
+		// check status as well.
+		expect(response.status).toBe(201);
+	});
+});
