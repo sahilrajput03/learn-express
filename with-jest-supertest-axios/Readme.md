@@ -73,3 +73,7 @@ alias twd='npm run test:watch:debug --'
 ## Running production locally for urgently critical case?
 
 Read the _scriptsComments_ key in `package.json` file.
+
+# Supertest vs. axios (axios wins clearly by popularity)
+
+![image](https://github.com/user-attachments/assets/a2d9b4bb-adca-4093-9ec5-efc2a7edd3ca)
