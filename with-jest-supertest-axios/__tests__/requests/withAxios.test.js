@@ -1,24 +1,26 @@
 const axios = require('axios');
 const app = require('../../app');
 
-const PORT = 4000;
-const api = axios.create({
-	baseURL: `http://localhost:${PORT}`,
+let server;
+
+/** @type {import('axios').AxiosInstance} */
+let api;
+
+beforeAll((done) => {
+	server = app.listen(() => {
+		const { port } = server.address(); // automatically assign an available port
+		console.log('Test server running on port:', port);
+		api = axios.create({
+			baseURL: `http://localhost:${port}`,
+		});
+		done();
+	});
+});
+afterAll(() => {
+	server.close(); // without this we get warning --- `A worker process has failed to exit gracefully and has been force exited. This is likely caused by tests leaking due to improper teardown. Try running with --detectOpenHandles to find leaks. Active timers can also cause this, ensure that .unref() was called on them.`
 });
 
 describe.only('with axios', () => {
-	let server;
-
-	beforeAll((done) => {
-		server = app.listen(PORT, () => {
-			// console.log('Test server running...');
-			done();
-		});
-	});
-	afterAll(() => {
-		server.close();
-	});
-
 	test('Check root endpoint', async () => {
 		const response = await api.get('/');
 
