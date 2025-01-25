@@ -2,7 +2,7 @@
 
 Other way to communicate is to have http server on both processes and communicate over http requests. Check with chatGPT to get example.
 
-# What is difference between fork and spawn in nodejs? Be concise. (ChatGPT)
+# `fork` vs `spawn`
 
 In Node.js, fork and spawn are used to create child processes, but they serve different purposes:
 
@@ -27,3 +27,26 @@ fork is tailored for Node.js modules with IPC, while spawn is for general comman
 ## Manually enable ipc in `spawn` (ChatGPT)
 
 Check `spawn` folder in this repo.
+
+# `worker_threads` (threads/multi threading)
+
+Official multi threading example from https://nodejs.org/en
+
+```js
+// threads.mjs
+import {
+  Worker,
+  isMainThread,
+  workerData,
+  parentPort,
+} from "node:worker_threads";
+if (isMainThread) {
+  const data = "some data";
+  const worker = new Worker(import.meta.filename, { workerData: data });
+  worker.on("message", (msg) => console.log("Reply from Thread:", msg));
+} else {
+  const source = workerData;
+  parentPort.postMessage(btoa(source.toUpperCase()));
+}
+// run with `node threads.mjs`
+```

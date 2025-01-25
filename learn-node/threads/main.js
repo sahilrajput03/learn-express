@@ -1,5 +1,3 @@
-// & threads
-
 // Docs - https://nodejs.org/docs/latest-v22.x/api/worker_threads.html
 const { Worker } = require('worker_threads');
 
