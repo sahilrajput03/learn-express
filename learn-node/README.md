@@ -50,3 +50,37 @@ if (isMainThread) {
 }
 // run with `node threads.mjs`
 ```
+
+# What is difference between fork, spawn and worker_thread in nodejs. Be concise.
+
+Here’s a concise comparison of fork, spawn, and worker_thread in Node.js:
+
+1. spawn
+
+- Purpose: Executes external commands or scripts (not limited to Node.js).
+- IPC: Optional; needs to be enabled explicitly.
+- Use Case: Running shell commands, external binaries.
+- Example: spawn('ls', ['-lh']).
+
+2. fork
+
+- Purpose: Creates a new Node.js process to execute a module.
+- IPC: Enabled by default for communication between parent and child.
+- Use Case: Running separate Node.js scripts or modules.
+- Example: fork('child.js').
+
+3. worker_thread
+
+- Purpose: Creates a thread within the same process for parallel tasks.
+- IPC: Built-in via MessagePort for thread communication.
+- Use Case: CPU-intensive tasks, avoiding blocking the event loop.
+- Example: new Worker('worker.js').
+
+Key Differences:
+
+| Feature      | spawn            | fork              | worker_thread          |
+| ------------ | ---------------- | ----------------- | ---------------------- |
+| Process Type | External process | Node.js process   | Thread in same process |
+| IPC Support  | Optional         | Default           | Built-in               |
+| Performance  | Higher overhead  | Moderate overhead | Lower overhead         |
+| Use Cases    | Shell commands   | Node.js scripts   | CPU-bound tasks        |
