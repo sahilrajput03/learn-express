@@ -1,5 +1,5 @@
 // Docs - https://nodejs.org/docs/latest-v22.x/api/worker_threads.html
-const { Worker } = require('worker_threads');
+const { Worker } = require('node:worker_threads');
 
 const data = [1, 2, 3, 4, 5]; // Data to share
 
@@ -23,3 +23,8 @@ worker.on('error', (err) => {
 worker.on('exit', (code) => {
     console.log(`Worker exited with code ${code}`);
 });
+
+setTimeout(() => {
+    // Test manual termination of worker
+    // worker.terminate();
+}, 500);

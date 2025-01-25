@@ -1,4 +1,4 @@
-const { parentPort } = require('worker_threads');
+const { parentPort, } = require('node:worker_threads');
 
 // Listen for messages from the main thread
 parentPort.on('message', (data) => {
@@ -9,5 +9,11 @@ parentPort.on('message', (data) => {
 });
 
 parentPort.on('message', (data) => {
-    throw new Error('shit-happens-for-real!');
+    // throw new Error('shit-happens-for-real!'); // triggers 'error' event in main thread
 });
+
+setTimeout(() => {
+    // The worker must be manually terminated to trigger the 'exit' event in main thread
+    process.exit(0);
+}, 2_000)
+
