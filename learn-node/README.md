@@ -1,4 +1,4 @@
-# Readme
+# learn node
 
 Other way to communicate is to have http server on both processes and communicate over http requests. Check with chatGPT to get example.
 
