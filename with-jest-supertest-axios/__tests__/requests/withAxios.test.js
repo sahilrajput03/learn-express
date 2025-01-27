@@ -11,9 +11,7 @@ beforeAll((done) => {
 		// We use ephemeral port (short-lived or lasts for a very brief period)
 		const { port } = server.address(); // automatically assign an available port
 		console.log('Test server running on port:', port);
-		api = axios.create({
-			baseURL: `http://localhost:${port}`,
-		});
+		api = axios.create({ baseURL: `http://localhost:${port}` });
 		done();
 	});
 });
