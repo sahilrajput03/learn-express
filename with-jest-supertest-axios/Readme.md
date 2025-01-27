@@ -2,7 +2,11 @@
 
 ## Important
 
-- Benefits of using supertest ? \*\*Ans. You don't need to start the server and it runs the server on its own(solves the bigger problem i.e., you never accidentally make the requests on development or production server's databases but test database only, YO!). Inspiration from [amazing stackoverflow answer](https://stackoverflow.com/a/62992056/10012446).
+- Benefits of using supertest ? **Ans. You don't need to start the server and it runs the server on its own(solves the bigger problem i.e., you never accidentally make the requests on development or production server's databases but test database only, YO!). Inspiration from [amazing stackoverflow answer](https://stackoverflow.com/a/62992056/10012446).**
+
+**Update: 28 Jan (🇮🇳😇🇮🇳😇🇮🇳😇🇮🇳😇)**
+
+- FYI: I now prefer using axios over supertest because I like to have external control myself to start and stop the server manually on my own and use an external jset like library for assertions.
 
 ## Terminologies
 
