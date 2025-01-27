@@ -7,7 +7,7 @@ Other way to communicate is to have http server on both processes and communicat
 # Why two examples of `spawn` and `spawn2`
 
 - In `spawn`: I am piping stdin, stdout & stderr of child to parent process.
-- In `spawn-2`: I am inheriting stdout & stderr of child to parent process. This means logs are printed directly to stdout/stderr of parent process. This is not a good option because we cannot distinguish the logs/errors of child process from parent parent process.
+- In `spawn-2`: I am inheriting stdout & stderr of child to parent process. This means logs are printed directly to stdout/stderr of parent process. **This is not a good option because we cannot distinguish the logs/errors of child process from parent parent process.**
 
 # `fork` vs `spawn`
 
