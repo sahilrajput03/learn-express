@@ -28,8 +28,6 @@ describe.only('with axios', () => {
 		const received = response.data;
 		const expected = "You made a get request on '/' endpoint.";
 		expect(received).toBe(expected);
-
-		// check status as well.
 		expect(response.status).toBe(200);
 	});
 
@@ -39,8 +37,6 @@ describe.only('with axios', () => {
 		const received = response.data;
 		const expected = "You made get request on '/a' endpoint.";
 		expect(received).toBe(expected);
-
-		// check status as well.
 		expect(response.status).toBe(201);
 	});
 });
