@@ -1,5 +1,3 @@
-// & child process
-
 const { fork } = require('child_process');
 
 const child = fork('child.js');
