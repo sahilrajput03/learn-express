@@ -9,7 +9,7 @@ child.on('message', (message) => {
 
 // Kill child processes (to prevent orphan processes) in case of normal exit via `process.exit()` of this process *OR* run time exception of this process.
 process.on('exit', () => {
-    console.log('Parent is exiting. Terminating child process...');
+    console.log('\nParent is exiting. Terminating child process...\n');
     child.kill(); // Ensure the child process is killed
 });
 
@@ -18,6 +18,6 @@ process.on('exit', () => {
 //     process.exit(0);
 // }, 10_000);
 
-// setTimeout(() => {
-//     throw new Error('heyyyy');
-// }, 3_000);
+setTimeout(() => {
+    throw new Error('heyyyy');
+}, 3_000);
