@@ -4,4 +4,4 @@ process.on('message', (message) => {
     console.log('child.js PROCESS ID:', process.pid);
 });
 
-setInterval(() => { }, 10000_000); // mimic eternally running server
+// setInterval(() => { }, 10000_000); // mimic eternally running server

@@ -18,6 +18,6 @@ process.on('exit', () => {
 //     process.exit(0);
 // }, 10_000);
 
-setTimeout(() => {
-    throw new Error('heyyyy');
-}, 3_000);
+// setTimeout(() => {
+//     throw new Error('heyyyy');
+// }, 3_000);
