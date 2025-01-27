@@ -88,3 +88,10 @@ Key Differences:
 | IPC Support  | Optional         | Default           | Built-in               |
 | Performance  | Higher overhead  | Moderate overhead | Lower overhead         |
 | Use Cases    | Shell commands   | Node.js scripts   | CPU-bound tasks        |
+
+# In nodejs, when we fork child process and consider we get run time error in parent process --- would the child processes be exited as well? (ChatGPT)
+
+By default:
+
+- Child processes do not exit automatically when the parent process crashes or encounters a runtime error.
+- You need to explicitly manage the lifecycle of child processes to ensure they are terminated when appropriate. This can be done using signals, .kill(), or other cleanup mechanisms in the parent process.
