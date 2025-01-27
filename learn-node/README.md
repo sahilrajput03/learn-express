@@ -6,7 +6,7 @@ Other way to communicate is to have http server on both processes and communicat
 
 # `fork` vs `spawn`
 
-![image](https://github.com/user-attachments/assets/6faf7df6-e285-4475-ba28-4115283cfb36)
+<img src="https://github.com/user-attachments/assets/6faf7df6-e285-4475-ba28-4115283cfb36" alt="drawing" width="700"/>
 
 In Node.js, fork and spawn are used to create child processes, but they serve different purposes:
 
