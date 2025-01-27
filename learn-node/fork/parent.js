@@ -7,10 +7,10 @@ child.on('message', (message) => {
     console.log('|PARENT|', 'Received from child:', message);
 });
 
-// Kill child processes (to prevent orphan processes) in case of normal exit via `process.exit()` of this process *OR* run time exception of this process.
+// Runs only when PARENT exits via `process.exit(exitCode?)` or any runtime exception in PARENT process
 process.on('exit', () => {
     console.log('\nParent is exiting. Terminating child process...\n');
-    child.kill(); // Ensure the child process is killed
+    child.kill(); // Kill child processes (to prevent orphan processes)
 });
 
 // * Testing killing of child in case of normal exit or run time exception when child is eternally running script
