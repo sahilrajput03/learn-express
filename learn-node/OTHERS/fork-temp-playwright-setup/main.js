@@ -11,10 +11,10 @@ let testsWereRun = false;
 let serverStarted = false;
 let mongodbConnected = false;
 
-child.on('message', (message) => {
-    console.log('|PARENT|', 'Received from child:', message);
-    if (message.data === 'TEST_SERVER_STARTED') { serverStarted = true; }
-    if (message.data === 'MONGODB_CONNECTED') { mongodbConnected = true; }
+child.on('message', (data) => {
+    console.log('|PARENT|', 'Received from child:', data);
+    if (data.message === 'TEST_SERVER_STARTED') { serverStarted = true; }
+    if (data.message === 'MONGODB_CONNECTED') { mongodbConnected = true; }
     if (serverStarted && mongodbConnected && !testsWereRun) {
         testsWereRun = true; // we need this so that we signal to run tests only once and not multiple times
         console.log(' > > > > Playwright tests can run now! \n\n\n'); // ! tests can run now...

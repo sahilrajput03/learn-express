@@ -3,8 +3,8 @@ const { fork } = require('child_process');
 const child = fork('child.js');
 child.send({ value: 42 });
 
-child.on('message', (message) => {
-    console.log('|PARENT|', 'Received from child:', message);
+child.on('message', (data) => {
+    console.log('|PARENT|', 'Received from child:', data);
 });
 
 // Runs only when PARENT exits via `process.exit(exitCode?)` or any runtime exception in PARENT process

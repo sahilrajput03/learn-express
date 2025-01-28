@@ -11,11 +11,11 @@ const child = spawn('node', ['child.js'], {
 });
 
 // Listen for messages from the child process
-child.on('message', (message) => {
-    console.log('Message from child:', message);
+child.on('message', (data) => {
+    console.log('Message from child:', data);
 });
 
-// Handle errors which occur in the child process, such as a failure to spawn or an error during its execution.
+// Triggered if there is an error when spawning or initializing the child process
 child.on('error', (err) => {
     console.error('|Child| Error:', err);
 });
