@@ -5,7 +5,7 @@ import { execSync, spawn } from 'node:child_process';
 // & 1. In the `beforeAll()` function we would start backend server and
 // &    connect to mongodb.
 
-// To generate tsc files
+// Generate - `dist/backend-test-server.js`
 execSync('rm -rf dist && npx tsc', { cwd: __dirname, stdio: 'inherit' })
 
 // Using sh (shell) we can execute many commands at once    
