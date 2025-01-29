@@ -24,6 +24,13 @@ For full *hot+flash+database_connected* please refer to `testing-hot-flash` dire
 **Quick Links:**
 - Learn limiting concurrent requests with [`queue()`](https://caolan.github.io/async/v3/docs.html#queue) of [`async`](https://caolan.github.io/async/v3/) library (awesome): [Click here](learn-limiting-concurrent-requests.md)
 
+## Read json comments file in nodejs
+
+**Libraries:**
+- json5 (64m weekly downloads) - [npm](https://www.npmjs.com/package/json5)
+- jsonc-parser (17m weekly downloads) - [npm](https://www.npmjs.com/package/jsonc-parser)
+
+
 ## ❤️  Expressjs starter in typescript (always keep this post to top of this file for easy reference)
 
 - My Expressjs + Typescript Example Project: `ts-node-dev` example: ⭐[Click here](https://github.com/sahilrajput03/learn-express/tree/main/with-typescript)⭐
