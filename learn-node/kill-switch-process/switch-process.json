@@ -1,0 +1,10 @@
+{
+  "//": [
+    "Set `killNow` to 1 to kill the process.",
+    "Pid will be null as soon as you save the file with `killNow: true`"
+  ],
+  "killNow": 0,
+  "pid": null,
+  "isRunning": false,
+  "lastCheckTime": null
+}

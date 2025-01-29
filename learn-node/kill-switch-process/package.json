@@ -1,0 +1,20 @@
+{
+  "//": [
+    "Please refer `package-scripts.js` for scripts of this project."
+  ],
+  "name": "test-kill-switch-process",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nps",
+    "test": "nps test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "nps": "^5.10.0",
+    "nps-utils": "^1.7.0"
+  }
+}
