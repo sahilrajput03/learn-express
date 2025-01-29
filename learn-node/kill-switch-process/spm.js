@@ -4,7 +4,7 @@ const { log } = require('console');
 const fs = require('fs');
 const { getHumanReadableTimestamp } = require('./utils');
 
-const command = 'npx tsc --watch';
+const command = 'npx tsc --watch'; // Also: build doesn't exists --- a fresh build is created automatically.
 const cwd = '/Users/apple/Documents/test/qr-solution/qr-solution-backend';
 const child = spawn('sh', ['-c', command], {
     cwd,
