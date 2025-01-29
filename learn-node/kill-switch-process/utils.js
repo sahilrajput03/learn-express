@@ -10,5 +10,6 @@ exports.getHumanReadableTimestamp = () => {
     const month = now.toLocaleString('default', { month: 'long' });
     const year = now.getFullYear();
 
+    // Sample output: "17:40:43 - 29 January 2025"
     return `${hours}:${minutes}:${seconds} - ${day} ${month} ${year}`;
 };
