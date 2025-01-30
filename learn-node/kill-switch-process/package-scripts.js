@@ -5,7 +5,7 @@ const npsUtils = require('nps-utils');
 // --- TESTED IN MACOS ---
 
 const listTscProcesses = `ps aux |grep "[t]sc --watch" | cat`; // (Note: `| cat` is necessary idk why?)
-const listSpmJsProcesses = `ps aux |grep "[s]pm.js"`;
+const listSpmJsProcesses = `ps aux |grep "[s]pm.js" | cat`;
 
 module.exports = {
     scripts: {
@@ -21,8 +21,8 @@ module.exports = {
 
         list: {
             default: "nps l.i",
-            name: `${listTscProcesses} && ${listSpmJsProcesses}`,
-            id: `${listTscProcesses} | awk '{print $2}' && ${listSpmJsProcesses} | awk '{print $2}'`,
+            name: `echo "TSC:"; ${listTscProcesses} && echo "\nSPM.JS:"; ${listSpmJsProcesses}`,
+            id: `echo "TSC:"; ${listTscProcesses} | awk '{print $2}' && echo "\nSPM.JS:"; ${listSpmJsProcesses} | awk '{print $2}'`,
         },
         kill: `${listTscProcesses} | awk '{print $2}' | xargs kill && ${listSpmJsProcesses} | awk '{print $2}' | xargs kill`,
     }
