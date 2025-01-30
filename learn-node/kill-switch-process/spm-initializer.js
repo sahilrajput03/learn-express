@@ -17,6 +17,8 @@ const spmInitializer = () => {
         if (checkIfProcessIsRunning(jsonData.pid.spmJs)) { kill(jsonData.pid.spmJs); }
         if (checkIfProcessIsRunning(jsonData.pid.child)) { kill(jsonData.pid.child); }
 
+        console.log(' ---- Spawning spm -----');
+        // spm (switch process manager)
         const commandSpm = 'node spm.js';
         const child = spawn('sh', ['-c', commandSpm], {
             cwd: __dirname,
