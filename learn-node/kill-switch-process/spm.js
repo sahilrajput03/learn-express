@@ -3,9 +3,9 @@ const { spawn } = require('child_process');
 const { log } = require('console');
 const fs = require('fs');
 
-const command = 'npx tsc --watch'; // Also: build doesn't exists --- a fresh build is created automatically.
+const backgroundProcessCommand = 'npx tsc --watch'; // Also: build doesn't exists --- a fresh build is created automatically.
 const cwd = '/Users/apple/Documents/test/qr-solution/qr-solution-backend';
-const child = spawn('sh', ['-c', command], {
+const child = spawn('sh', ['-c', backgroundProcessCommand], {
     cwd,
 });
 const filePath = 'spm.json';
