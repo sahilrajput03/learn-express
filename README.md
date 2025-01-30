@@ -1,5 +1,8 @@
 # Learn Express
 
+**Quick Links:**
+- Learn node: [Click here](./learn-node/README.md)
+
 For full *hot+flash+database_connected* please refer to `testing-hot-flash` directory in this repo.
 
 - **(Failue attempt to help share common files b/w frontend and backend)** Svelte + Expressjs: [sahilrajput03/svelte-express](https://github.com/sahilrajput03/svelte-express)
