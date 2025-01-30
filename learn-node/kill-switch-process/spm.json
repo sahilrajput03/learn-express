@@ -2,11 +2,12 @@
   "//": [
     "Set `killNow` to 1 to kill the process.",
     "Pid will be null as soon as you save the file with `killNow: true`",
-    "Please add comments in this json file as key-value pairs only else the javascript won't be able yo read this json file thus you would not be able to kill the process.",
-    "//! If the backgroundProcessCommand [`tsc --watch`] is not actually running you can simply set isRunning to `false` and then re-run the `spm-initializer.js` program [INITIALIZER_SCRIPT] playwright tests to initialize background process again. "
+    "Please add comments in this json file as key-value pairs only else the javascript won't be able yo read this json file thus you would not be able to kill the process."
   ],
   "killNow": 0,
-  "pid": null,
-  "isRunning": false,
-  "lastCheckTime": null
+  "pid": {
+    "spmJs": 39007,
+    "child": 39037
+  },
+  "lastCheckTime": "20:00:40 - 30 January 2025"
 }
