@@ -1,9 +1,10 @@
 # Learn Express
 
 **Quick Links:**
+
 - ❤️ Learn node: [Click here](./learn-node/README.md)
 
-For full *hot+flash+database_connected* please refer to `testing-hot-flash` directory in this repo.
+For full _hot+flash+database_connected_ please refer to `testing-hot-flash` directory in this repo.
 
 - **(Failue attempt to help share common files b/w frontend and backend)** Svelte + Expressjs: [sahilrajput03/svelte-express](https://github.com/sahilrajput03/svelte-express)
 
@@ -25,18 +26,19 @@ For full *hot+flash+database_connected* please refer to `testing-hot-flash` dire
 - Added `learn-assertions` repo.
 
 **Quick Links:**
+
 - Learn limiting concurrent requests with [`queue()`](https://caolan.github.io/async/v3/docs.html#queue) of [`async`](https://caolan.github.io/async/v3/) library (awesome): [Click here](learn-limiting-concurrent-requests.md)
 
-
-## ❤️  Expressjs starter in typescript (always keep this post to top of this file for easy reference)
+## ❤️ Expressjs starter in typescript (always keep this post to top of this file for easy reference)
 
 - My Expressjs + Typescript Example Project: `ts-node-dev` example: ⭐[Click here](https://github.com/sahilrajput03/learn-express/tree/main/with-typescript)⭐
-	- Check readme in above folder to see instructions for creating from scratch.
+  - Check readme in above folder to see instructions for creating from scratch.
 - Article: Dev.to Article: [Click here](https://dev.to/codeoz/express-with-typescript-starter-explained-fast-4dn7) - [Github Repo](https://github.com/Code-Oz/basic-express-typescript)
 
 ## Read json comments file in nodejs
 
 **Libraries:**
+
 - `json5` (64m weekly downloads) - [npm](https://www.npmjs.com/package/json5)
 - `jsonc-parser` (17m weekly downloads) - [npm](https://www.npmjs.com/package/jsonc-parser)
 
@@ -59,27 +61,25 @@ node --dotenv index.js
 NODE_ENV_FILE=./config/custom.env node --dotenv index.js
 ```
 
-
 ## Using cookies in expressjs - 1/n
 
 ```js
-import cookieParser from 'cookie-parser'
+import cookieParser from "cookie-parser";
 app.use(cookieParser()); // Use cookie-parser middleware
 
+app.get("/u1", async (req: Request, res: Response) => {
+  res.cookie("name", "Sahil Rajput", { maxAge: 900000 }); // "maxAge": Lifetime of the cookie in milliseconds
+  res.redirect("/get-cookie");
+});
 
-app.get('/u1', async (req: Request, res: Response) => {
-  res.cookie('name', 'Sahil Rajput', { maxAge: 900000 }); // "maxAge": Lifetime of the cookie in milliseconds
-  res.redirect('/get-cookie');
-})
-
-app.get('/get-cookie', async (req: Request, res: Response) => {
+app.get("/get-cookie", async (req: Request, res: Response) => {
   const name = req.cookies.name;
   if (name) {
     res.send(`Hello, ${name}`);
   } else {
     res.send('No name cookie found. Go back to to <a href="/u1">/u1</a>');
   }
-})
+});
 ```
 
 ## Using cookies in expressjs - 2/n
@@ -120,7 +120,7 @@ app.get('/get-cookie', async (req: Request, res: Response) => {
 }
 ```
 
-Other suggestions from chatgpt for setting `domain` property: 
+Other suggestions from chatgpt for setting `domain` property:
 
 way1
 
@@ -146,11 +146,10 @@ OR way2:
 
 - MDN Docs: [Click here](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/routes)
 - `express-async-handler`
-	- Github: [express-async-handler](https://github.com/Abazhenov/express-async-handler#readme)
-	- Npm: [Click here](https://www.npmjs.com/package/express-async-handler)
+  - Github: [express-async-handler](https://github.com/Abazhenov/express-async-handler#readme)
+  - Npm: [Click here](https://www.npmjs.com/package/express-async-handler)
 
 ![image](https://github.com/sahilrajput03/learn-express/assets/31458531/0c714da7-f1dc-4853-8930-cfeec2b089df)
-
 
 ## Monitor the memory usage of Node.js
 
@@ -239,67 +238,67 @@ Source of Inspiration: https://github.com/axios/axios/blob/main/ECOSYSTEM.md
 - Github/Docs: https://github.com/Gerhut/axiosist
 
 ```js
-const axios = require('axios')
-const axiosist = require('axiosist')
-const express = require('express')
-const app = express()
+const axios = require("axios");
+const axiosist = require("axiosist");
+const express = require("express");
+const app = express();
 
-app.use(express.json())
+app.use(express.json());
 
-app.get('/host', (req, res) => res.send(req.get('host')))
-app.get('/name', (req, res) => res.send({name: 'john'}))
-app.post('/user', (req, res) => res.send({...req.body}))
+app.get("/host", (req, res) => res.send(req.get("host")));
+app.get("/name", (req, res) => res.send({ name: "john" }));
+app.post("/user", (req, res) => res.send({ ...req.body }));
 
-const server = axiosist(app) // equivalent to below
+const server = axiosist(app); // equivalent to below
 // const server = axios.create({adapter: axiosist.createAdapter(app)})
 
 void (async () => {
-	const response = await server.get('/host')
-	console.log('got resp.data', response.data)
-})()
+  const response = await server.get("/host");
+  console.log("got resp.data", response.data);
+})();
 
 void (async () => {
-	const response = await server.get('/name')
-	console.log('name?', response.data)
-})()
+  const response = await server.get("/name");
+  console.log("name?", response.data);
+})();
 
 // Axiosist will keep the host header of the request, for example
 void (async () => {
-	const response = await server.get('https://loveapi.ml/host')
-	if (response.data !== 'loveapi.ml') throw new Error('failed.')
-})()
+  const response = await server.get("https://loveapi.ml/host");
+  if (response.data !== "loveapi.ml") throw new Error("failed.");
+})();
 
 void (async () => {
-	const usr = {name: 'Sahil', age: 10}
-	const {data} = await server.post('/user', usr)
+  const usr = { name: "Sahil", age: 10 };
+  const { data } = await server.post("/user", usr);
 
-	if (data.name !== usr.name || data.age !== usr.age) throw new Error('user requets failed')
-})()
+  if (data.name !== usr.name || data.age !== usr.age)
+    throw new Error("user requets failed");
+})();
 ```
 
 ## What just happened to expressjs?
 
 ![image](https://user-images.githubusercontent.com/31458531/185786759-47b3711a-f113-42fa-b853-0c592141768a.png)
 
+**Using `sahilrajput03-logger`:**
 
-**Using `sahilrajput03-logger`:** 
-
-*PLEASE READ ITS README*: https://github.com/sahilrajput03/logger-npm#readme
+_PLEASE READ ITS README_: https://github.com/sahilrajput03/logger-npm#readme
 
 **Status Codes for http:** [Click here](status-code.md)
 
 **PUT vs. PATCH in http requests**
 
-*The main difference between the PUT and PATCH method is that the PUT method uses the request URI to supply a modified version of the requested resource which replaces the original version of the resource, whereas the PATCH method supplies a set of instructions to modify the resource.*
+_The main difference between the PUT and PATCH method is that the PUT method uses the request URI to supply a modified version of the requested resource which replaces the original version of the resource, whereas the PATCH method supplies a set of instructions to modify the resource._
 
 **What is the use of `express-async-errors` npm package**
 
 - ALERT: You must have error printing `console.log(error)` in any of your middleware to print the db errors else you won't see db errors in your server terminal at all. For exact usage instruction refer projects [here](https://github.com/sahilrajput03/learning_sql/tree/main/fso-part13).
 
-- FYI: express-async-errors also prevents server crasing if any route throws some error as well(***this is really very IMPORTANT in production server that one bad endpoint doesn't cause entire server to go down***). I.e., ![image](https://user-images.githubusercontent.com/31458531/172602435-12c370ed-c162-4541-931a-5e3451042032.png)
+- FYI: express-async-errors also prevents server crasing if any route throws some error as well(**_this is really very IMPORTANT in production server that one bad endpoint doesn't cause entire server to go down_**). I.e., ![image](https://user-images.githubusercontent.com/31458531/172602435-12c370ed-c162-4541-931a-5e3451042032.png)
 
 So above happend instead of: ![image](https://user-images.githubusercontent.com/31458531/172602696-6b34a096-1369-4e26-9067-fd8929f4b3f0.png)
- which is really very important in any production server.
+which is really very important in any production server.
 
 Source: [express-async-errors@github](https://github.com/davidbanham/express-async-errors), [Fullstackopen.com](https://fullstackopen.com/en/part4/testing_the_backend#eliminating-the-try-catch).
 
@@ -307,14 +306,11 @@ Source: [express-async-errors@github](https://github.com/davidbanham/express-asy
 ![image](https://user-images.githubusercontent.com/31458531/169242898-7cacd7d4-563a-4f71-9aca-e750e6df1d6a.png)
 ![image](https://user-images.githubusercontent.com/31458531/169243043-329fe030-3c9e-42ad-a7b3-1c9276ab7c44.png)
 
-
 **Sample server code for code structure reference @ https://www.digitalocean.com/community/tutorials/test-a-node-restful-api-with-mocha-and-chai**
 
 - FYI: We can put break point on the end of the function to check the value of last variable in the fuction as well.
 
 ![](./debug1.jpeg)
-
-
 
 **FYI: For loading env from a file using command line env-cmd is an amazing tool: https://www.npmjs.com/package/env-cmd**
 
@@ -326,9 +322,9 @@ Source: [express-async-errors@github](https://github.com/davidbanham/express-asy
 **Using morgan specifics:**
 
 Learn: What is `content-length` anyway?
+
 - [src1](https://stackoverflow.com/a/2773411/10012446): It's the number of bytes of data in the body of the request or response. The body is the part that comes after the blank line below the headers.
 - [src2](https://stackoverflow.com/a/2773408/10012446): The Content-Length entity-header field indicates the size of the entity-body, in decimal number of OCTETs, sent to the recipient.
-
 
 ```bash
 # custom
@@ -355,7 +351,6 @@ POST /api/login 200 203 - 1.934 ms
 ::ffff:127.0.0.1 - - [26/Jul/2022:07:19:07 +0000] "PUT /api/users/jami_kousa HTTP/1.1" 200 83 "-" "-"
 ::ffff:127.0.0.1 - - [26/Jul/2022:07:19:07 +0000] "POST /api/login HTTP/1.1" 200 203 "-" "-"
 ```
-
 
 ## Difference b/w res.send and res.json ?
 
@@ -407,3 +402,8 @@ Read [here](https://stackoverflow.com/a/19041848/10012446).
 ## Phenomenal hot-module-replacement with node
 
 ![](./img-phenomenal-hot-replacement-rocks.jpeg)
+
+# Learn node (generated via auto docs)
+
+<!-- MARKDOWN-AUTO-DOCS:START (CODE:src=./learn-node/README.md) -->
+<!-- MARKDOWN-AUTO-DOCS:END -->
