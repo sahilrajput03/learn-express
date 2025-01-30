@@ -1,4 +1,4 @@
-# Process Management in Nodejs
+# Learn Process Management in Nodejs
 
 Other way to communicate is to have http server on both processes and communicate over http requests and sockets. Check with chatGPT about that to get related examples.
 
