@@ -1,0 +1,16 @@
+{
+  "name": "test-ps-list",
+  "version": "1.0.0",
+  "main": "a.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon a.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "ps-list": "^8.1.1"
+  }
+}
