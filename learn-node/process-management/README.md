@@ -100,3 +100,38 @@ By default:
 
 - Child processes do not exit automatically when the parent process crashes or encounters a runtime error.
 - You need to explicitly manage the lifecycle of child processes to ensure they are terminated when appropriate. This can be done using signals, .kill(), or other cleanup mechanisms in the parent process.
+
+## `exec` vs. `spawn` in nodejs (ChatGPT)
+
+In Node.js, `execSync` and spawn are used to execute shell commands but differ in key aspects:
+
+1. `execSync` (from child_process):
+
+- Runs synchronously (blocking).
+- Returns the command output as a Buffer/String.
+- Suitable for short, simple commands.
+
+Example:
+
+```js
+const { execSync } = require('child_process');
+const output = execSync('ls').toString();
+console.log(output);
+```
+
+2. `spawn`:
+
+- Runs asynchronously (non-blocking).
+- Returns a stream, useful for handling large output.
+- Preferred for long-running processes.
+
+Example:
+
+```js
+const { spawn } = require('child_process');
+const ls = spawn('ls');
+
+ls.stdout.on('data', (data) => console.log(data.toString()));
+```
+
+Use `execSync` when you need immediate results and spawn for better performance with large data. 🚀
