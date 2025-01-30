@@ -10,8 +10,8 @@ const listSpmJsProcesses = `ps aux |grep "[s]pm.js" | cat`;
 module.exports = {
     scripts: {
         default: 'nps o',
-        // dev: "nodemon main.js",
-        once: "node main.js",
+        // dev: "nodemon spm-initializer.js",
+        once: "node spm-initializer.js",
         // validate: npsUtils.concurrent.nps('build', 'test'), // to run commands concurrently
         // build: 'sleep 2 && echo build... && exit 1',
         // test: 'sleep 5 && echo test...',
