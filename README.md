@@ -1,7 +1,7 @@
 # Learn Express
 
 **Quick Links:**
-- Learn node: [Click here](./learn-node/README.md)
+- ❤️ Learn node: [Click here](./learn-node/README.md)
 
 For full *hot+flash+database_connected* please refer to `testing-hot-flash` directory in this repo.
 
