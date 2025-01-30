@@ -9,7 +9,7 @@ const cwd = '/Users/apple/Documents/test/qr-solution/qr-solution-backend';
 const child = spawn('sh', ['-c', command], {
     cwd,
 });
-const filePath = 'spm.json';
+const filePath = '../spm.json';
 
 console.log('\n');
 

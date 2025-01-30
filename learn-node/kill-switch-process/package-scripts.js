@@ -11,7 +11,7 @@ module.exports = {
     scripts: {
         default: 'nps o',
         // dev: "nodemon spm-initializer.js",
-        once: "node spm-initializer.js",
+        once: "node spm/spm-initializer.js",
         // validate: npsUtils.concurrent.nps('build', 'test'), // to run commands concurrently
         // build: 'sleep 2 && echo build... && exit 1',
         // test: 'sleep 5 && echo test...',
