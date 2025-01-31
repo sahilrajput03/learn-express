@@ -27,7 +27,7 @@ app.listen(port, function () {
 })
 ```
 
-```
+```bash
 # Install dependencies:
 npm init -y
 node -v > .nvmrc
