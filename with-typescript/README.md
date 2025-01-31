@@ -53,7 +53,7 @@ sed -i -r '/^[ \t]*\//d; /^[[:space:]]*$/d; s/\/\*(.*?)\*\///g; s/[[:blank:]]+$/
 npm i -D nps && nps init
 
 # Add below scripts to your package-scripts.js file in "scripts" key:
-default: "nps start.dev",
+default: "nps s.dev",
 start: {
   dev: "ts-node-dev --respawn --transpile-only --clear src/app.ts",
   debug: "ts-node-dev --inspect --respawn --transpile-only --clear src/app.ts",
