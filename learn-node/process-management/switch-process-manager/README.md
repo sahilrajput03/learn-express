@@ -1,5 +1,7 @@
 # SPM - Switch Process Manager
 
+Switch Process manager is a process manager with a kill switch.
+
 Run the file `spm-initializer.js` via running command --- `nps`.
 
 It is a cross platform solution because this project only uses apis of nodejs.
