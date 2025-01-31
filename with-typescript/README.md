@@ -82,3 +82,5 @@ nps
 # Run the dev server
 npm start
 ```
+
+Thanks
