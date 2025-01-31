@@ -6,8 +6,11 @@ Two step process:
 
 ```bash
 mkdir src
+touch src/app.ts
+```
+Add below code to `src/app.ts` file:
 
-cat <<EOF > src/app.ts
+```ts
 import express from 'express'
 import type { Application, Request, Response } from 'express'
 
@@ -22,9 +25,9 @@ app.get('/', (req: Request, res: Response) => {
 app.listen(port, function () {
   console.log(`App running on: http://localhost:${port}`)
 })
-EOF
+```
 
-
+```
 # Install dependencies:
 npm init -y
 node -v > .nvmrc
