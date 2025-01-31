@@ -4,11 +4,12 @@ Switch Process manager is a process manager with a kill switch.
 
 Run the file `spm-initializer.js` via running command --- `nps`.
 
-It is a cross platform solution because this project only uses apis of nodejs.
+It is a cross platform solution (this program only uses nodejs apis).
 
 Spm is amazing if you require a process to be running in background in any of your program and also have a kill-switch file.
 
-- E.g., like the case I have for running backend test server code in frontend which requires code to be latest using `tsc --watch` command. Alternatively: you can simply have a check if the appdopriate command is running or not using os's `ps aux` command run via nodejs spawn feature.
+- E.g., like the case I have for running backend test server code in frontend (qr-solution) which requires code to be latest using `tsc --watch` command to be running so that playwright tests are running against upto date code of backend project.
+  - _Alternatively:_ you can simply have a check if the appdopriate command is running or not using os's `ps aux` command run via nodejs spawn feature.
 
 ### Other thoughts
 
