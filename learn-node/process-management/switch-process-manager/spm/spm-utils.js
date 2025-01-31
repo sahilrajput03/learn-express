@@ -13,7 +13,6 @@ function getHumanReadableTimestamp() {
     // Sample output: "17:40:43 - 29 January 2025"
     return `${hours}:${minutes}:${seconds} - ${day} ${month} ${year}`;
 };
-// exports.getHumanReadableTimestamp = getHumanReadableTimestamp;
 
 function checkIfProcessIsRunning(pid) {
     if (!pid) { return false; } // return `false` if pid is `falsy` value.
