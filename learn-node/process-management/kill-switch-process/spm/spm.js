@@ -40,4 +40,4 @@ const syncSwitchProcessJsonFile = () => {
 // run on launch
 syncSwitchProcessJsonFile();
 // poll = 3 seconds
-setInterval(syncSwitchProcessJsonFile, 3_000);
+setInterval(syncSwitchProcessJsonFile, 2_000);
