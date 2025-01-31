@@ -48,7 +48,6 @@ sed -i -r '/^[ \t]*\//d; /^[[:space:]]*$/d; s/\/\*(.*?)\*\///g; s/[[:blank:]]+$/
 
 3. Depending upon if you want to use nps or not:
   - Using nps:
-3. If you want to use `nps` then use:
 
 ```bash
 npm i -D nps && nps init
