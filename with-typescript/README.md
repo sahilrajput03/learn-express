@@ -39,14 +39,38 @@ npx tsc --init
 sed -i -r '/^[ \t]*\//d; /^[[:space:]]*$/d; s/\/\*(.*?)\*\///g; s/[[:blank:]]+$//' tsconfig.json; rm tsconfig.json-r
 ```
 
-2. Manually update `tsconfig.ts` fand `package.json` files:
+2. Manually update `tsconfig.ts`:
 
 ```bash
 # In tsconfig.json file, you must copy-paste below line inside "compilerOptions" key:
 "outDir": "./dist" /* Specify an output folder for all emitted files. */,
+```
+
+3. Depending upon if you want to use nps or not:
+  - Using nps:
+3. If you want to use `nps` then use:
+
+```bash
+npm i -D nps && nps init
+
+# Add below scripts to your package-scripts.js file in "scripts" key:
+default: "nps start.dev",
+start: {
+  dev: "ts-node-dev --respawn --transpile-only --clear src/app.ts",
+  debug: "ts-node-dev --inspect --respawn --transpile-only --clear src/app.ts",
+  prod: "node dist/app.js"
+},
+build: "rm -rf dist && tsc",
 
 
 
+# Run the dev server
+nps
+```
+
+  - Without `nps`: Update `package.json` files
+
+```bash
 # In `package.json` remove "test" script and copy-paste below three scripts:
 "start": "npm run start:dev",
 "start:dev": "ts-node-dev --respawn --transpile-only --clear src/app.ts",
