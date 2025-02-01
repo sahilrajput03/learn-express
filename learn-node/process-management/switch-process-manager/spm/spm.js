@@ -4,11 +4,13 @@ const { log } = require('console');
 const fs = require('fs');
 const { getHumanReadableTimestamp } = require('./spm-utils');
 
-const command = 'npx tsc --watch'; // Also: build doesn't exists --- a fresh build is created automatically.
 const cwd = '/Users/apple/Documents/test/qr-solution/qr-solution-backend';
+
+const command = 'npx tsc --watch'; // Also: build doesn't exists --- a fresh build is created automatically.
 const child = spawn('sh', ['-c', command], {
     cwd,
 });
+
 const filePath = '../spm.json';
 
 console.log('\n');
