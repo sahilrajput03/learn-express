@@ -8,7 +8,9 @@
 mkdir src
 touch src/app.ts
 ```
+
 Add below code to `src/app.ts` file:
+  - *Note: Do not try to optimize this step by using echo command create file with below code because I tried it and it causes issues with below code because of backticks in the below code (in console.log).*
 
 ```ts
 import express from 'express'
