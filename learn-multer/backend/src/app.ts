@@ -1,7 +1,6 @@
 import express from 'express'
 import type { Application, Request, Response } from 'express'
-import { newProduct, newUser } from '../controllers/product'
-import { upload } from '../middlewares/multer'
+import { newProduct, newProductUploadMiddleware, newUser, newUserUploadMiddleware } from '../controllers/product'
 
 const app: Application = express()
 
@@ -11,8 +10,8 @@ app.get('/', (req: Request, res: Response) => {
   res.send('Hello from express + typescript')
 })
 
-app.put("/new-user", upload.single("photo"), newUser)
-app.put("/new-product", upload.array("photos", 2 /** max allowed */), newProduct)
+app.put("/new-user", newUserUploadMiddleware, newUser)
+app.put("/new-product", newProductUploadMiddleware, newProduct)
 
 app.listen(port, function () {
   console.log(`App running on: http://localhost:${port}`)
