@@ -3,10 +3,13 @@ import type { Application, Request, Response } from 'express'
 import { newProduct, newUser } from '../controllers/product'
 import { newProductUploadMiddleware, newUserUploadMiddleware } from '../middlewares/multer/customMulterMiddleware'
 import { commonMulterMiddleware } from '../middlewares/multer/commonMulterMiddleware'
+import cors from 'cors'
 
 const app: Application = express()
 
 const port = 8080
+
+app.use(cors()) // necessary otherwise we get cors error in frontend while uplaoding
 
 app.get('/', (req: Request, res: Response) => {
   res.send('Hello from express + typescript')
