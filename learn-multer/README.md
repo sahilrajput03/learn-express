@@ -18,11 +18,11 @@ Upload files via postman:
 
 ### Multi Upload
 
-![](./postman-multi-upload.jpeg)
+<img src="./postman-multi-upload.jpeg" alt="drawing" width="700"/>
 
 ### Single Upload
 
-![](./postman-single-upload.jpeg)
+<img src="./postman-single-upload.jpeg" alt="drawing" width="700"/>
 
 ## Multer Alternatives
 
@@ -40,3 +40,5 @@ Upload files via postman:
 https://npmtrends.com/busboy-vs-formidable-vs-multer
 
 ![](./multer-alternatives.jpeg)
+
+<img src="./postman-single-upload.jpeg" alt="drawing" width="400"/>
