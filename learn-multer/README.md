@@ -9,3 +9,8 @@ Upload files via postman:
 ### Single Upload
 
 ![](./postman-single-upload.jpeg)
+
+## Error handling in multer
+
+- [Click here](https://www.npmjs.com/package/multer#error-handling)
+  - [multer-error.js](https://github.com/expressjs/multer/blob/master/lib/multer-error.js)
