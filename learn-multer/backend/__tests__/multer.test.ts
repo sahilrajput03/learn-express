@@ -61,7 +61,10 @@ describe('multer uploads', () => {
             } catch (e: any) {
                 error = e
             }
-            expect(error.response.data).toMatchObject({ success: false })
+            expect(error.response.data).toStrictEqual({
+                success: false,
+                message: "Please send image(s).",
+            })
         })
 
         test('uploading more than expected files should fail', async () => {
@@ -147,7 +150,10 @@ describe('multer uploads', () => {
             } catch (e: any) {
                 error = e
             }
-            expect(error.response.data).toMatchObject({ success: false })
+            expect(error.response.data).toStrictEqual({
+                success: false,
+                message: "Please send image(s).",
+            })
         })
 
         test('uploading more than expected files should fail', async () => {
