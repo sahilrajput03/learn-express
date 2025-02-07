@@ -17,12 +17,12 @@ app.get('/', (req: Request, res: Response) => {
 // 2. Please avoid using `upload.single('photo')` or `upload.array('photos', 2)` directly in the below routes as middlewares because multer throws very unreadable errors at commonly thus we try to catch multer specific error as specifed in official docs here - https://www.npmjs.com/package/multer#error-handling
 
 // older
-app.put("/single-image-1", newUserUploadMiddleware, newUser)
-app.put("/multiple-image-1", newProductUploadMiddleware, newProduct)
+app.post("/single-image-1", newUserUploadMiddleware, newUser)
+app.post("/multiple-image-1", newProductUploadMiddleware, newProduct)
 
 // & NEW Awesome way
-app.put("/single-image-2", commonMulterMiddleware('photo', 1), newProduct) // we use `newProduct` because files are received in `req.files` for `upload.array` in multer
-app.put("/multiple-image-2", commonMulterMiddleware('photos', 2), newProduct)
+app.post("/single-image-2", commonMulterMiddleware('photo', 1), newProduct) // we use `newProduct` because files are received in `req.files` for `upload.array` in multer
+app.post("/multiple-image-2", commonMulterMiddleware('photos', 2), newProduct)
 
 app.listen(port, function () {
   console.log(`App running on: http://localhost:${port}`)
