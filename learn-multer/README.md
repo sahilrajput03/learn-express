@@ -33,7 +33,7 @@ Upload files via postman:
 - `formidable`:
   - [npm](https://www.npmjs.com/package/formidable)
   - [github](https://github.com/node-formidable/formidable)
-- `busboy`:
+- `busboy` (Note: `multer` uses `busboy` underneath):
   - [npm](https://www.npmjs.com/package/busboy)
   - [github](https://github.com/mscdex/busboy)
 
