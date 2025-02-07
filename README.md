@@ -36,6 +36,10 @@ For full _hot+flash+database_connected_ please refer to `testing-hot-flash` dire
   - (todo) Docs: Moving to Express 5: [Click here](https://expressjs.com/en/guide/migrating-5.html)
 - Blog by Trevor I. Lasn - What's New in Express.js v5.0: [Click here](https://www.trevorlasn.com/blog/whats-new-in-express-5)
 
+## Official Error handling guide of expressjs
+
+[Docs](https://expressjs.com/en/guide/error-handling.html)
+
 ## ❤️ Expressjs starter in typescript (always keep this post to top of this file for easy reference)
 
 - My Expressjs + Typescript Example Project: `ts-node-dev` example: ⭐[Click here](https://github.com/sahilrajput03/learn-express/tree/main/with-typescript)⭐
