@@ -12,7 +12,7 @@
 1. Maximum file size upload limit and cancel the request. Sahil: I think this validation should also be specified in the frontend too.
 2. Specify Allowed file type for e.g, jpg, jpeg, gif, etc to restrict uploading any other type of files where an image(s) is required.
 
-## Upload files via postman:
+## Upload files via postman
 
 **Multi file Upload**
 
