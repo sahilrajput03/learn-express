@@ -51,7 +51,7 @@ export const newProduct = async (req: any, res: any, next: any) => {
 
   // & One by one upload each file via `photos[i].path` and then delete it
   for (let i = 0; i < photos.length; i++) {
-    // fs.unlinkSync(photos[i].path)
+    fs.unlinkSync(photos[i].path)
   }
 
   res.status(201).json({ success: true, });
