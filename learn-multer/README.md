@@ -19,11 +19,17 @@ Upload files via postman:
 
 ## Multer Alternatives
 
+**Buy why `multer` instead of alternatives?** Because it is official expressjs package - [https://github.com/expressjs/multer](https://github.com/expressjs/multer)
+
+**Alternatives:**
+
 - `formidable`:
   - [npm](https://www.npmjs.com/package/formidable)
   - [github](https://github.com/node-formidable/formidable)
 - `busboy`:
   - [npm](https://www.npmjs.com/package/busboy)
   - [github](https://github.com/mscdex/busboy)
+
+https://npmtrends.com/busboy-vs-formidable-vs-multer
 
 ![](./multer-alternatives.jpeg)
