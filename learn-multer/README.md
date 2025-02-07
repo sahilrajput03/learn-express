@@ -9,8 +9,10 @@
 
 **Add code from sla\*\*\*r project for:**
 
-1. Maximum file size upload limit and cancel the request. Sahil: I think this validation should also be specified in the frontend too.
-2. Specify Allowed file type for e.g, jpg, jpeg, gif, etc to restrict uploading any other type of files where an image(s) is required.
+- Maximum file size upload limit and cancel the request. Sahil: I think this validation should also be specified in the frontend too.
+  - Write tests for this as well.
+- Specify Allowed file type for e.g, jpg, jpeg, gif, etc to restrict uploading any other type of files where an image(s) is required.
+  - Write tests for this as well.
 
 ## Upload files via postman
 
