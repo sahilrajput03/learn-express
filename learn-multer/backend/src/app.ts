@@ -1,6 +1,7 @@
 import express from 'express'
 import type { Application, Request, Response } from 'express'
-import { newProduct, newProductUploadMiddleware, newUser, newUserUploadMiddleware } from '../controllers/product'
+import { newProduct, newUser } from '../controllers/product'
+import { newProductUploadMiddleware, newUserUploadMiddleware } from '../middlewares/multer-utils'
 
 const app: Application = express()
 
