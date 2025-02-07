@@ -44,7 +44,7 @@ export const newProduct = async (req: any, res: any, next: any) => {
   }]
   */
 
-  if (!photos) {
+  if (!photos || (photos?.length === 0)) {
     res.status(400).json({ success: false, message: 'Please send image(s).' }); // handling request without images need to be handled
     return
   }

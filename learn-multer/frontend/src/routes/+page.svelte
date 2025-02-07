@@ -2,7 +2,7 @@
 	import axios from 'axios';
 
 	let file: any;
-	let files: any;
+	let files: any = [];
 
 	const uploadSingleFile = async () => {
 		const formData = new FormData();
@@ -15,7 +15,7 @@
 			headers: { 'Content-Type': 'multipart/form-data' }
 		};
 		try {
-			const { data } = await axios.post('http://localhost:8080/single-image-2', payload, config);
+			const { data } = await axios.post('http://localhost:8080/v2/single-image', payload, config);
 			console.log('🚀 ~ uploadFile ~ data:', data);
 		} catch (error: any) {
 			console.log('error?', error);
@@ -40,7 +40,7 @@
 			headers: { 'Content-Type': 'multipart/form-data' }
 		};
 		try {
-			const { data } = await axios.post('http://localhost:8080/multiple-image-2', payload, config);
+			const { data } = await axios.post('http://localhost:8080/v2/multiple-image', payload, config);
 			console.log('🚀 ~ uploadFile ~ data:', data);
 		} catch (error: any) {
 			console.log('error?', error);
