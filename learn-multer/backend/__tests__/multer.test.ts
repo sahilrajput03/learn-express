@@ -18,7 +18,7 @@ beforeAll((done) => {
         const { port } = server.address() as AddressInfo; // automatically assign an available port
         console.log('Test server running on port:', port);
         api = axios.create({ baseURL: `http://localhost:${port}` });
-        // api = axios.create({ baseURL: `http://localhost:${8080}` }); // ! for testing only
+        // api = axios.create({ baseURL: `http://localhost:${8080}` }); // ! for ad-hoc testing to test against a real dev server
         done();
     });
 });
