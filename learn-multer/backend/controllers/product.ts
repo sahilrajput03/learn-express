@@ -17,7 +17,7 @@ export const newUser = async (req: any, res: any, next: any) => {
   */
 
   if (!photo) {
-    res.status(400).json({ success: false, message: 'Please send image' });
+    res.status(400).json({ success: false, message: 'Please send image' }); // handling request without image need to be handled
     return
   }
 
@@ -45,13 +45,13 @@ export const newProduct = async (req: any, res: any, next: any) => {
   */
 
   if (!photos) {
-    res.status(400).json({ success: false, message: 'Please send images.' });
+    res.status(400).json({ success: false, message: 'Please send image(s).' }); // handling request without images need to be handled
     return
   }
 
   // & One by one upload each file via `photos[i].path` and then delete it
   for (let i = 0; i < photos.length; i++) {
-    fs.unlinkSync(photos[i].path)
+    // fs.unlinkSync(photos[i].path)
   }
 
   res.status(201).json({ success: true, });
