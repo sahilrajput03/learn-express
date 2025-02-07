@@ -3,17 +3,17 @@ import { upload } from "./multer"
 
 const multerError = (fieldName: string, maxAllowed: number) => `Please make sure you are uploading to \`${fieldName}\` field and not more than ${maxAllowed} file${maxAllowed > 1 ? 's' : ''}.`
 
-const handleMulterErrors = (req: any, res: any, next: any, fieldName: string, maxAllowed = 1) => (err: any) => {
-    if (err instanceof multer.MulterError) {
+const handleMulterErrors = (req: any, res: any, next: any, fieldName: string, maxAllowed = 1) => (error: any) => {
+    if (error instanceof multer.MulterError) {
         console.log('A Multer error occurred when uploading.') // [E.g., MulterError: Unexpected field]
-        if (err.name === "MulterError" && err.message === 'Unexpected field') {
+        if (error.name === "MulterError" && error.message === 'Unexpected field') {
             // Note: Images do not actually upload if this error happens.
             res.status(400).json({ success: false, message: multerError(fieldName, maxAllowed) });
         }
-    } else if (err) {
+    } else if (error) {
         console.log('An unknown error occurred when uploading.')
     }
-    next(err) // Everything went fine.
+    next(error) // Everything went fine.
 }
 // Docs: To catch errors specifically from Multer, you can call the middleware function by yourself: (src - https://www.npmjs.com/package/multer#error-handling)
 export const newProductUploadMiddleware = (req: any, res: any, next: any) => {
