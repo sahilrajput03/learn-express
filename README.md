@@ -29,6 +29,13 @@ For full _hot+flash+database_connected_ please refer to `testing-hot-flash` dire
 
 - Learn limiting concurrent requests with [`queue()`](https://caolan.github.io/async/v3/docs.html#queue) of [`async`](https://caolan.github.io/async/v3/) library (awesome): [Click here](learn-limiting-concurrent-requests.md)
 
+## Express 5 Launch on Oct, 2024
+
+- Docs:
+  - (todo) Docs: Introducing Express v5: A New Era for the Node.js Framework: [Click here](https://expressjs.com/2024/10/15/v5-release.html)
+  - (todo) Docs: Moving to Express 5: [Click here](https://expressjs.com/en/guide/migrating-5.html)
+- Blog by Trevor I. Lasn - What's New in Express.js v5.0: [Click here](https://www.trevorlasn.com/blog/whats-new-in-express-5)
+
 ## ❤️ Expressjs starter in typescript (always keep this post to top of this file for easy reference)
 
 - My Expressjs + Typescript Example Project: `ts-node-dev` example: ⭐[Click here](https://github.com/sahilrajput03/learn-express/tree/main/with-typescript)⭐
