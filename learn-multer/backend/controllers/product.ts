@@ -3,7 +3,7 @@ import { upload } from '../middlewares/multer';
 import multer from 'multer';
 
 // Docs: To catch errors specifically from Multer, you can call the middleware function by yourself: (src - https://www.npmjs.com/package/multer#error-handling)
-export const newUserUploadMiddleware = async (req: any, res: any, next: any) => {
+export const newUserUploadMiddleware = (req: any, res: any, next: any) => {
   const fieldName = "photo"
   upload.single(fieldName)(req, res, function (err) {
     if (err instanceof multer.MulterError) {
@@ -47,7 +47,7 @@ export const newUser = async (req: any, res: any, next: any) => {
 };
 
 // Docs: To catch errors specifically from Multer, you can call the middleware function by yourself: (src - https://www.npmjs.com/package/multer#error-handling)
-export const newProductUploadMiddleware = async (req: any, res: any, next: any) => {
+export const newProductUploadMiddleware = (req: any, res: any, next: any) => {
   const fieldName = "photos"
   const maxAllowed = 2
   upload.array(fieldName, maxAllowed)(req, res, function (err) {
