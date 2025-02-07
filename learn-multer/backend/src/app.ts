@@ -20,7 +20,7 @@ app.get('/', (req: Request, res: Response) => {
 app.put("/single-image-1", newUserUploadMiddleware, newUser)
 app.put("/multiple-image-1", newProductUploadMiddleware, newProduct)
 
-// & NEW
+// & NEW Awesome way
 app.put("/single-image-2", commonMulterMiddleware('photo', 1), newProduct) // we use `newProduct` because files are received in `req.files` for `upload.array` in multer
 app.put("/multiple-image-2", commonMulterMiddleware('photos', 2), newProduct)
 

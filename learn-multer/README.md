@@ -4,6 +4,18 @@
 
 Upload files via postman:
 
+## ❤️ Error handling in multer
+
+- [Click here](https://www.npmjs.com/package/multer#error-handling)
+  - [multer-error.js](https://github.com/expressjs/multer/blob/master/lib/multer-error.js)
+
+## Todos
+
+**Add code from sla\*\*\*r project for:**
+
+1. Maximum file size upload limit and cancel the request. Sahil: I think this validation should also be specified in the frontend too.
+2. Specify Allowed file type for e.g, jpg, jpeg, gif, etc to restrict uploading any other type of files where an image(s) is required.
+
 ### Multi Upload
 
 ![](./postman-multi-upload.jpeg)
@@ -11,11 +23,6 @@ Upload files via postman:
 ### Single Upload
 
 ![](./postman-single-upload.jpeg)
-
-## Error handling in multer
-
-- [Click here](https://www.npmjs.com/package/multer#error-handling)
-  - [multer-error.js](https://github.com/expressjs/multer/blob/master/lib/multer-error.js)
 
 ## Multer Alternatives
 
