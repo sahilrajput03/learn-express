@@ -39,6 +39,4 @@ Upload files via postman:
 
 https://npmtrends.com/busboy-vs-formidable-vs-multer
 
-![](./multer-alternatives.jpeg)
-
-<img src="./postman-single-upload.jpeg" alt="drawing" width="400"/>
+<img src="./multer-alternatives.jpeg" alt="drawing" width="700"/>
