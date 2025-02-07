@@ -3,7 +3,7 @@
 **Quick Links:**
 
 - ❤️ Learn node: [Click here](./learn-node/README.md)
-- Learn multer: [Click here](./learn-multer)
+- ❤️ Learn multer: [Click here](./learn-multer)
 
 For full _hot+flash+database_connected_ please refer to `testing-hot-flash` directory in this repo.
 
