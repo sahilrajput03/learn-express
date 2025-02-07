@@ -8,7 +8,7 @@ const handleMulterErrors = (req: any, res: any, next: any, fieldName: string, ma
         console.log('A Multer error occurred when uploading.') // [E.g., MulterError: Unexpected field]
         if (error.name === "MulterError" && error.message === 'Unexpected field') {
             // Note: Images do not actually upload if this error happens.
-            res.status(400).json({ success: false, message: multerError(fieldName, maxAllowed) });
+            res.status(400).json({ success: false, message: multerError(fieldName, maxAllowed), error });
         }
     } else if (error) {
         console.log('An unknown error occurred when uploading.')

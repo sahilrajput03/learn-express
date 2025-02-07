@@ -5,9 +5,7 @@ import { newProductUploadMiddleware, newUserUploadMiddleware } from '../middlewa
 import { commonMulterMiddleware } from '../middlewares/multer/commonMulterMiddleware'
 import cors from 'cors'
 
-const app: Application = express()
-
-const port = 8080
+export const app: Application = express()
 
 app.use(cors()) // necessary otherwise we get cors error in frontend while uplaoding
 
@@ -26,7 +24,3 @@ app.post("/v1/multiple-image", newProductUploadMiddleware, newProduct)
 // & NEW Awesome way
 app.post("/v2/single-image", commonMulterMiddleware('photo', 1), newProduct) // we use `newProduct` because files are received in `req.files` for `upload.array` in multer
 app.post("/v2/multiple-image", commonMulterMiddleware('photos', 2), newProduct)
-
-app.listen(port, function () {
-  console.log(`App running on: http://localhost:${port}`)
-})
