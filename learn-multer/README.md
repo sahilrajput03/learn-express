@@ -1,9 +1,5 @@
 # Learn Multer
 
-## **TODO: Check what are the different needs of slasher's code and what is that code you wrote for the dependency inejction and is it better to use separate multer error handlers or make an abstraction of it based on the usage in the slasher's project.**
-
-Upload files via postman:
-
 ## ❤️ Error handling in multer
 
 - [Click here](https://www.npmjs.com/package/multer#error-handling)
@@ -16,11 +12,13 @@ Upload files via postman:
 1. Maximum file size upload limit and cancel the request. Sahil: I think this validation should also be specified in the frontend too.
 2. Specify Allowed file type for e.g, jpg, jpeg, gif, etc to restrict uploading any other type of files where an image(s) is required.
 
-### Multi Upload
+## Upload files via postman:
+
+**Multi file Upload**
 
 <img src="./postman-multi-upload.jpeg" alt="drawing" width="700"/>
 
-### Single Upload
+**Single file Upload**
 
 <img src="./postman-single-upload.jpeg" alt="drawing" width="700"/>
 
