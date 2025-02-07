@@ -12,7 +12,9 @@ app.get('/', (req: Request, res: Response) => {
   res.send('Hello from express + typescript')
 })
 
-// Note to Developer: `POSTMAN`: Sometimes there is issues with postman when you copy/paste requests it doesn't able to keep correct cache of images --- thus makek sure you delete all images after you copy/page any request that has images attached to it. Thanks.
+// Note to Developer:
+// 1. `POSTMAN`: Sometimes there is issues with postman when you copy/paste requests it doesn't able to keep correct cache of images --- thus makek sure you delete all images after you copy/page any request that has images attached to it. Thanks.
+// 2. Please avoid using `upload.single('photo')` or `upload.array('photos', 2)` directly in the below routes as middlewares because multer throws very unreadable errors at commonly thus we try to catch multer specific error as specifed in official docs here - https://www.npmjs.com/package/multer#error-handling
 
 // older
 app.put("/single-image-1", newUserUploadMiddleware, newUser)
