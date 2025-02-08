@@ -1,5 +1,10 @@
 # Readme
 
+**Quick Links:**
+- ❤️ Implemented in:
+  - [`learn-multer`](https://github.com/sahilrajput03/learn-express/tree/main/learn-multer)
+  - [`qr-solution project`](https://github.com/sahilrajput03/qr-solution-backend)
+
 ## Important
 
 - Benefits of using supertest ? **Ans. You don't need to start the server and it runs the server on its own(solves the bigger problem i.e., you never accidentally make the requests on development or production server's databases but test database only, YO!). Inspiration from [amazing stackoverflow answer](https://stackoverflow.com/a/62992056/10012446).**
