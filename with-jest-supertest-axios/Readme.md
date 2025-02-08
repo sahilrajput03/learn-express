@@ -1,6 +1,7 @@
 # Readme
 
 **Quick Links:**
+- ❤️ Learn Jest/expect: [Click here](./learn-jest-expect.md){: search-title="Learn Jest/expect"}
 - ❤️ Implemented in:
   - [`learn-multer`](https://github.com/sahilrajput03/learn-express/tree/main/learn-multer)
   - [`qr-solution project`](https://github.com/sahilrajput03/qr-solution-backend)
