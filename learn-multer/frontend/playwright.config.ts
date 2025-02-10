@@ -75,7 +75,7 @@ export default defineConfig({
   // existing dev server if running otherwise start the dev server [tested].
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: 'nps dev',
+    command: 'npx nps dev',
     url: 'http://localhost:5173',
     reuseExistingServer: !process.env.CI,
   },
