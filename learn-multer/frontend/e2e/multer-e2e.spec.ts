@@ -11,7 +11,7 @@ const file3 = path.join(__dirname, '..', '..', 'backend', '__tests__', 'sample-f
 
 test('single image upload', async ({ page }) => {
     await page.goto('http://localhost:5173/');
-    await sleep(500) // Note: This is necessary otherwise files selected in the file-input is not recognizing the files.
+    await sleep(1000) // Note: This is necessary otherwise files selected in the file-input is not recognizing the files.
     await page.locator('#single-file-input').setInputFiles(file1);
     await page.getByRole('button', { name: 'Submit single image' }).click();
 
@@ -28,7 +28,7 @@ test('single image upload', async ({ page }) => {
 
 test('multiple images upload', async ({ page }) => {
     await page.goto('http://localhost:5173/');
-    await sleep(500) // Note: This is necessary otherwise files selected in the file-input is not recognizing the files.
+    await sleep(1000) // Note: This is necessary otherwise files selected in the file-input is not recognizing the files.
     await page.locator('#multiple-file-input').setInputFiles([file1, file2]);
     await page.getByRole('button', { name: 'Submit multiple images' }).click();
     await expect(page.getByText('Multiple file upload successful')).toBeVisible();
