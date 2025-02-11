@@ -8,6 +8,7 @@ import * as path from 'path';
 import { rimrafSync } from 'rimraf'
 import fs from 'node:fs';
 import { spmInitializer } from './spm/spm-initializer'
+import { backendTestServerPort } from './e2e/testing.env'
 
 let serverStarted = false;
 let mongodbConnected = false;
@@ -41,7 +42,7 @@ function spawnBackendTestServer() {
         stdio: ['pipe', 'pipe', 'pipe', 'ipc'] // We enable IPC by adding 'ipc' in the `stdio` option
     });
 
-    child.send({ message: 'START_SERVER_AND_CONNECT_TO_DB', port: 8191 }); // ! READ PORT FROM .env.testing file directly
+    child.send({ message: 'START_SERVER_AND_CONNECT_TO_DB', port: backendTestServerPort });
 
     // Note: We are using ipc here
     child.on('message', (data: any) => {
