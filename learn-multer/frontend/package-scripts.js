@@ -1,7 +1,9 @@
 export default {
   scripts: {
     default: "nps dev",
-    dev: 'vite dev',
+    dev: {
+      default: 'vite dev',
+    },
     build: 'vite build',
     preview: 'vite preview',
     prepare: 'svelte-kit sync || echo \'\'',

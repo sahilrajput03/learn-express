@@ -1,6 +1,13 @@
 <script lang="ts">
 	import axios from 'axios';
 
+	const PORT = import.meta.env.VITE_APP_PORT;
+	let api = axios.create({ baseURL: `http://localhost:${PORT}` });
+
+	// ! TODO: remove below variables completely form .env.testing file.
+	console.log('boom - VITE_APP_ENV', import.meta.env.VITE_APP_ENV); // "testing"
+	console.log('boom - VITE_APP_PORT', import.meta.env.VITE_APP_PORT); // 8091
+
 	let file: any;
 	let files: any = [];
 
@@ -20,7 +27,7 @@
 			headers: { 'Content-Type': 'multipart/form-data' }
 		};
 		try {
-			const { data } = await axios.post('http://localhost:8080/v2/single-image', payload, config);
+			const { data } = await api.post('/v2/single-image', payload, config);
 			console.log('🚀 ~ uploadFile ~ data:', data);
 
 			// Asserting this alert is doable but its very inconsistant (flaky tests experience).
@@ -49,7 +56,7 @@
 			headers: { 'Content-Type': 'multipart/form-data' }
 		};
 		try {
-			const { data } = await axios.post('http://localhost:8080/v2/multiple-image', payload, config);
+			const { data } = await api.post('/v2/multiple-image', payload, config);
 			console.log('🚀 ~ uploadFile ~ data:', data);
 			// Asserting this alert is doable but its very inconsistant (flaky tests experience).
 			// alert('multiple file upload successful');
