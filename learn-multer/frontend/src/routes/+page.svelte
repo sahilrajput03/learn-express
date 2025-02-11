@@ -1,12 +1,12 @@
 <script lang="ts">
 	import axios from 'axios';
+	import { isDevelopment, isTesting } from '../utils/env';
+
+	console.log('🚀 ~ isTesting:', isTesting);
+	console.log('🚀 ~ isDevelopment:', isDevelopment);
 
 	const PORT = import.meta.env.VITE_APP_PORT;
 	let api = axios.create({ baseURL: `http://localhost:${PORT}` });
-
-	// ! TODO: remove below variables completely form .env.testing file.
-	console.log('boom - VITE_APP_ENV', import.meta.env.VITE_APP_ENV); // "testing"
-	console.log('boom - VITE_APP_PORT', import.meta.env.VITE_APP_PORT); // 8091
 
 	let file: any;
 	let files: any = [];

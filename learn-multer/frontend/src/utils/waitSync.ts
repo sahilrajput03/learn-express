@@ -1,4 +1,4 @@
-export async function waitSync(checkFunction, interval = 50, timeout = 5_000) {
+export async function waitSync(checkFunction: any, interval = 50, timeout = 5_000) {
     return new Promise<void>((resolve, reject) => {
         const startTime = Date.now();
 

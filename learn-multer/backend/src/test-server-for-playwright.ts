@@ -17,10 +17,8 @@ process.on('message', async (data: any) => {
     if (data.message === 'START_SERVER_AND_CONNECT_TO_DB') {
         // start test server
         await new Promise<void>((resolve, reject) => {
-            server = app.listen(() => {
-                // We use ephemeral port (short-lived or lasts for a very brief period)
-                const { port } = server.address() as AddressInfo; // automatically assign an available port
-                process.send?.({ message: 'TEST_SERVER_STARTED', port });
+            server = app.listen(data.port, () => { // ! NEW: We receive port from frontend
+                process.send?.({ message: 'TEST_SERVER_STARTED' });
                 resolve()
             });
         })

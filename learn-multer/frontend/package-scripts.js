@@ -3,6 +3,7 @@ export default {
     default: "nps dev",
     dev: {
       default: 'vite dev',
+      testing: 'vite dev --mode=testing', // This command is not at all used by playwright. This command is to test "testing" related code for my own use only.
     },
     build: 'vite build',
     preview: 'vite preview',

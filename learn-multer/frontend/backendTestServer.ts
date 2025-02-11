@@ -15,7 +15,7 @@ let mongodbConnected = false;
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const targetFolderPath = path.join(__dirname, '..', 'backend'); // !!!!!!
 
-export const vars = { port: null, testsWereRun: false }
+export const vars = { testsWereRun: false }
 
 function ensureBackendBuild() {
     if (!process.env.CI) {
@@ -41,14 +41,13 @@ function spawnBackendTestServer() {
         stdio: ['pipe', 'pipe', 'pipe', 'ipc'] // We enable IPC by adding 'ipc' in the `stdio` option
     });
 
-    child.send({ message: 'START_SERVER_AND_CONNECT_TO_DB' });
+    child.send({ message: 'START_SERVER_AND_CONNECT_TO_DB', port: 8191 }); // ! READ PORT FROM .env.testing file directly
 
     // Note: We are using ipc here
     child.on('message', (data: any) => {
         // log('|PARENT|', 'Received from child:', data);
         if (data.message === 'TEST_SERVER_STARTED') {
-            serverStarted = true; vars.port = data.port;
-            // log('port is set now!!!')
+            serverStarted = true;
         }
         if (data.message === 'MONGODB_CONNECTED') { mongodbConnected = true; }
         if (serverStarted && mongodbConnected && !vars.testsWereRun) {

@@ -5,12 +5,13 @@ import { fileURLToPath } from 'node:url';
 import { checkIfProcessIsRunning } from './spm-utils.js';
 import { log } from 'node:console';
 import { kill } from 'node:process';
+import path from 'path';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export const spmInitializer = () => {
     // if both spmJs and its child are running then do not do anything.
-    const jsonData = JSON.parse(fs.readFileSync('spm.json', 'utf8'));
+    const jsonData = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'spm.json'), 'utf8'));
 
     // console.log(checkIfProcessIsRunning(jsonData.pid.spmJs), checkIfProcessIsRunning(jsonData.pid.child));
     if (checkIfProcessIsRunning(jsonData.pid.spmJs) && checkIfProcessIsRunning(jsonData.pid.child)) {

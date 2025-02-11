@@ -1,4 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
+import { frontendTestServerPort } from './src/utils/constants';
 
 /**
  * Read environment variables from file.
@@ -80,11 +81,8 @@ export default defineConfig({
   /* Run your local dev server before starting the tests */
   webServer: {
     // command: 'npx nps dev.testing',
-    command: 'vite dev --port 5191 --mode=testing',
-    url: 'http://localhost:5191',
+    command: `npx vite dev --port ${frontendTestServerPort} --mode=testing`,
+    url: `http://localhost:${frontendTestServerPort}`,
     reuseExistingServer: !process.env.CI,
-    env: {
-      VITE_APP_PORT: "8091" // backend server port
-    }
   },
 });

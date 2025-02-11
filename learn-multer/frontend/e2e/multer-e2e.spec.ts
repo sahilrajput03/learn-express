@@ -3,14 +3,18 @@ import axios from 'axios'
 import path from 'path';
 import { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { sleep } from '../utils/sleep'
+import { sleep } from '../src/utils/sleep'
 import { startBackendTestServer, vars } from '../backendTestServer'
-import { waitSync } from '../utils/waitSync'
+import { waitSync } from '../src/utils/waitSync'
+import { frontendTestServerPort } from '../src/utils/constants';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const file1 = path.join(__dirname, '..', '..', 'backend', '__tests__', 'sample-files', 'img1.jpg');
 const file2 = path.join(__dirname, '..', '..', 'backend', '__tests__', 'sample-files', 'img2.jpg');
 const file3 = path.join(__dirname, '..', '..', 'backend', '__tests__', 'sample-files', 'img3.jpg');
+
+// TODO-FUTURE: Make use of below port in all below tests so its obvious what port is used everywhere.
+// frontendTestServerPort
 
 // TODO: Test if putting tests out of top describe also works?
 test.describe('multer tests', () => {
@@ -21,7 +25,7 @@ test.describe('multer tests', () => {
         pidTestServer = startBackendTestServer()
         await waitSync(() => vars.testsWereRun)
         api = axios.create({
-            baseURL: `http://localhost:${vars.port}`,
+            baseURL: `http://localhost:8191`, // ! READ PORT FROM .env.testing file directly
         });
     })
     test.afterAll(() => {
@@ -31,7 +35,7 @@ test.describe('multer tests', () => {
     })
 
     test('single image upload', async ({ page }) => {
-        await page.goto('http://localhost:5173/');
+        await page.goto('http://localhost:5191/');
         await sleep(1000) // Note: This is necessary otherwise files selected in the file-input is not recognizing the files.
         await page.locator('#single-file-input').setInputFiles(file1);
         await page.getByRole('button', { name: 'Submit single image' }).click();
@@ -48,7 +52,7 @@ test.describe('multer tests', () => {
     });
 
     test('multiple images upload', async ({ page }) => {
-        await page.goto('http://localhost:5173/');
+        await page.goto('http://localhost:5191/');
         await sleep(1000) // Note: This is necessary otherwise files selected in the file-input is not recognizing the files.
         await page.locator('#multiple-file-input').setInputFiles([file1, file2]);
         await page.getByRole('button', { name: 'Submit multiple images' }).click();
