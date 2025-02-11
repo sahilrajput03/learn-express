@@ -80,7 +80,6 @@ export default defineConfig({
   // existing dev server if running otherwise start the dev server [tested].
   /* Run your local dev server before starting the tests */
   webServer: {
-    // command: 'npx nps dev.testing',
     command: `npx vite dev --port ${frontendTestServerPort} --mode=testing`,
     url: `http://localhost:${frontendTestServerPort}`,
     reuseExistingServer: !process.env.CI,
