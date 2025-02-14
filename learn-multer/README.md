@@ -2,7 +2,8 @@
 
 **TODO_FOR_THIS_PROJECT:**
 
-- Migrate from spawning typescript `build` based backend server to `ts-node-dev` server like you have in `qr-solution` frontend project. ❤️
+- Migrate from spawning typescript `build` based backend server to `ts-node-dev` server like you have in `qr-solution` frontend project ❤️
+  - (+ socket based communication b/w parent/child processes because `spawn('ts-node-dev myscript')'` doesn't work with ipc)
 
 **Quick Links:**
 
