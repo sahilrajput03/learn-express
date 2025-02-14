@@ -1,5 +1,9 @@
 # Learn Multer
 
+**TODO_FOR_THIS_PROJECT:**
+
+- Migrate from spawning typescript `build` based backend server to `ts-node-dev` server like you have in `qr-solution` frontend project. ❤️
+
 **Quick Links:**
 
 - **Multer Docs**
