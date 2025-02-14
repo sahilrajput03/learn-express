@@ -7,6 +7,7 @@
 - ❤️ Learn multer: [Click here](./learn-multer)
 - ❤️ with-jest-supertest-axios: [learn-express/with-jest-supertest-axios](https://github.com/sahilrajput03/learn-express/tree/main/with-jest-supertest-axios)
 - ❤️ socket-minimal-example: [learn-express/socket-minimal-example](https://github.com/sahilrajput03/learn-express/tree/main/socket-minimal-example)
+- ❤️ Web Push Notification: [learn-express/node_push_notifications](https://github.com/sahilrajput03/learn-express/tree/main/node_push_notifications)
 
 For full _hot+flash+database_connected_ please refer to `testing-hot-flash` directory in this repo.
 
