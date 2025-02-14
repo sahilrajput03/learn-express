@@ -88,4 +88,10 @@ nps
 npm start
 ```
 
+**Other resources:**
+- Article: Dev.to Article: [Click here](https://dev.to/codeoz/express-with-typescript-starter-explained-fast-4dn7)
+  - [Github Repo](https://github.com/Code-Oz/basic-express-typescript)
+
+
 Thanks
+
