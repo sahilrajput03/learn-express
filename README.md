@@ -11,6 +11,7 @@
 - Learn node: [learn-express/learn-node](https://github.com/sahilrajput03/learn-express/tree/main/learn-node)
   - ❤️ Learn Process Management in Nodejs: [learn-express/learn-node/process-management](https://github.com/sahilrajput03/learn-express/tree/main/learn-node/process-management)
     - ❤️❤️ switch-process-manager: [learn-express/learn-node/process-management/switch-process-manager](https://github.com/sahilrajput03/learn-express/tree/main/learn-node/process-management/switch-process-manager)
+- ❤️ console-and-file-log: [learn-express/console-and-file-log](https://github.com/sahilrajput03/learn-express/tree/main/console-and-file-log)
 
 For full _hot+flash+database_connected_ please refer to `testing-hot-flash` directory in this repo.
 
@@ -37,7 +38,27 @@ For full _hot+flash+database_connected_ please refer to `testing-hot-flash` dire
 
 - Learn limiting concurrent requests with [`queue()`](https://caolan.github.io/async/v3/docs.html#queue) of [`async`](https://caolan.github.io/async/v3/) library (awesome): [Click here](learn-limiting-concurrent-requests.md)
 
-## Express 5 Launch on Oct, 2024
+## Stop using `rimraf` in favor of `rmSync` in nodejs
+
+Why? - [Source](https://github.com/tiged/tiged/commit/21cb3020736e0977d08f28fed8d0695072c61877#diff-e12ef33c4a6336f4305e726dd4bd82c9fc6c2b436c809a965692c45e213956c6)
+
+**When `import { rmSync } from 'node:fs';` was released in node? (ChatGPT)**
+
+The `rmSync` function was introduced in Node.js v14.14.0 (October 2020) as part of the `fs` module. It provides a synchronous way to remove files or directories.
+
+**Do we need `rimraf`? (ChatGPT)**
+
+With modern Node.js versions (v14.14.0 and later), you have built-in support for recursive deletion using `fs.rmSync` (or the `async fs.rm`) with the `{ recursive: true }` option. This means that for many use cases, you no longer need the external `rimraf` package.
+
+However, you might still consider using `rimraf` if:
+- Backward compatibility: You need to support older Node.js versions that don't have recursive removal built in.
+- Edge cases: There are specific cross-platform issues or edge cases that rimraf handles more gracefully.
+
+In summary, if you're targeting a recent Node.js version and don't need those extra assurances, you likely don't need `rimraf`.
+
+## Express v5 (beta) launched on Oct, 2024
+
+Test it via - `npm install --save express@next`
 
 - Docs:
   - (todo) Docs: Introducing Express v5: A New Era for the Node.js Framework: [Click here](https://expressjs.com/2024/10/15/v5-release.html)
