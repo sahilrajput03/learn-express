@@ -31,3 +31,8 @@ Simply include this script in your Node.js application, and all console logs and
 Is chronological order better than the reverse-chronology order to debug the logs later? Be concise 
 
 Yes, logs are appended in chronological order, meaning earlier entries appear first. Chronological order is generally better for debugging since it preserves the sequence of events, making it easier to trace the flow and identify when issues occur.
+
+
+## 🚗 Other thoughts
+
+When big cloud companies have built special logs utilities e.g, cloudwatch and logger in github actions they have feature to help hide credentials being printed to screens. THIS IS ALL GOOD *BUT* if developer pushed some code to an api to production `res.json(process.env)` in any random api then developer gets all production environment values at once. HACKED (?). Developer is always in control of everything!
