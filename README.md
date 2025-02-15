@@ -8,6 +8,9 @@
 - ❤️ with-jest-supertest-axios: [learn-express/with-jest-supertest-axios](https://github.com/sahilrajput03/learn-express/tree/main/with-jest-supertest-axios)
 - ❤️ socket-minimal-example: [learn-express/socket-minimal-example](https://github.com/sahilrajput03/learn-express/tree/main/socket-minimal-example)
 - ❤️ Web Push Notification: [learn-express/node_push_notifications](https://github.com/sahilrajput03/learn-express/tree/main/node_push_notifications)
+- Learn node: [learn-express/learn-node](https://github.com/sahilrajput03/learn-express/tree/main/learn-node)
+  - ❤️ Learn Process Management in Nodejs: [learn-express/learn-node/process-management](https://github.com/sahilrajput03/learn-express/tree/main/learn-node/process-management)
+    - ❤️❤️ switch-process-manager: [learn-express/learn-node/process-management/switch-process-manager](https://github.com/sahilrajput03/learn-express/tree/main/learn-node/process-management/switch-process-manager)
 
 For full _hot+flash+database_connected_ please refer to `testing-hot-flash` directory in this repo.
 
