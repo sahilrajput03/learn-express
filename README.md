@@ -55,7 +55,9 @@ However, you might still consider using `rimraf` if:
 
 In summary, if you're targeting a recent Node.js version and don't need those extra assurances, you likely don't need `rimraf`.
 
-## Express 5 Launch on Oct, 2024
+## Express v5 (beta) launched on Oct, 2024
+
+Test it via - `npm install --save express@next`
 
 - Docs:
   - (todo) Docs: Introducing Express v5: A New Era for the Node.js Framework: [Click here](https://expressjs.com/2024/10/15/v5-release.html)
