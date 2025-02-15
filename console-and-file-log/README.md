@@ -1,5 +1,11 @@
 # README
 
+Clone this folder via -
+
+```bash
+npx tiged sahilrajput03/learn-express/console-and-file-log console-and-file-log
+```
+
 **📜 Overview**
 
 This Node.js utility captures and logs both stdout and stderr to separate files while also printing them to the terminal. Additionally, it merges both streams into a combined log file for better debugging and tracking.
