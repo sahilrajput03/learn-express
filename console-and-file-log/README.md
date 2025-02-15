@@ -4,6 +4,8 @@ Clone this folder via -
 
 ```sh
 npx tiged sahilrajput03/learn-express/console-and-file-log console-and-file-log
+cd console-and-file-log
+node app.js
 ```
 
 **📜 Overview**
