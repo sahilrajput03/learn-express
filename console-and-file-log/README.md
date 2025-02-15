@@ -2,7 +2,7 @@
 
 Clone this folder via -
 
-```bash
+```sh
 npx tiged sahilrajput03/learn-express/console-and-file-log console-and-file-log
 ```
 
