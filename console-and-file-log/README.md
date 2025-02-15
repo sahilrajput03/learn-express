@@ -6,6 +6,8 @@ Clone this folder via -
 npx tiged sahilrajput03/learn-express/console-and-file-log console-and-file-log
 cd console-and-file-log
 node app.js
+
+# Note: Logs are written to files under `.ignored` directory and we ignore this folder in .gitignore file on purpose because we do not want server instance logs to sync to github repository.
 ```
 
 **📜 Overview**
