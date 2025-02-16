@@ -354,12 +354,14 @@ Source: [express-async-errors@github](https://github.com/davidbanham/express-asy
 
 Source: [Github](https://github.com/expressjs/morgan), [npm](https://www.npmjs.com/package/morgan)
 
+**❤️ Tip: To print response body as well to morgan logs you can refer usage in `qr-solution-backend` project.**
+
 **Using morgan specifics:**
 
 Learn: What is `content-length` anyway?
 
-- [src1](https://stackoverflow.com/a/2773411/10012446): It's the number of bytes of data in the body of the request or response. The body is the part that comes after the blank line below the headers.
-- [src2](https://stackoverflow.com/a/2773408/10012446): The Content-Length entity-header field indicates the size of the entity-body, in decimal number of OCTETs, sent to the recipient.
+- [1](https://stackoverflow.com/a/2773411/10012446): It's the number of bytes of data in the body of the request or response. The body is the part that comes after the blank line below the headers.
+- [2](https://stackoverflow.com/a/2773408/10012446): The Content-Length entity-header field indicates the size of the entity-body, in decimal number of OCTETs, sent to the recipient.
 
 ```bash
 # ❤️ Custom
