@@ -350,8 +350,7 @@ Source: [express-async-errors@github](https://github.com/davidbanham/express-asy
 
 ## Using morgan coz morgan is supported by express only! Yo!
 
-- Source: https://github.com/expressjs/morgan
-- Source: https://www.npmjs.com/package/morgan
+Source: [Github](https://github.com/expressjs/morgan), [npm](https://www.npmjs.com/package/morgan)
 
 **Using morgan specifics:**
 
@@ -361,27 +360,31 @@ Learn: What is `content-length` anyway?
 - [src2](https://stackoverflow.com/a/2773408/10012446): The Content-Length entity-header field indicates the size of the entity-body, in decimal number of OCTETs, sent to the recipient.
 
 ```bash
-# custom
+# ❤️ Custom
 # morgan.token('body', (req, res) => JSON.stringify(req.body))
 # app.use(morgan(':method :url :status :body - :response-time ms'))
 PUT /api/users/jami_kousa 200 {"disabled":false} - 3.916 ms
 POST /api/login 200 {"username":"jami_kousa","password":"secret"} - 1.201 ms
 
-# custom (with response content-length)
+
+# ❤️ Custom (with response content-length)
 # morgan.token('body', (req, res) => JSON.stringify(req.body))
 # app.use(morgan(':method :url :status :body - :response-time ms - :res[content-length]'))
 PUT /api/users/jami_kousa 200 {"disabled":false} - 4.020 ms - 83
 POST /api/login 200 {"username":"jami_kousa","password":"secret"} - 1.145 ms - 203
 
-# with app.use(morgan('tiny')) # :method :url :status :res[content-length] - :response-time ms
+
+# app.use(morgan('tiny')) # :method :url :status :res[content-length] - :response-time ms
 PUT /api/users/jami_kousa 200 83 - 6.340 ms
 POST /api/login 200 203 - 1.934 ms
 
-# with app.use(morgan('short')) # :remote-addr :remote-user :method :url HTTP/:http-version :status :res[content-length] - :response-time ms
+
+# app.use(morgan('short')) # :remote-addr :remote-user :method :url HTTP/:http-version :status :res[content-length] - :response-time ms
 ::ffff:127.0.0.1 - PUT /api/users/jami_kousa HTTP/1.1 200 83 - 9.335 ms
 ::ffff:127.0.0.1 - POST /api/login HTTP/1.1 200 203 - 1.736 ms
 
-# with app.use(morgan('combined')) # :remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent"
+
+# app.use(morgan('combined')) # :remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent"
 ::ffff:127.0.0.1 - - [26/Jul/2022:07:19:07 +0000] "PUT /api/users/jami_kousa HTTP/1.1" 200 83 "-" "-"
 ::ffff:127.0.0.1 - - [26/Jul/2022:07:19:07 +0000] "POST /api/login HTTP/1.1" 200 203 "-" "-"
 ```
