@@ -350,6 +350,8 @@ Source: [express-async-errors@github](https://github.com/davidbanham/express-asy
 
 ## Using morgan coz morgan is supported by express only! Yo!
 
+`npm i morgan @types/morgan`
+
 Source: [Github](https://github.com/expressjs/morgan), [npm](https://www.npmjs.com/package/morgan)
 
 **Using morgan specifics:**
