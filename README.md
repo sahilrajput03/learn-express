@@ -12,6 +12,9 @@
   - ❤️ Learn Process Management in Nodejs: [learn-express/learn-node/process-management](https://github.com/sahilrajput03/learn-express/tree/main/learn-node/process-management)
     - ❤️❤️ switch-process-manager: [learn-express/learn-node/process-management/switch-process-manager](https://github.com/sahilrajput03/learn-express/tree/main/learn-node/process-management/switch-process-manager)
 - ❤️ console-and-file-log: [learn-express/console-and-file-log](https://github.com/sahilrajput03/learn-express/tree/main/console-and-file-log)
+- Expressjs Docs:
+  - Interesting middleware:
+    - ❤️ Helpful to host static content sites on subdomains easily with express: [vhost](https://expressjs.com/en/resources/middleware/vhost.html)
 
 For full _hot+flash+database_connected_ please refer to `testing-hot-flash` directory in this repo.
 
