@@ -14,7 +14,7 @@
 - ❤️ console-and-file-log: [learn-express/console-and-file-log](https://github.com/sahilrajput03/learn-express/tree/main/console-and-file-log)
 - Expressjs Docs:
   - Interesting middleware:
-    - ❤️ Helpful to host static content sites on subdomains easily with express: [vhost](https://expressjs.com/en/resources/middleware/vhost.html)
+    - ❤️🚀🧨 Helpful to handle traffic (or host static-content sites) on subdomains easily: [vhost](https://expressjs.com/en/resources/middleware/vhost.html)
 
 For full _hot+flash+database_connected_ please refer to `testing-hot-flash` directory in this repo.
 
