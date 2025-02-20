@@ -449,7 +449,29 @@ Read [here](https://stackoverflow.com/a/19041848/10012446).
 
 <img src="https://github.com/user-attachments/assets/fd7238e3-919a-4425-99c1-b581d435669a" alt="drawing" width="700"/>
 
-**Catching caught exceptions without using breakpoints DOES NOT WORK:**
+**Catching caught exceptions without using breakpoints DOES NOT WORK with `readFileSync(..)` api unless you use a `safeReThrow()`:**
+
+```js
+// works with caught exceptions in vscode debugger
+const f1 = () => Promise.reject('knowing is everything!')
+const f2 = async () => { throw "Try to know what you listen!" }
+const f3 = () => { Promise.reject('Beliefs are fake, to know is what is important.') }
+const f4 = () => { console.log(process.a.b) }
+const f5 = () => { readFileSync('unknown-file') }
+const f6 = async () => { readFileSync('unknown-file') }
+const f7 = async () => { try { readFileSync('unknown-file') } catch (error) { } }
+const f8 = async () => { try { readFileSync('unknown-file') } catch (error) { safeReThrow(error) } }
+const f9 = async () => { await readFile('unknown-file') }
+const f10 = async () => { try { await readFile('unknown-file') } catch (error) { } }
+
+setTimeout(() => {
+    // f1() // f1, f2, f3, f4, f5, f6, f8, f9, 10 --- all works
+    // For `f7` --- we need explicit safeReThrow() so that VsCode Debugger's `Caught Exceptions` feature to break when readFileSync throws error
+}, 3_000)
+
+async function safeReThrow(error: any) { try { throw error } catch (error) { } }
+```
+
 
 <img src="https://github.com/user-attachments/assets/18bd9508-9073-4176-896c-05f4fd933036" alt="drawing" width="700"/>
 
