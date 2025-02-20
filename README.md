@@ -452,6 +452,9 @@ Read [here](https://stackoverflow.com/a/19041848/10012446).
 **Catching caught exceptions without using breakpoints DOES NOT WORK with `readFileSync(..)` api unless you use a `safeReThrow()`:**
 
 ```js
+import { readFileSync } from 'fs'
+import { readFile } from 'fs/promises'
+
 // works with caught exceptions in vscode debugger
 const f1 = () => Promise.reject('knowing is everything!')
 const f2 = async () => { throw "Try to know what you listen!" }
