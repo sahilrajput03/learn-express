@@ -30,6 +30,14 @@ WebSockets are a specialized type of socket optimized for persistent, low-latenc
 
 ## Debugger
 
-![image](https://github.com/user-attachments/assets/fd7238e3-919a-4425-99c1-b581d435669a)
+**Catching uncaught exceptions without using breakpoints:**
 
-![image](https://github.com/user-attachments/assets/18bd9508-9073-4176-896c-05f4fd933036)
+<img src="https://github.com/user-attachments/assets/fd7238e3-919a-4425-99c1-b581d435669a" alt="drawing" width="700"/>
+
+**Catching caught exceptions without using breakpoints DOES NOT WORK:**
+
+<img src="https://github.com/user-attachments/assets/18bd9508-9073-4176-896c-05f4fd933036" alt="drawing" width="700"/>
+
+**We can enable/disable breakpoints of a file from here:**
+
+<img src="https://github.com/user-attachments/assets/b4100f88-2f1a-4b71-85e1-251da2828005" alt="drawing" width="700"/>
