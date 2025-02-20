@@ -466,7 +466,7 @@ const f10 = async () => { try { await readFile('unknown-file') } catch (error) {
 
 setTimeout(() => {
     // f1() // f1, f2, f3, f4, f5, f6, f8, f9, 10 --- all works ❤️
-    // For `f7` --- we need explicit safeReThrow() so that VsCode Debugger's `Caught Exceptions` feature to break when readFileSync throws error
+    // For `f7` --- we need explicit safeReThrow() so that VsCode Debugger's `Caught Exceptions` feature to break when readFileSync throws error inside a try-catch block
 }, 3_000)
 
 async function safeReThrow(error: any) { try { throw error } catch (error) { } }
