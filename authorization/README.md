@@ -3,6 +3,7 @@
 Sahil's Awesome Tests For Quick Revision:
 - ❤️ bcrypt tests: [bcrypt-jwt-unit-tests/bcrypt.ts](https://github.com/sahilrajput03/learn-express/blob/main/authorization/bcrypt-jwt-unit-tests/bcrypt.ts)
 - ❤️ jwt tests: [bcrypt-jwt-unit-tests/jwt.ts](https://github.com/sahilrajput03/learn-express/blob/main/authorization/bcrypt-jwt-unit-tests/jwt.ts)
+  - For proper error handling refer qr-project.
 
 Others:
 - Src: https://github.com/WebDevSimplified/JWT-Authentication
