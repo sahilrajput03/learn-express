@@ -28,8 +28,8 @@ However, Node.js can use Unix sockets via the net module for IPC.
 WebSockets are a specialized type of socket optimized for persistent, low-latency communication in web applications.
 
 
+## Debugger
 
+![image](https://github.com/user-attachments/assets/fd7238e3-919a-4425-99c1-b581d435669a)
 
-
-
-
+![image](https://github.com/user-attachments/assets/18bd9508-9073-4176-896c-05f4fd933036)
