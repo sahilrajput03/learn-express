@@ -368,15 +368,15 @@ Learn: What is `content-length` anyway?
 
 ```bash
 # ❤️ Custom
-# morgan.token('body', (req, res) => JSON.stringify(req.body))
-# app.use(morgan(':method :url :status :body - :response-time ms'))
+# morgan.token('payload', (req, res) => JSON.stringify(req.body))
+# app.use(morgan(':method :url :status :payload - :response-time ms'))
 PUT /api/users/jami_kousa 200 {"disabled":false} - 3.916 ms
 POST /api/login 200 {"username":"jami_kousa","password":"secret"} - 1.201 ms
 
 
 # ❤️ Custom (with response content-length)
-# morgan.token('body', (req, res) => JSON.stringify(req.body))
-# app.use(morgan(':method :url :status :body - :response-time ms - :res[content-length]'))
+# morgan.token('payload', (req, res) => JSON.stringify(req.body))
+# app.use(morgan(':method :url :status :payload - :response-time ms - :res[content-length]'))
 PUT /api/users/jami_kousa 200 {"disabled":false} - 4.020 ms - 83
 POST /api/login 200 {"username":"jami_kousa","password":"secret"} - 1.145 ms - 203
 
