@@ -368,15 +368,15 @@ Learn: What is `content-length` anyway?
 
 ```bash
 # ❤️ Custom
-# morgan.token('body', (req, res) => JSON.stringify(req.body))
-# app.use(morgan(':method :url :status :body - :response-time ms'))
+# morgan.token('payload', (req, res) => JSON.stringify(req.body))
+# app.use(morgan(':method :url :status :payload - :response-time ms'))
 PUT /api/users/jami_kousa 200 {"disabled":false} - 3.916 ms
 POST /api/login 200 {"username":"jami_kousa","password":"secret"} - 1.201 ms
 
 
 # ❤️ Custom (with response content-length)
-# morgan.token('body', (req, res) => JSON.stringify(req.body))
-# app.use(morgan(':method :url :status :body - :response-time ms - :res[content-length]'))
+# morgan.token('payload', (req, res) => JSON.stringify(req.body))
+# app.use(morgan(':method :url :status :payload - :response-time ms - :res[content-length]'))
 PUT /api/users/jami_kousa 200 {"disabled":false} - 4.020 ms - 83
 POST /api/login 200 {"username":"jami_kousa","password":"secret"} - 1.145 ms - 203
 
@@ -442,6 +442,45 @@ Read [here](https://stackoverflow.com/a/19041848/10012446).
 - _Loading .env file in the debugging mode. [Src](https://code.visualstudio.com/docs/nodejs/nodejs-debugging#_load-environment-variables-from-external-file)_
 
 - Remote debugging applications: [@nodejs docs](https://nodejs.org/en/docs/guides/debugging-getting-started/#enabling-remote-debugging-scenarios), [@vscode docs](https://code.visualstudio.com/docs/editor/debugging#_remote-debugging).
+
+## Debugger
+
+**Catching uncaught exceptions without using breakpoints:**
+
+<img src="https://github.com/user-attachments/assets/fd7238e3-919a-4425-99c1-b581d435669a" alt="drawing" width="700"/>
+
+**Catching caught exceptions without using breakpoints DOES NOT WORK with `readFileSync(..)` api unless you use a `safeReThrow()`:**
+
+```js
+import { readFileSync } from 'fs'
+import { readFile } from 'fs/promises'
+
+// works with caught exceptions in vscode debugger
+const f1 = () => Promise.reject('knowing is everything!')
+const f2 = async () => { throw "Try to know what you listen!" }
+const f3 = () => { Promise.reject('Beliefs are fake, to know is what is important.') }
+const f4 = () => { console.log(process.a.b) }
+const f5 = () => { readFileSync('unknown-file') }
+const f6 = async () => { readFileSync('unknown-file') }
+const f7 = async () => { try { readFileSync('unknown-file') } catch (error) { } }
+const f8 = async () => { try { readFileSync('unknown-file') } catch (error) { safeReThrow(error) } }
+const f9 = async () => { await readFile('unknown-file') }
+const f10 = async () => { try { await readFile('unknown-file') } catch (error) { } }
+
+setTimeout(() => {
+    // f1() // f1, f2, f3, f4, f5, f6, f8, f9, 10 --- all works ❤️
+    // For `f7` --- we need explicit safeReThrow() so that VsCode Debugger's `Caught Exceptions` feature to break when readFileSync throws error inside a try-catch block
+}, 3_000)
+
+async function safeReThrow(error: any) { try { throw error } catch (error) { } }
+```
+
+
+<img src="https://github.com/user-attachments/assets/18bd9508-9073-4176-896c-05f4fd933036" alt="drawing" width="700"/>
+
+**We can enable/disable breakpoints of a file from here:**
+
+<img src="https://github.com/user-attachments/assets/b4100f88-2f1a-4b71-85e1-251da2828005" alt="drawing" width="700"/>
 
 ## Phenomenal hot-module-replacement with node
 

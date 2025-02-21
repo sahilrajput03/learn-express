@@ -26,10 +26,3 @@ However, Node.js can use Unix sockets via the net module for IPC.
 - WebSockets: A protocol over TCP that enables full-duplex, real-time communication between a client (browser) and a server, commonly used for web apps.
 
 WebSockets are a specialized type of socket optimized for persistent, low-latency communication in web applications.
-
-
-
-
-
-
-
