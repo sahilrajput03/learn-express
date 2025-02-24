@@ -1,9 +1,10 @@
 # Learn Mocha
 
-❤️ Doc: [mochajs.org](https://mochajs.org)
+❤️ Documentation: [mochajs.org](https://mochajs.org)
 
 **Quick Links:**
 
+- Learn Mocha (Google Doc): [Click here](https://docs.google.com/document/d/19lJnR9d93wplsKpdd7pfqqXUgKTWL2HZNYyo64mkFSE/edit?tab=t.0)
 - **Examples: [Docs](https://mochajs.org/#examples)**
   - Tests of express lib: [Click here](https://github.com/expressjs/express/tree/master/test) [from examples of Chai docs]
   - Tests of connect lib: [Click here](https://github.com/senchalabs/connect/tree/master/test) (Middleware layer for nodejs)
