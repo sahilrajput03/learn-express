@@ -42,6 +42,29 @@ For full _hot+flash+database_connected_ please refer to `testing-hot-flash` dire
 
 - Learn limiting concurrent requests with [`queue()`](https://caolan.github.io/async/v3/docs.html#queue) of [`async`](https://caolan.github.io/async/v3/) library (awesome): [Click here](learn-limiting-concurrent-requests.md)
 
+## `after` library
+
+https://github.com/Raynos/after#naive-example
+
+```js
+var after = require("after")
+    , next = after(3, logItWorks)
+
+next()
+next()
+next() // it works
+
+function logItWorks() {
+    console.log("it works!")
+}
+```
+
+## No operation function
+
+```js
+function noop() {}
+```
+
 ## Stop using `rimraf` in favor of `rmSync` in nodejs
 
 Why? - [Source](https://github.com/tiged/tiged/commit/21cb3020736e0977d08f28fed8d0695072c61877#diff-e12ef33c4a6336f4305e726dd4bd82c9fc6c2b436c809a965692c45e213956c6)
