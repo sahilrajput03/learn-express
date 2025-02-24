@@ -1,9 +1,6 @@
 <script lang="ts">
 	import axios from 'axios';
-	import { isDevelopment, isTesting } from '../utils/env';
-
-	console.log('🚀 ~ isTesting:', isTesting);
-	console.log('🚀 ~ isDevelopment:', isDevelopment);
+	// import { isDevelopment, isTesting } from '../utils/env';
 
 	const PORT = import.meta.env.VITE_APP_PORT;
 	let api = axios.create({ baseURL: `http://localhost:${PORT}` });
