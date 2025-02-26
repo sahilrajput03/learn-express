@@ -42,6 +42,11 @@ For full _hot+flash+database_connected_ please refer to `testing-hot-flash` dire
 
 - Learn limiting concurrent requests with [`queue()`](https://caolan.github.io/async/v3/docs.html#queue) of [`async`](https://caolan.github.io/async/v3/) library (awesome): [Click here](learn-limiting-concurrent-requests.md)
 
+## I prefer to use `return void res.json({...})` or `res.status(HttpStatusCode.NotFound).send("Hosh")`
+
+This is just awesome because I save to more lines of code in the same screen now. ❤️
+
+
 ## `after` library (used in tests in express package)
 
 https://github.com/Raynos/after#naive-example
