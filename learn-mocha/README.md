@@ -27,7 +27,7 @@ The tests in `express` repo takes `4 seconds` to run on my system to run `1234 t
 ## Assertion library: chai vs. expect
 
 - Npm trends: [Click here](https://npmtrends.com/chai-vs-expect)
-  - [chai npm](https://www.npmjs.com/package/chai) (github: 8.2k\*)
-  - [expect npm](https://www.npmjs.com/package/expect) (inside a monorepo of jest github: 44.6k\*)
+  - [chai npm](https://www.npmjs.com/package/chai) (github: 8.2k\*) [first release 9 years ago]
+  - [expect npm](https://www.npmjs.com/package/expect) (inside a monorepo of jest github: 44.6k\*) [first release 13 years ago]
 
 <img src="./screenshots/2.png" alt="drawing" width="700"/>
