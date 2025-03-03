@@ -19,6 +19,11 @@ The tests in `express` repo takes `4 seconds` to run on my system to run `1234 t
 
 <img src="./screenshots/1.png" alt="drawing" width="700"/>
 
+# Assertions Library
+
+- Chai: [Docs](https://www.chaijs.com/api/bdd/)
+- Expect: [Docs](https://jestjs.io/docs/expect)
+
 ## Assertion library: chai vs. expect
 
 - Npm trends: [Click here](https://npmtrends.com/chai-vs-expect)
