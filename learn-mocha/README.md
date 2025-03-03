@@ -13,7 +13,7 @@
   - Use `-R min` (alias for `--reporter min`) - [src](https://mochajs.org/#min)
     - _Also (Hack): You can use this in your test to clear terminal logs before each run as well - `beforeEach(function () { console.log('\x1Bc'); });` [TESTED]_
 
-## Mocha is truely blazing fast ❤️
+## ❤ Mocha is truely blazing fast
 
 The tests in `express` repo takes `4 seconds` to run on my system to run `1234 tests`. 🎉 The results are super fast probably because mocha encourages to use node's native `assert` module to run tests (instead of using a different library for e.g., like `expect` is used by `jest`)
 
