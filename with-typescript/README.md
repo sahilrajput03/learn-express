@@ -1,5 +1,7 @@
 # Creating a expressjs + typescript project
 
+*TODO: In future I might want to explore this package - [tsx](https://github.com/privatenumber/tsx)*
+
 **❤️Three step process:**
 
 1. Create a folder `my-expressjs-typescript` and then run following commands inside the folder:
