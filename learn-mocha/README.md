@@ -17,7 +17,7 @@
 
 The tests in `express` repo takes `4 seconds` to run on my system to run `1234 tests`. 🎉 The results are super fast probably because mocha encourages to use node's native `assert` module to run tests (instead of using a different library for e.g., like `expect` is used by `jest`)
 
-![alt text](./screenshots/1.png)
+<img src="./screenshots/1.png" alt="drawing" width="700"/>
 
 ## Assertion library: chai vs. expect
 
@@ -25,4 +25,4 @@ The tests in `express` repo takes `4 seconds` to run on my system to run `1234 t
   - [chai npm](https://www.npmjs.com/package/chai) (github: 8.2k\*)
   - [expect npm](https://www.npmjs.com/package/expect) (inside a monorepo of jest github: 44.6k\*)
 
-![alt text](./screenshots/2.png)
+<img src="./screenshots/2.png" alt="drawing" width="700"/>
