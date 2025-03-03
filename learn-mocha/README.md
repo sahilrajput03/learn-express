@@ -4,13 +4,14 @@
 
 **Quick Links:**
 
-- Learn Mocha (Google Doc): [Click here](https://docs.google.com/document/d/19lJnR9d93wplsKpdd7pfqqXUgKTWL2HZNYyo64mkFSE/edit?tab=t.0)
-- **Examples: [Docs](https://mochajs.org/#examples)**
+- Learn Mocha - Google Doc: [Click here](https://docs.google.com/document/d/19lJnR9d93wplsKpdd7pfqqXUgKTWL2HZNYyo64mkFSE/edit?tab=t.0)
+- **Examples**
+  - Examples from Mocha Documentation: [Click here](https://mochajs.org/#examples)
   - Tests of express lib: [Click here](https://github.com/expressjs/express/tree/master/test) [from examples of Chai docs]
   - Tests of connect lib: [Click here](https://github.com/senchalabs/connect/tree/master/test) (Middleware layer for nodejs)
-- Clear terminal logs on restart when watch mode is on:
-  - Use `-R min` (`--reporter min`) - [src](https://mochajs.org/#min)
-  - _Hack: You can use this in your test to clear terminal logs before each run as well - `beforeEach(function () { console.log('\x1Bc'); });` [TESTED]_
+- Clear terminal logs before running tests:
+  - Use `-R min` (alias for `--reporter min`) - [src](https://mochajs.org/#min)
+    - _Also (Hack): You can use this in your test to clear terminal logs before each run as well - `beforeEach(function () { console.log('\x1Bc'); });` [TESTED]_
 
 ## Mocha is truely blazing fast ❤️
 
