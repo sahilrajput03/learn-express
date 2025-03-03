@@ -13,7 +13,7 @@
   - Use `-R min` (alias for `--reporter min`) - [src](https://mochajs.org/#min)
     - _Also (Hack): You can use this in your test to clear terminal logs before each run as well - `beforeEach(function () { console.log('\x1Bc'); });` [TESTED]_
 
-## ❤ Mocha is truely blazing fast
+## ❤ Mocha is truly blazing fast
 
 The tests in `express` repo takes `4 seconds` to run on my system to run `1234 tests`. 🎉 The results are super fast probably because mocha encourages to use node's native `assert` module to run tests (instead of using a different library for e.g., like `expect` is used by `jest`)
 
@@ -22,7 +22,7 @@ The tests in `express` repo takes `4 seconds` to run on my system to run `1234 t
 ## Assertion library: chai vs. expect
 
 - Npm trends: [Click here](https://npmtrends.com/chai-vs-expect)
-  - [chai npm](https://www.npmjs.com/package/chai)
-  - [expect npm](https://www.npmjs.com/package/expect)
+  - [chai npm](https://www.npmjs.com/package/chai) (github: 8.2k\*)
+  - [expect npm](https://www.npmjs.com/package/expect) (inside a monorepo of jest github: 44.6k\*)
 
 ![alt text](./screenshots/2.png)
