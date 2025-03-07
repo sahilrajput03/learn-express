@@ -55,3 +55,25 @@
 https://npmtrends.com/busboy-vs-formidable-vs-multer
 
 <img src="./multer-alternatives.jpeg" alt="drawing" width="700"/>
+
+## Are streams better as compared to saving file and then uploading to third party servers un a backend server? (ChatGPT)
+
+Yes, using streams is generally better than saving a file and then uploading it to third-party servers, especially in a backend server environment. Here’s why:
+
+**Advantages of Using Streams**
+
+1. Lower Memory Usage – Streams process data in chunks, avoiding the need to load the entire file into memory. This is crucial for handling large files.
+2. Faster Processing – Since data is processed as it arrives, there's no need to wait for the entire file to be stored before uploading.
+3. Reduced Disk I/O – Directly streaming data eliminates the need for temporary file storage, reducing read/write operations on the disk.
+4. Better Scalability – Since less RAM and disk space are used, your backend can handle more concurrent uploads without resource bottlenecks.
+5. Improved Security – Avoids storing sensitive files temporarily, reducing exposure to security risks.
+
+**When Saving the File Might Be Better**
+
+1. Post-Processing Needs – If you need to manipulate or analyze the file before uploading, storing it temporarily might be necessary.
+2. Resumable Uploads – Some cloud services support resumable uploads, which might require temporary file storage.
+3. Limited Third-Party API Support for Streams – Some APIs may not support streaming uploads, forcing you to save files first.
+
+**Conclusion**
+
+In most cases, streaming is the preferred method for efficiency, performance, and scalability. However, if your workflow requires file processing before uploading, a hybrid approach (streaming when possible, saving when necessary) might be the best solution.
