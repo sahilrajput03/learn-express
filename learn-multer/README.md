@@ -8,6 +8,8 @@
 
 **Quick Links:**
 
+- This resources is used in projects:
+  - `qr-solution` project
 - **Multer Docs**
   - Accept a mix of files from different multiple fields of the form: [https://www.npmjs.com/package/multer#fieldsfields](https://www.npmjs.com/package/multer#fieldsfields)
   - Setting file size limits in multer: [https://www.npmjs.com/package/multer#limits](https://www.npmjs.com/package/multer#limits)
