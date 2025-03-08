@@ -33,7 +33,7 @@ export const newProduct = async (req: any, res: any, next: any) => {
   console.log("🚀 photos:", photos)
   /**
   [{
-    fieldname: 'photos',
+    fieldname: 'photos', // ! NOTE we get the field name here thus we are uploading files to multiple fields in form then we can make use of this.
     originalname: 'lily.jpeg',
     encoding: '7bit',
     mimetype: 'image/jpeg',
