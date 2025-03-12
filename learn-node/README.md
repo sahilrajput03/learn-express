@@ -5,8 +5,22 @@
 - ❤️ Learn Process Management in Nodejs: [Click here](./process-management/README.md)
   - Tags: `fork`, `spawn`, `exec`, `spawn`, kill-switch (switch process manager), `ipc`.
 
-# `n` (package), Native Test Runner, Watch mode
+#   Nodejs Things
 
+```bash
+node -p "3+3"
+# OUTPUT: 6
+
+node -p "console.log('hello')"
+# OUTPUT:
+# hello
+# undefined
+
+node -p process.env
+// OUTPUT: (prints environment variables)
+```
+
+# `n` (package), Native Test Runner, Watch mode
 
 - `n` – Interactively Manage Your Node.js Versions - [https://www.npmjs.com/package/n](https://www.npmjs.com/package/n)
 - Node.js introduced watch mode (`--watch`) in Node.js v18, which is an LTS (Long-Term Support) version.
