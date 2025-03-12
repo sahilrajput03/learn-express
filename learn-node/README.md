@@ -5,9 +5,12 @@
 - ❤️ Learn Process Management in Nodejs: [Click here](./process-management/README.md)
   - Tags: `fork`, `spawn`, `exec`, `spawn`, kill-switch (switch process manager), `ipc`.
 
-#   Nodejs Things
+# Nodejs Features
 
 ```bash
+node --watch a.js
+# watch a script (without using nodemon) ❤️
+
 node -p "3+3"
 # OUTPUT: 6
 
