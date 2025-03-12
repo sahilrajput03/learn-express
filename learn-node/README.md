@@ -21,6 +21,17 @@ node -p "console.log('hello')"
 
 node -p process.env
 // OUTPUT: (prints environment variables)
+
+### TESTING - Add below code to a.js
+import assert from "assert";
+import test from "node:test";
+test('car', () => { assert(1 === 1); });
+
+# Run test
+node --test a.js
+
+# Run test in watch mode
+node --test --watch a.js
 ```
 
 # `n` (package), Native Test Runner, Watch mode
