@@ -7,7 +7,8 @@
 - **Examples**
   - Examples from Mocha Documentation: [Click here](https://mochajs.org/#examples)
     - Tests of express lib: [Click here](https://github.com/expressjs/express/tree/master/test) [from examples of Chai docs]
-  - Tests of connect lib: [Click here](https://github.com/senchalabs/connect/tree/master/test) (Middleware layer for nodejs)
+    - Tests of connect lib: [Click here](https://github.com/senchalabs/connect/tree/master/test) (Middleware layer for nodejs)
+  - Tests of mongoose lib: [Click here](https://github.com/Automattic/mongoose/tree/master/test)
   - Tests of socket.io lib: [Click here](https://socket.io/docs/v4/testing/)
 - Clear terminal logs before running tests:
   - Use `-R min` (alias for `--reporter min`) - [src](https://mochajs.org/#min)
