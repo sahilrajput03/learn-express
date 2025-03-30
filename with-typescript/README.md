@@ -46,10 +46,9 @@ npx tsc --init
 sed -i -r '/^[ \t]*\//d; /^[[:space:]]*$/d; s/\/\*(.*?)\*\///g; s/[[:blank:]]+$//' tsconfig.json; rm tsconfig.json-r
 ```
 
-2. Manually update `tsconfig.ts`:
+2. Manually update `tsconfig.ts` and by copy-pasting below lines inside `"compilerOptions"` key:
 
-```bash
-# In tsconfig.json file, you must copy-paste below line inside "compilerOptions" key:
+```json
 "outDir": "./dist" /* Specify an output folder for all emitted files. */,
 // To help progress faster by not having to unnecessary assign `any` everywhere i.e, to allow type to be any implicitly
 "noImplicitAny": false,
