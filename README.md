@@ -2,7 +2,7 @@
 
 **Quick Links:**
 
-- ❤️❤️ with-typescript: [learn-express/socket-minimal-example](https://github.com/sahilrajput03/learn-express/tree/main/with-typescript)
+- ❤️❤️ with-typescript: [learn-express/with-typescript](https://github.com/sahilrajput03/learn-express/tree/main/with-typescript)
 - ❤️ Learn node: [Click here](./learn-node/README.md)
 - ❤️ Learn multer: [Click here](./learn-multer)
 - ❤️ with-jest-supertest-axios: [learn-express/with-jest-supertest-axios](https://github.com/sahilrajput03/learn-express/tree/main/with-jest-supertest-axios)
