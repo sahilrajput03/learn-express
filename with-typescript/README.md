@@ -51,6 +51,8 @@ sed -i -r '/^[ \t]*\//d; /^[[:space:]]*$/d; s/\/\*(.*?)\*\///g; s/[[:blank:]]+$/
 ```bash
 # In tsconfig.json file, you must copy-paste below line inside "compilerOptions" key:
 "outDir": "./dist" /* Specify an output folder for all emitted files. */,
+// To help progress faster by not having to unnecessary assign `any` everywhere i.e, to allow type to be any implicitly
+"noImplicitAny": false,
 ```
 
 3. Depending upon if you want to use nps or not:
