@@ -101,7 +101,7 @@ By default:
 - Child processes do not exit automatically when the parent process crashes or encounters a runtime error.
 - You need to explicitly manage the lifecycle of child processes to ensure they are terminated when appropriate. This can be done using signals, .kill(), or other cleanup mechanisms in the parent process.
 
-## `exec` vs. `spawn` in nodejs (ChatGPT)
+## `execSync` vs. `spawn` in nodejs (ChatGPT)
 
 In Node.js, `execSync` and spawn are used to execute shell commands but differ in key aspects:
 
