@@ -101,6 +101,26 @@ By default:
 - Child processes do not exit automatically when the parent process crashes or encounters a runtime error.
 - You need to explicitly manage the lifecycle of child processes to ensure they are terminated when appropriate. This can be done using signals, .kill(), or other cleanup mechanisms in the parent process.
 
+## Using `execSync`
+
+*(Used in github repo - `android-loop/utils/tts-gtts.ts` recently on 3 April 2025)*
+
+```js
+const { execSync } = require('child_process');
+
+try {
+  // Execute a shell command and get the output
+  const output = execSync('ls -la');
+  console.log(output.toString());
+} catch (error) {
+  console.error('Error executing command:', error);
+}
+```
+
+## Running `spawn` in a synchronous manner
+
+Refer Github Repo (file): `android-loop/utils/playSpeechFile.ts`
+
 ## `execSync` vs. `spawn` in nodejs (ChatGPT)
 
 In Node.js, `execSync` and spawn are used to execute shell commands but differ in key aspects:
