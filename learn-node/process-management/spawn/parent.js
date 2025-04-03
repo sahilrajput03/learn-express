@@ -22,9 +22,7 @@ child.stderr.on('data', (data) => { console.log('|CHILD-STDERR|:', data.toString
 
 // Runs only when CHILD exits via `process.exit(exitCode?)` or any runtime exception in CHILD process
 // Triggered when the child process terminates (regardless of success or failure).
-child.on('exit', (code) => {
-    console.log(`Child exited with code ${code}`);
-});
+child.on('exit', (code) => { console.log(`Child exited with code ${code}`); });
 
 // Runs only when PARENT exits via `process.exit(exitCode?)` or any runtime exception in PARENT process
 process.on('exit', () => {
