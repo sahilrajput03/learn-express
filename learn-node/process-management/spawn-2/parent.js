@@ -16,9 +16,7 @@ child.on('message', (data) => {
 });
 
 // Triggered if there is an error when spawning or initializing the child process
-child.on('error', (err) => {
-    console.error('|Child| Error:', err);
-});
+child.on('error', (err) => { console.error('|CHILD-FAILED-TO_SPAWN_PROCESS| Error:', err); });
 
 // Send a message to the child process
 child.send({ hello: 'world' });
