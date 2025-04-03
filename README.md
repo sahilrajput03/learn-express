@@ -47,7 +47,7 @@ For full _hot+flash+database_connected_ please refer to `testing-hot-flash` dire
 ```ts
 process.on('uncaughtException', (err) => {
     console.error('🛑Found uncaughtException:', err);
-    // process.exit(1) // We do not exit on some unhandled exception intentionally
+    // process.exit(1) // We do not exit on an unhandled exception intentionally to prevent server crash
 });
 ```
 
