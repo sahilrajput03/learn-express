@@ -4,7 +4,7 @@ Other way to communicate is to have http server on both processes and communicat
 
 ❤️❤️ Demonstration video of this folder @ youtube by me: [Click here](https://www.youtube.com/watch?v=epbrENZ_bJs&t=80s)
 
-# Prefer passing sync funciton instead of an async callback function to `process.on('SIGING', () => {..})`
+# 🚀 Prefer passing sync funciton instead of an async callback function to `process.on('SIGING', () => {..})`
 
 Refer this file for more context: [sahilrajput03/android-loop/utils/mongodb.ts](https://github.com/sahilrajput03/android-loop/blob/main/utils/mongodb.ts)
 
