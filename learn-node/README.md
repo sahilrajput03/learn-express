@@ -5,7 +5,7 @@
 - ❤️ Learn Process Management in Nodejs: [Click here](./process-management/README.md)
   - Tags: `fork`, `spawn`, `exec`, `spawn`, kill-switch (switch process manager), `ipc`.
 
-## npm - optional dependency?
+## What are `optionalDependencies` in `package.json` (#npm)?
 
 There are situations when a certain dependency is not installable on your os type and is made to be installed on another system like "android". For e.g. if you try to install `lightningcss.android-arm64.node` on macos it'll throw error as shown below because its a dependency for "android" os as we can read from the logs too.
 
