@@ -5,6 +5,24 @@
 - ❤️ Learn Process Management in Nodejs: [Click here](./process-management/README.md)
   - Tags: `fork`, `spawn`, `exec`, `spawn`, kill-switch (switch process manager), `ipc`.
 
+## npm - optional dependency?
+
+There are situations when a certain dependency is not installable on your os type and is made to be installed on another system like "android". For e.g. if you try to install `lightningcss.android-arm64.node` on macos it'll throw error as shown below because its a dependency for "android" os as we can read from the logs too.
+
+```bash
+npm install lightningcss.android-arm64.node
+# OUTPUT:
+# npm error code EBADPLATFORM
+# npm error notsup Unsupported platform for lightningcss.android-arm64.node@1.29.3-alpha.2: wanted {"os":"android","cpu":"arm64"} (current: {"os":"darwin","cpu":"x64"})
+# npm error notsup Valid os:   android
+# npm error notsup Actual os:  darwin
+# npm error notsup Valid cpu:  arm64
+# npm error notsup Actual cpu: x64
+# npm error A complete log of this run can be found in: /Users/apple/.npm/_logs/2025-04-22T14_25_45_881Z-debug-0.log
+```
+
+So here we can install this dependecy as optional dependency instead like that - `npm install lightningcss.android-arm64.node --save-optional`. This is a solution when I needed this dependency to work with tailwind v4 release in my latest `learn-svelte/new-ai-sdk` project. ([source of info](https://github.com/tailwindlabs/tailwindcss/discussions/15999#discussioncomment-12909555)).
+
 # Nodejs Features
 
 ```bash
