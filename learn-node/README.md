@@ -7,6 +7,8 @@
 
 ## What are `optionalDependencies` in `package.json` (#npm)?
 
+Optional dependencies are not critical for your package to work — if they fail to install (e.g., due to OS incompatibility), the installation will continue without them. ([ChatGPT](https://chatgpt.com/c/68078ac5-a998-8007-b64e-d9651932e858))
+
 There are situations when a certain dependency is not installable on your os type and is made to be installed on another system like "android". For e.g. if you try to install `lightningcss.android-arm64.node` on macos it'll throw error as shown below because its a dependency for "android" os as we can read from the logs too.
 
 ```bash
