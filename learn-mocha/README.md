@@ -21,7 +21,7 @@
 - Chai: [Docs](https://www.chaijs.com/api/bdd/)
 - Expect: [Docs](https://jestjs.io/docs/expect)
 
-## Assertion library: chai vs. expect
+**Comparing chai vs. expect (assertion library)**
 
 - Npm trends: [Click here](https://npmtrends.com/chai-vs-expect)
   - [chai npm](https://www.npmjs.com/package/chai) (github: 8.2k\*) [first release 9 years ago]
