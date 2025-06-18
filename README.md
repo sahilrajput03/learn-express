@@ -7,7 +7,7 @@
 - ❤️ Learn multer: [Click here](./learn-multer)
 - ❤️ with-jest-supertest-axios: [learn-express/with-jest-supertest-axios](https://github.com/sahilrajput03/learn-express/tree/main/with-jest-supertest-axios)
 - ❤️ socket-minimal-example: [learn-express/socket-minimal-example](https://github.com/sahilrajput03/learn-express/tree/main/socket-minimal-example)
-- ❤️ Authorization: [Click here](./authorization/README.md) (#jwt, #bcrypt, #bcrypt-jwt-unit-tests)
+- ❤️ `authorization`: [learn-express/authorization](./authorization/README.md) (#jwt, #bcrypt, #bcrypt-jwt-unit-tests)
 - ❤️ Web Push Notification: [learn-express/node_push_notifications](https://github.com/sahilrajput03/learn-express/tree/main/node_push_notifications)
 - Learn node: [learn-express/learn-node](https://github.com/sahilrajput03/learn-express/tree/main/learn-node)
   - ❤️ Learn Process Management in Nodejs: [learn-express/learn-node/process-management](https://github.com/sahilrajput03/learn-express/tree/main/learn-node/process-management)
