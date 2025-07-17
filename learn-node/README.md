@@ -4,6 +4,7 @@
 
 - ❤️ Learn Process Management in Nodejs: [Click here](./process-management/README.md)
   - Tags: `fork`, `spawn`, `exec`, `spawn`, kill-switch (switch process manager), `ipc`.
+- Reading input from STDIN in Nodejs: [Click here](./read-input-from-stdin)
 
 ## What are `optionalDependencies` in `package.json` (#npm)?
 
@@ -59,15 +60,14 @@ node --test --watch a.js
 - `n` – Interactively Manage Your Node.js Versions - [https://www.npmjs.com/package/n](https://www.npmjs.com/package/n)
 - Node.js introduced watch mode (`--watch`) in Node.js v18, which is an LTS (Long-Term Support) version.
 - Test Runner natively in nodejs - [https://nodejs.org/docs/latest-v22.x/api/test.html](https://nodejs.org/docs/latest-v22.x/api/test.html)
-(was officially released stable in node18)
+  (was officially released stable in node18)
 - Medium Article - [Click here](https://threkk.medium.com/i-tested-the-node-js-test-runner-so-you-dont-have-to-958b11db46ef)
 - Article - [Click here](https://nodesource.com/blog/11-features-nodeJS-18-to-try)
 - A gist by a developer - Node.js 18 Test Runner - [Click here](https://gist.github.com/subfuzion/11013a8435c9de5302430fd44c3f76a7#6-running-a-subset-of-tests)
 - Youtube - Testing Libraries: Testing: Mocha, Totally Tooling Tips (S3, E11): [Click here](https://www.youtube.com/watch?v=L48AjLVgXS4)
 - Nodesource:
-  - [https://nodesource.com/products/nsolid](https://nodesource.com/products/nsolid )
+  - [https://nodesource.com/products/nsolid](https://nodesource.com/products/nsolid)
   - [https://nodesource.com/about](https://nodesource.com/about)
-
 
 # When was node multi threading introduced? (ChatGPT)
 
