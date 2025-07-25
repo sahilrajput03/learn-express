@@ -18,6 +18,7 @@
     - Interesting middleware:
       - ❤️🚀🧨 Helpful to handle traffic (or host static-content sites) on subdomains easily: [vhost](https://expressjs.com/en/resources/middleware/vhost.html)
   - ❤️ Learn mocha: [Click here](./learn-mocha/README.md)
+  - learn assertions: [Click here](./learn-testing-assertions-with-jest/__test__/1.test.js)
 - **Docs:**
   - `expressjs` - Advanced topics:
     - Production best practices: performance and reliability: [Click here](https://expressjs.com/en/advanced/best-practice-performance.html#set-node_env-to-production)
