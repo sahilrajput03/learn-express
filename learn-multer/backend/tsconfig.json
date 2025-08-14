@@ -7,5 +7,7 @@
     "strict": true, /* Enable all strict type-checking options. */
     "skipLibCheck": true, /* Skip type checking all .d.ts files. */
     "outDir": "./dist" /* Specify an output folder for all emitted files. */,
+    // ❤️ Make `error` in a catch block default to `any`
+    "useUnknownInCatchVariables": false
   }
 }

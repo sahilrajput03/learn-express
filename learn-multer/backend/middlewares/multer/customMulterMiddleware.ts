@@ -3,7 +3,7 @@ import { upload } from "./multer"
 
 const multerError = (fieldName: string, maxAllowed: number) => `Please make sure you are uploading to \`${fieldName}\` field and not more than ${maxAllowed} file${maxAllowed > 1 ? 's' : ''}.`
 
-const handleMulterErrors = (req: any, res: any, next: any, fieldName: string, maxAllowed = 1) => (error: any) => {
+const handleMulterErrors = (req: any, res: any, next: any, fieldName: string, maxAllowed = 1) => (error) => {
     if (error instanceof multer.MulterError) {
         console.log('A Multer error occurred when uploading.') // [E.g., MulterError: Unexpected field]
         if (error.name === "MulterError" && error.message === 'Unexpected field') {

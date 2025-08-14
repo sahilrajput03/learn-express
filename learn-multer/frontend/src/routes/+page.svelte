@@ -30,7 +30,7 @@
 			// Asserting this alert is doable but its very inconsistant (flaky tests experience).
 			// alert('single file upload successful');
 			isSingleFileUploadSuccessful = true;
-		} catch (error: any) {
+		} catch (error) {
 			console.log('error?', error);
 			const { data } = error.response;
 			if (data.success === false) {
@@ -58,7 +58,7 @@
 			// Asserting this alert is doable but its very inconsistant (flaky tests experience).
 			// alert('multiple file upload successful');
 			isMultipleFileUploadSuccessful = true;
-		} catch (error: any) {
+		} catch (error) {
 			console.log('error?', error);
 			const { data } = error.response;
 			if (data.success === false) {

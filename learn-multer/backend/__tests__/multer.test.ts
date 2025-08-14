@@ -37,9 +37,7 @@ describe('multer uploads', () => {
             formData.append('photo', file);
 
             const payload = formData;
-            const config = {
-                headers: { 'Content-Type': 'multipart/form-data' }
-            };
+            const config = { headers: { 'Content-Type': 'multipart/form-data' } };
             const { data } = await api.post('/v2/single-image', payload, config);
             expect(data.success).toBe(true)
         })
@@ -51,9 +49,7 @@ describe('multer uploads', () => {
             // formData.append('photo', file);
 
             const payload = formData;
-            const config = {
-                headers: { 'Content-Type': 'multipart/form-data' }
-            };
+            const config = { headers: { 'Content-Type': 'multipart/form-data' } };
 
             let error
             try {
@@ -81,9 +77,7 @@ describe('multer uploads', () => {
             });
 
             const payload = formData;
-            const config = {
-                headers: { 'Content-Type': 'multipart/form-data' }
-            };
+            const config = { headers: { 'Content-Type': 'multipart/form-data' } };
 
             let error
             try {
@@ -140,9 +134,7 @@ describe('multer uploads', () => {
             // });
 
             const payload = formData;
-            const config = {
-                headers: { 'Content-Type': 'multipart/form-data' }
-            };
+            const config = { headers: { 'Content-Type': 'multipart/form-data' } };
 
             let error
             try {
@@ -171,9 +163,7 @@ describe('multer uploads', () => {
             });
 
             const payload = formData;
-            const config = {
-                headers: { 'Content-Type': 'multipart/form-data' }
-            };
+            const config = { headers: { 'Content-Type': 'multipart/form-data' } };
 
             let error
             try {
