@@ -9,14 +9,14 @@ const storage = multer.diskStorage({
     },
     filename: (req, file, cb) => {
         const id = uuid();
-        let extName = file.originalname.split(".").pop();
+        let extName = file.originalname.split(".").pop() as string;
         // In tests, when I upload a pdf file I'm facing the issue that any pdf
         //      file is uploaded with name e.g, `xxx....xxx.blob` (ending with
         //      .blob) in the `local-storage-for-tests` folder, and to fix this
         //      issue I'm using `mime` package to get proper file extension 
         //      ('pdf') from the mimetype ('application/pdf').
         if (extName === 'blob') {
-            extName = mime.extension(file.mimetype) // 'application/pdf' -> 'pdf'
+            extName = mime.extension(file.mimetype) as string // 'application/pdf' -> 'pdf'
         }
         const fileName = `${id}.${extName}`
         cb(null, fileName);
