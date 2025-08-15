@@ -50,6 +50,14 @@ For full _hot+flash+database_connected_ please refer to `testing-hot-flash` dire
 
 - Learn limiting concurrent requests with [`queue()`](https://caolan.github.io/async/v3/docs.html#queue) of [`async`](https://caolan.github.io/async/v3/) library (awesome): [Click here](learn-limiting-concurrent-requests.md)
 
+## MVC - Model View Controller Pattern
+
+*tldr; I like my own pattern I have instead of model view controller. ~ Sahil*
+
+[Click here](https://chatgpt.com/c/689f40ed-f93c-8320-bf16-90af8e5edb6b)
+
+
+
 ## AWESOME - ️️️️️️❤️❤️ Always handle uncaught exception to help prevent your server crash on some random unhandled exception occurs
 
 ```ts
