@@ -54,7 +54,31 @@ For full _hot+flash+database_connected_ please refer to `testing-hot-flash` dire
 
 *tldr; I like my own pattern I have instead of model view controller. ~ Sahil*
 
-[Click here](https://chatgpt.com/c/689f40ed-f93c-8320-bf16-90af8e5edb6b)
+Source: [Click here](https://chatgpt.com/c/689f40ed-f93c-8320-bf16-90af8e5edb6b)
+
+```js
+// MODEL - models/userModel.js
+const users = [{ id: 1, name: "Alice" }]; // Fake data instead of DB
+exports.getUserById = (id) => {
+  return users.find(user => user.id === id);
+};
+
+
+// VIEW - views/userView.js
+exports.renderUser = (user) => { return `<h1>User: ${user.name}</h1>`; };
+
+
+// CONTROLLER - controllers/userController.js
+exports.getUserPage = (req, res) => {
+  const user = UserModel.getUserById(1);    // MODEL
+  const html = UserView.renderUser(user);   // VIEW
+  res.send(html);
+};                                           // CONTROLLER
+
+
+// ROUTER - app.js
+app.get("/user", userController.getUserPage);
+```
 
 
 
