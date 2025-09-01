@@ -25,12 +25,22 @@ const notifier = require('node-notifier');
 // String
 notifier.notify('Message');
 
-// Object
-notifier.notify({
-    sound: true,
-    title: 'My notification',
-    message: 'Hello, there!'
-});
+// Tested on macOS  [Docs: https://www.npmjs.com/package/node-notifier]
+const sounds = [true /* default=Bottle */, "Basso", "Blow", "Bottle", "Frog", "Funk", "Glass", "Hero", "Morse", "Ping", "Pop", "Purr", "Sosumi", "Submarine", "Tink"];
+
+(async () => {
+    for (const sound of sounds) {
+        await new Promise(res => setTimeout(res, 3_000));
+        notifier.notify({
+            sound: sound,
+            title: 'My notification',
+            message: 'Hello, there! Sound:' + sound,
+            timeout: 2, // (default=10) Alias for expire-time, time etc. Time before notify-send expires. Defaults to 10 seconds.
+        });
+    }
+})();
+
+// ❤️ Good Sounds: blow, funk, glass, hero, sosumi, submarine
 ```
 
 ## What are `optionalDependencies` in `package.json` (#npm)?
