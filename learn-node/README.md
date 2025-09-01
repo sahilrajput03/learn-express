@@ -28,13 +28,22 @@ So here we can install this dependecy as optional dependency instead like that -
 
 # Nodejs Features
 
-```bash
-# Watch a script (without using nodemon) ❤️
-node --watch a.js
+**Watch a script (without using nodemon) ❤️:**
 
-### TESTING - Add below code to a.js
-import assert from "assert";
-import test from "node:test";
+```bash
+node --watch a.js
+```
+
+**Testing:**
+
+```
+# FILE: a.js
+// * For ES module
+// import assert from "assert";
+// import test from "node:test";
+// * For commonjs
+const test = require('node:test');
+const assert = require('assert');
 test('car', () => { assert(1 === 1); });
 
 # Run test once
@@ -44,8 +53,9 @@ node --test a.js
 node --watch a.js
 ```
 
+**Evaluate expression:**
+
 ```
-# Evaluate expression
 node -p "3+3"
 # OUTPUT: 6
 
