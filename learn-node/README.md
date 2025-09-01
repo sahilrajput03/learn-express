@@ -28,7 +28,7 @@ So here we can install this dependecy as optional dependency instead like that -
 
 # Nodejs Features
 
-**Watch a script (without using nodemon) ❤️:**
+**Watch a script, without using nodemon❤️:**
 
 ```bash
 node --watch a.js
