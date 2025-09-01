@@ -6,6 +6,33 @@
   - Tags: `fork`, `spawn`, `exec`, `spawn`, kill-switch (switch process manager), `ipc`.
 - Reading input from STDIN in Nodejs: [Click here](./read-input-from-stdin)
 
+## System notifications via nodejs (Tested on MacOS)
+
+```bash
+npm i node-notifier
+```
+
+Sample code:
+
+```js
+// https://www.npmjs.com/package/node-notifier
+
+// & This is probably be helpful to alert me when tests are finished running 
+// & because I'm gonna run tests only locally for some time and I need some
+// & sound effect to be alerted when its done.
+
+const notifier = require('node-notifier');
+// String
+notifier.notify('Message');
+
+// Object
+notifier.notify({
+    sound: true,
+    title: 'My notification',
+    message: 'Hello, there!'
+});
+```
+
 ## What are `optionalDependencies` in `package.json` (#npm)?
 
 Optional dependencies are not critical for your package to work — if they fail to install (e.g., due to OS incompatibility), the installation will continue without them. ([ChatGPT](https://chatgpt.com/c/68078ac5-a998-8007-b64e-d9651932e858))
