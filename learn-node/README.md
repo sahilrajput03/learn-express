@@ -29,9 +29,23 @@ So here we can install this dependecy as optional dependency instead like that -
 # Nodejs Features
 
 ```bash
+# Watch a script (without using nodemon) ❤️
 node --watch a.js
-# watch a script (without using nodemon) ❤️
 
+### TESTING - Add below code to a.js
+import assert from "assert";
+import test from "node:test";
+test('car', () => { assert(1 === 1); });
+
+# Run test once
+node --test a.js
+
+# Run test in watch mode
+node --watch a.js
+```
+
+```
+# Evaluate expression
 node -p "3+3"
 # OUTPUT: 6
 
@@ -42,17 +56,6 @@ node -p "console.log('hello')"
 
 node -p process.env
 // OUTPUT: (prints environment variables)
-
-### TESTING - Add below code to a.js
-import assert from "assert";
-import test from "node:test";
-test('car', () => { assert(1 === 1); });
-
-# Run test
-node --test a.js
-
-# Run test in watch mode
-node --test --watch a.js
 ```
 
 # `n` (package), Native Test Runner, Watch mode
