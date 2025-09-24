@@ -6,6 +6,12 @@
   - Tags: `fork`, `spawn`, `exec`, `spawn`, kill-switch (switch process manager), `ipc`.
 - Reading input from STDIN in Nodejs: [Click here](./read-input-from-stdin)
 
+## Saving data in files for web application - Paul Graham
+
+[ChatGPT](https://chatgpt.com/c/68d28e32-f6c0-832a-92ac-37237e0f9fa5)
+
+- `proper-lockfile`: [npm](https://www.npmjs.com/package/proper-lockfile/v/1.1.0)
+
 ## System notifications via nodejs (Tested on MacOS)
 
 ```bash
