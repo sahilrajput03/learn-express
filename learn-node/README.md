@@ -12,6 +12,25 @@
 
 - `proper-lockfile`: [npm](https://www.npmjs.com/package/proper-lockfile/v/1.1.0)
 
+My test usage:
+
+```js
+const lockfile = require('proper-lockfile');
+
+const FILE = "a.txt";
+async function main() {
+    // Learn: Below command creates a file `a.js.lock`
+    await lockfile.lock(FILE); // acquire lock
+    console.log('file locked ✅ 🔒');
+    setTimeout(async () => {
+        // Learn: Below command deleted the file `a.js.lock`
+        await lockfile.unlock(FILE); // release lock
+        console.log('file unlocked ✅ 🔓');
+    }, 5_000);
+}
+main();
+```
+
 ## System notifications via nodejs (Tested on MacOS)
 
 ```bash
