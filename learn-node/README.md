@@ -6,6 +6,16 @@
   - Tags: `fork`, `spawn`, `exec`, `spawn`, kill-switch (switch process manager), `ipc`.
 - Reading input from STDIN in Nodejs: [Click here](./read-input-from-stdin)
 
+## Using events in nodejs
+
+```js
+const EventEmitter = require('events');
+const emitter = new EventEmitter();
+emitter.on('wwebjs-client-ready', () => console.log('✅'));
+
+setInterval(() => emitter.emit('flagChanged', true), 1_000);
+```
+
 ## Saving data in files for web application - Paul Graham
 
 [ChatGPT](https://chatgpt.com/c/68d28e32-f6c0-832a-92ac-37237e0f9fa5)
