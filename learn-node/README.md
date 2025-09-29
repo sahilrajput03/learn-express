@@ -6,7 +6,13 @@
   - Tags: `fork`, `spawn`, `exec`, `spawn`, kill-switch (switch process manager), `ipc`.
 - Reading input from STDIN in Nodejs: [Click here](./read-input-from-stdin)
 
+## Does `uuid` library and `crypto.randomUUID()` generates uuid in same pattern?
+
+tldr; YES. [ChatGPT](https://chatgpt.com/c/68dad910-9fa0-8329-8a36-016a874bf2be)
+
 ## Using events in nodejs
+
+*FYI: We can pass `data` via the events as well. Source: [ChatGPT](https://chatgpt.com/c/68d966fd-ff8c-832f-b92a-db0905a17f36)*
 
 ```js
 const EventEmitter = require('events');
