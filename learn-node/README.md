@@ -6,6 +6,84 @@
   - Tags: `fork`, `spawn`, `exec`, `spawn`, kill-switch (switch process manager), `ipc`.
 - Reading input from STDIN in Nodejs: [Click here](./read-input-from-stdin)
 
+## Does `uuid` library and `crypto.randomUUID()` generates uuid in same pattern?
+
+tldr; YES. [ChatGPT](https://chatgpt.com/c/68dad910-9fa0-8329-8a36-016a874bf2be)
+
+## Using events in nodejs
+
+*FYI: We can pass `data` via the events as well. Source: [ChatGPT](https://chatgpt.com/c/68d966fd-ff8c-832f-b92a-db0905a17f36)*
+
+```js
+const EventEmitter = require('events');
+const emitter = new EventEmitter();
+emitter.on('wwebjs-client-ready', () => console.log('✅'));
+
+setInterval(() => emitter.emit('flagChanged', true), 1_000);
+```
+
+## Saving data in files for web application - Paul Graham
+
+[ChatGPT](https://chatgpt.com/c/68d28e32-f6c0-832a-92ac-37237e0f9fa5)
+
+- `proper-lockfile`: [npm](https://www.npmjs.com/package/proper-lockfile/v/1.1.0)
+
+My test usage:
+
+```js
+const lockfile = require('proper-lockfile');
+
+const FILE = "a.txt";
+async function main() {
+    // Learn: Below command creates a file `a.js.lock`
+    await lockfile.lock(FILE); // acquire lock
+    console.log('file locked ✅ 🔒');
+    setTimeout(async () => {
+        // Learn: Below command deleted the file `a.js.lock`
+        await lockfile.unlock(FILE); // release lock
+        console.log('file unlocked ✅ 🔓');
+    }, 5_000);
+}
+main();
+```
+
+## System notifications via nodejs (Tested on MacOS)
+
+```bash
+npm i node-notifier
+```
+
+Sample code:
+
+```js
+// https://www.npmjs.com/package/node-notifier
+
+// & This is probably be helpful to alert me when tests are finished running 
+// & because I'm gonna run tests only locally for some time and I need some
+// & sound effect to be alerted when its done.
+
+const notifier = require('node-notifier');
+// String
+notifier.notify('Message');
+
+// Tested on macOS  [Docs: https://www.npmjs.com/package/node-notifier]
+const sounds = [true /* default=Bottle */, "Basso", "Blow", "Bottle", "Frog", "Funk", "Glass", "Hero", "Morse", "Ping", "Pop", "Purr", "Sosumi", "Submarine", "Tink"];
+
+(async () => {
+    for (const sound of sounds) {
+        await new Promise(res => setTimeout(res, 3_000));
+        notifier.notify({
+            sound: sound,
+            title: 'My notification',
+            message: 'Hello, there! Sound:' + sound,
+            timeout: 2, // (default=10) Alias for expire-time, time etc. Time before notify-send expires. Defaults to 10 seconds.
+        });
+    }
+})();
+
+// ❤️ Good Sounds: blow, funk, glass, hero, sosumi, submarine
+```
+
 ## What are `optionalDependencies` in `package.json` (#npm)?
 
 Optional dependencies are not critical for your package to work — if they fail to install (e.g., due to OS incompatibility), the installation will continue without them. ([ChatGPT](https://chatgpt.com/c/68078ac5-a998-8007-b64e-d9651932e858))
@@ -28,10 +106,34 @@ So here we can install this dependecy as optional dependency instead like that -
 
 # Nodejs Features
 
+**Watch a script, without using nodemon❤️:**
+
 ```bash
 node --watch a.js
-# watch a script (without using nodemon) ❤️
+```
 
+**Testing:**
+
+```
+# FILE: a.js
+// * For ES module
+// import assert from "assert";
+// import test from "node:test";
+// * For commonjs
+const test = require('node:test');
+const assert = require('assert');
+test('car', () => { assert(1 === 1); });
+
+# Run test once
+node --test a.js
+
+# Run test in watch mode
+node --watch a.js
+```
+
+**Evaluate expression:**
+
+```
 node -p "3+3"
 # OUTPUT: 6
 
@@ -42,17 +144,6 @@ node -p "console.log('hello')"
 
 node -p process.env
 // OUTPUT: (prints environment variables)
-
-### TESTING - Add below code to a.js
-import assert from "assert";
-import test from "node:test";
-test('car', () => { assert(1 === 1); });
-
-# Run test
-node --test a.js
-
-# Run test in watch mode
-node --test --watch a.js
 ```
 
 # `n` (package), Native Test Runner, Watch mode
