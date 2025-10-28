@@ -4,8 +4,8 @@ const { spawn } = require('child_process');
 const fs = require('fs');
 
 // Inspiration: https://chatgpt.com/c/6900c7c1-a108-8321-ae56-981d9bd2916c
-// Note: 1. All processes spawned are automatically killed with exit of this program when you press ctrl+c. [TESTED]
-// Note: 2. To know which proceses are running alreayd you can run `pgrep -f b-app.js`
+// Note: 1. All processes spawned are automatically killed when you press ctrl+c there are no orphan processes. [TESTED]
+// Note: 2. To know which proceses are running currently you can run `pgrep -f b-app.js` from another terminal.
 // Note: This app does two things - (1) restart app when there are file changes and (2) restart when app crashes with non-zero exit code.
 const APP_FILE = 'b-app.js'; // your main app file
 let proc = null;
