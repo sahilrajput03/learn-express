@@ -17,7 +17,7 @@ if (0 /* Use 1=enable and 0=disable debug logs*/) { console.debug = (...argument
 if (1 /* Use 1=enable and 0=disable warn logs*/) { console.warn = (...arguments) => { console.log("\t🟢(warn) ", ...arguments); }; } else { console.debug = () => { }; }
 
 // To be able remove this exit listeners on restart logics we must have a reference to this function
-function launchProcOnExit(exitCode) {
+function recoverProcOnExit(exitCode) {
     if (exitCode !== 0) {
         console.warn(`⚠️ App crashed with code ${exitCode}. Restarting in 2s... 🚀`);
         // We delay restart to prevent crash loops and allow the OS to clean up memory, file handles, or ports.
@@ -28,7 +28,7 @@ function launchProcOnExit(exitCode) {
 
 function start() {
     proc = spawn('node', [APP_FILE], { stdio: 'inherit' });
-    proc.on('exit', launchProcOnExit);
+    proc.on('exit', recoverProcOnExit);
 }
 // Start the app initially
 start();
@@ -62,7 +62,7 @@ function restartAppOnFileChange(reason) {
             console.debug('proc KILLED 💥', proc.pid);
         }
         // Remove earlier 'exit' listener to prevent its own app start logic
-        proc.off('exit', launchProcOnExit);
+        proc.off('exit', recoverProcOnExit);
         start();
     } else {
         // For debugging only
