@@ -1,14 +1,14 @@
 # README
 
-Reap benefits of hot module replacement with express server. One big benefit is that you won't need to wait for connecting to database on each change whenever you save new changes in your server anymore.
+Hot module replacement with express server.
 
-Source: https://github.com/sidorares/hot-module-replacement
+**Benefits:**
+- Database connection is cached thus on hot reload the older db connectoin can be reused instead of reconnecting again.
 
-I forked above repo at my https://github.com/sahilrajput03/hot-module-replacement github account as well.
-
-*Another promising project(from the readme of `sidorares` repo): https://github.com/darul75/express-hot-reload*
-*Another promising project: https://github.com/shimondoodkin/node-hot-reload*
-
+- Used npm package - `hot-module-replacement`: [Github](https://github.com/sidorares/hot-module-replacement)
+  - (my fork) https://github.com/sahilrajput03/hot-module-replacement github account as well.
+- *Another promising project(from the readme of `sidorares` repo): https://github.com/darul75/express-hot-reload*
+- *Another promising project: https://github.com/shimondoodkin/node-hot-reload*
 
 ## Amazing article which I used to make my own hot-reloading utility
 
