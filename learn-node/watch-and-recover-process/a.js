@@ -5,7 +5,7 @@ const fs = require('fs');
 
 // Inspiration: https://chatgpt.com/c/6900c7c1-a108-8321-ae56-981d9bd2916c
 // Note: 1. All processes spawned are automatically killed when you press ctrl+c there are no orphan processes. [TESTED]
-// Note: 2. To know which proceses are running currently you can run `pgrep -f b-app.js` from another terminal.
+// Note: 2. To know which processes are running currently you can run `pgrep -f b-app.js` from another terminal.
 // Note: This app does two things - (1) restart app when there are file changes and (2) restart when app crashes with non-zero exit code.
 const APP_FILE = 'b-app.js'; // your main app file
 let proc = null;
@@ -20,7 +20,7 @@ if (1 /* Use 1=enable and 0=disable warn logs*/) { console.warn = (...arguments)
 function launchProcOnExit(exitCode) {
     if (exitCode !== 0) {
         console.warn(`⚠️ App crashed with code ${exitCode}. Restarting in 2s... 🚀`);
-        // We delay restart to prevent crash loops and allows the OS to clean up memory, file handles, or ports.
+        // We delay restart to prevent crash loops and allow the OS to clean up memory, file handles, or ports.
         isRecoveringProc = true;
         setTimeout(() => { start(); isRecoveringProc = false; }, 2_000);
     } else { console.debug('App exited gracefully (exitCode=0). ✅'); }
@@ -40,12 +40,12 @@ fs.watch('.', { recursive: true }, (eventType, filename) => {
     if (filename.startsWith('node_modules/')) { return; } // ignore file saves in node_modules folder
     // Learn: This ensures only one callback fires for rapid
     //        successive events. This is necessary because when any file is
-    //        changd multiple events are fired on windows and macos i.e,
+    //        changed multiple events are fired on windows and macos i.e,
     //        'change' and 'rename'.
     clearTimeout(timeout);
     timeout = setTimeout(() => {
         // console.log(`File changed: ${filename}`);
-        // App restat logic
+        // App restart logic
         restartAppOnFileChange(`file change: ${filename}`);
     }, 100); // wait 100ms to avoid duplicate triggers
 });
