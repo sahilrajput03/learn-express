@@ -1,0 +1,73 @@
+#!/usr/bin/env node
+// @ts-nocheck
+const { spawn } = require('child_process');
+const fs = require('fs');
+
+// Inspiration: https://chatgpt.com/c/6900c7c1-a108-8321-ae56-981d9bd2916c
+// Note: 1. All processes spawned are automatically killed when you press ctrl+c there are no orphan processes. [TESTED]
+// Note: 2. To know which processes are running you can use another terminal to run `pgrep -f app.js` (considering you passes `app.js` to wrp.js as argument).
+// Note: We do two things - (1) restart proc when there are file changes and (2) restart when proc crashes with non-zero exit code.
+const PROC_FILE = process.argv[2]; // your proc file
+let proc = null;
+function isProcRunning() { return proc.exitCode === null; };
+let isRestartingProcOnFileChange = false;
+let isRecoveringProcOnCrash = false;
+
+if (0 /* Use 1=enable and 0=disable debug logs*/) { console.debug = (...arguments) => { console.log("\t🛑(debug)", ...arguments); }; } else { console.debug = () => { }; }
+if (1 /* Use 1=enable and 0=disable warn logs*/) { console.info = (...arguments) => { console.log("\t🟢(info) ", ...arguments); }; } else { console.info = () => { }; }
+
+// To be able remove this exit listeners on restart logics we must have a reference to this function
+function recoverProcOnCrash(exitCode) {
+    if (exitCode !== 0) {
+        console.info(`⚠️ Proc crashed with code ${exitCode}. Restarting in 2s... 🚀`);
+        // We delay restart to prevent crash loops and allow the OS to clean up memory, file handles, or ports.
+        isRecoveringProcOnCrash = true;
+        setTimeout(() => { start(); isRecoveringProcOnCrash = false; }, 2_000);
+    } else { console.debug('Proc exited gracefully (exitCode=0). ✅'); }
+}
+
+function start() {
+    proc = spawn('node', [PROC_FILE], { stdio: 'inherit' });
+    proc.on('exit', recoverProcOnCrash);
+}
+// Start the proc initially
+start();
+
+// Watch files changes
+let timeout;
+fs.watch('.', { recursive: true }, (_eventType, filename) => {
+    if (filename.startsWith('.git/')) { return; } // ignore file saves in .git folder
+    if (filename.startsWith('node_modules/')) { return; } // ignore file saves in node_modules folder
+    // Learn: This ensures only one callback fires for rapid
+    //        successive events. This is necessary because when any file is
+    //        changed multiple events (2) are fired on macos [TESTED] probably
+    //        'change' and 'rename'.
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+        // console.log(`File changed: ${filename}`);
+        // Proc restart logic
+        restartProcOnFileChange(`file change: ${filename}`);
+    }, 100); // wait 100ms to avoid duplicate triggers
+});
+
+function restartProcOnFileChange(reason) {
+    if (isRecoveringProcOnCrash) { return console.debug('✅Cancelled restarting proc becoz recovering previous proc is in progres already.'); }
+    isRestartingProcOnFileChange = true;
+    console.debug("function - restartProcOnFileChange(..): 🚀 ~ reason:", reason);
+    if (proc) {
+        console.info(`🔄 Restarting proc due to ${reason}...`);
+        if (isProcRunning()) {
+            // Does not throw error when process was not running already [TESTED]
+            proc?.kill();
+            console.debug('proc KILLED 💥', proc.pid);
+        }
+        // Remove earlier 'exit' listener to prevent its own proc start logic
+        proc.off('exit', recoverProcOnCrash);
+        start();
+    } else {
+        // For debugging only
+        if (!proc) console.debug('proc is null.');
+        if (!isProcRunning()) console.debug('proc is *NOT* running.');
+    }
+    isRestartingProcOnFileChange = false;
+}
