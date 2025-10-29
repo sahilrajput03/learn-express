@@ -3,7 +3,9 @@
 const { spawn } = require('child_process');
 const fs = require('fs');
 
-// Usage: ./wrp node app.js --tag=proj1
+// USAGE: (I have added alias to .zshrc file --- alias wrp='~/Documents/github_repos/learn-express/learn-node/watch-and-recover-process/wrp')
+//  wrp node app.js --tag=proj1
+//  wrp ts-node --transpileOnly src/server.ts --tag=proj1
 //      Optionaly, we pass `--tag=proj1` so that we can filter easily in process list (htop, top, etc)
 
 // & Please use command `tail -f .log` to view live logs because vscode shows delayed logs.
@@ -59,6 +61,7 @@ fs.watch('.', { recursive: true }, (_eventType, filename) => {
     if (filename.startsWith('.git/')) { return; } // ignore file saves in .git folder
     if (filename.startsWith('node_modules/')) { return; } // ignore file saves in node_modules folder
     if (filename === logFile) { return; }
+    if (filename.startsWith('.ignored')) { return; }
     // Learn: This ensures only one callback fires for rapid
     //        successive events. This is necessary because when any file is
     //        changed multiple events (2) are fired on macos [TESTED] probably
@@ -92,3 +95,10 @@ function restartProcOnFileChange(reason) {
     }
     isRestartingProcOnFileChange = false;
 }
+
+process.on('SIGTERM', () => {
+    console.log('Got SIGTERM(15), Terminating process gracefully.');
+    // Necessary to kill proc on receiving sigterm otherwise it would be left orphaned.
+    proc?.kill();
+    process.exit(0); // exiting explicit is necessary to terminate this child process unless script finishes naturally
+});
