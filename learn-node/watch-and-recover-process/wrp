@@ -3,6 +3,9 @@
 const { spawn } = require('child_process');
 const fs = require('fs');
 
+// Why wrp? --- To have my own process manager like pm2 for server usage.
+// Why not use while loop in bash script to handle CRASH? --- (1) It is very unreliable and we can have orphan child processes and (2) I need a long term maintainable solution so using javascript is ideal.
+
 // USAGE: (I have added alias to .zshrc file --- alias wrp='~/Documents/github_repos/learn-express/learn-node/watch-and-recover-process/wrp')
 //  wrp node app.js --tag=proj1
 //  wrp ts-node --transpileOnly src/server.ts --tag=proj1
