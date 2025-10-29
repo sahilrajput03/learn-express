@@ -12,6 +12,7 @@ const fs = require('fs');
 //              wrp npx ts-node --transpileOnly src/server.ts --tag=proj1
 // (LINODE ✅)  nohup ~/Documents/wrp npx ts-node --transpileOnly src/server.ts --tag=qr-prod-backend > wrp.log 2>&1 &
 //              (wrp logs)   tail -f wrp.log
+// TODO: (VERY FUTURE SHIT) - For using the timed logs I can probably use a custom logger in my application which has the time PREFIX and i can easily enable disable it from .env file instead.
 
 
 // & Please use command `tail -f .log` to view live logs because vscode shows delayed logs.
