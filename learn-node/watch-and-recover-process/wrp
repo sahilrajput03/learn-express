@@ -9,12 +9,7 @@ const fs = require('fs');
 //      Optionaly, we pass `--tag=proj1` so that we can filter easily in process list (htop, top, etc)
 // USAGE: (I have added alias to .zshrc file --- alias wrp='~/Documents/github_repos/learn-express/learn-node/watch-and-recover-process/wrp')
 //              wrp node app.js --tag=proj1
-//              wrp npx ts-node --transpileOnly src/server.ts --tag=proj1
-// (LINODE ✅)  nohup ~/Documents/wrp npx ts-node --transpileOnly src/server.ts --tag=qr-prod-backend > wrp.log 2>&1 &
-// &            (wrp logs)   tail -f wrp.log
-// ^ NOTE: I AM NOT USING THIS FOR PROD_QR_BACKEND instead of pm2 by disabling the `pm2 reload ecoysystem..` in the github webhook listener code.
-// ^ TODO_FUTURE: (VERY FUTURE THING) - For using the timed logs I can probably use a custom logger in my application which has the time PREFIX and i can easily enable disable it from .env file instead.
-
+//              wrp npx ts-node --transpileOnly src/server.ts --tag=qr-prod-backend
 
 // & Please use command `tail -f .log` to view live logs because vscode shows delayed logs.
 //      To fix for vscode, the only reliable way is to close the log file with `cmd+w` and reopen it via `cmd+shift+t`.
