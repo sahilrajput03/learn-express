@@ -3,7 +3,7 @@
 const { spawn } = require('child_process');
 const fs = require('fs');
 
-// Usage: ./wrp app.js --tag=proj1
+// Usage: ./wrp node app.js --tag=proj1
 //      Optionaly, we pass `--tag=proj1` so that we can filter easily in process list (htop, top, etc)
 
 // & Please use command `tail -f .log` to view live logs because vscode shows delayed logs.
@@ -15,8 +15,6 @@ const logFile = '.log';
 // Note: 1. All processes spawned are automatically killed when you press ctrl+c there are no orphan processes. [TESTED]
 // Note: 2. To know which processes are running you can use another terminal to run `pgrep -f app.js` (considering you passes `app.js` to wrp.js as argument).
 // Note: We do two things - (1) restart proc when there are file changes and (2) restart when proc crashes with non-zero exit code.
-const PROC_FILE = process.argv[2]; // your proc file
-const PROC_ARGS = process.argv.slice(3); // Take all args from index 3 onward
 let proc = null;
 function isProcRunning() { return proc.exitCode === null; };
 let isRestartingProcOnFileChange = false;
@@ -39,7 +37,7 @@ function recoverProcOnCrash(exitCode) {
 
 function start() {
     // We pass comment suffix of `# wrp` so that when we search for `wrp` in htop, we get both wrp and its children proc as well.
-    proc = spawn('node', [PROC_FILE, ...PROC_ARGS, '# wrp'], { stdio: ['ignore', 'pipe', 'pipe'] /* must be 'pipe' to access streams */ });
+    proc = spawn(process.argv[2], [...process.argv.slice(3), '# wrp'], { stdio: ['ignore', 'pipe', 'pipe'] /* must be 'pipe' to access streams */ });
     proc.on('exit', recoverProcOnCrash);
     // Necessary to create new stream each time otherwise previous stream stops working after proc has exited on crash or killed by our restart logic both. [TESTED]
     logStream = fs.createWriteStream(logFile, { flags: 'a' });
