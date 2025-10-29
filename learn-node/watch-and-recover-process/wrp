@@ -44,7 +44,9 @@ function recoverProcOnCrash(exitCode) {
         setTimeout(() => { start(); isRecoveringProcOnCrash = false; }, 2_000);
     } else { console.debug('Proc exited gracefully (exitCode=0). ✅'); }
 }
-console.log(process.argv.slice(2));
+
+// Helpful for debugging
+console.debug(process.argv.slice(2));
 
 function start() {
     // We pass comment suffix of `# wrp` so that when we search for `wrp` in htop, we get both wrp and its children proc as well.
