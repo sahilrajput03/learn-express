@@ -7,9 +7,14 @@ const fs = require('fs');
 // Why not use while loop in bash script to handle CRASH? --- (1) It is very unreliable and we can have orphan child processes and (2) I need a long term maintainable solution so using javascript is ideal.
 
 // USAGE: (I have added alias to .zshrc file --- alias wrp='~/Documents/github_repos/learn-express/learn-node/watch-and-recover-process/wrp')
-//  wrp node app.js --tag=proj1
-//  wrp ts-node --transpileOnly src/server.ts --tag=proj1
+//          wrp node app.js --tag=proj1
+//          wrp npx ts-node --transpileOnly src/server.ts --tag=proj1
+// ! TESTING IN LINODE:
+// (LINODE) ✅ wrp npx ts-node --transpileOnly src/server.ts --tag=qr-prod-backend
 //      Optionaly, we pass `--tag=proj1` so that we can filter easily in process list (htop, top, etc)
+// ! BELOW COMMAND DOESN"T SEEM TO WORK FOR SOME REASON.
+// nohup ~/Documents/wrp npx ts-node --transpileOnly src/server.ts --tag=qr-prod-backend &
+
 
 // & Please use command `tail -f .log` to view live logs because vscode shows delayed logs.
 //      To fix for vscode, the only reliable way is to close the log file with `cmd+w` and reopen it via `cmd+shift+t`.
