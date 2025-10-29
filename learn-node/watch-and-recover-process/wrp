@@ -13,6 +13,7 @@ const fs = require('fs');
 // (LINODE ✅)  nohup ~/Documents/wrp npx ts-node --transpileOnly src/server.ts --tag=qr-prod-backend > wrp.log 2>&1 &
 //              (wrp logs)   tail -f wrp.log
 // TODO: (VERY FUTURE SHIT) - For using the timed logs I can probably use a custom logger in my application which has the time PREFIX and i can easily enable disable it from .env file instead.
+// !! NOTE: I AM NOT USING THIS FOR PROD_QR_BACKEND because on every push pm2 starts the app even if I have stopped the app before, this is because of logic inside the github-webhook listener probably.
 
 
 // & Please use command `tail -f .log` to view live logs because vscode shows delayed logs.
