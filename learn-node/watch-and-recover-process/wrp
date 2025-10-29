@@ -33,12 +33,12 @@ let isRecoveringProcOnCrash = false;
 let logStream;
 
 if (0 /* Use 1=enable and 0=disable debug logs*/) { console.debug = (...arguments) => { console.log("\t🛑(debug)", ...arguments); }; } else { console.debug = () => { }; }
-if (1 /* Use 1=enable and 0=disable warn logs*/) { console.info = (...arguments) => { console.log("\t🟢(info) ", ...arguments); }; } else { console.info = () => { }; }
+if (1 /* Use 1=enable and 0=disable info logs*/) { console.info = (...arguments) => { console.log("\t🟢(info) ", ...arguments); }; } else { console.info = () => { }; }
 
 // To be able remove this exit listeners on restart logics we must have a reference to this function
 function recoverProcOnCrash(exitCode) {
     if (exitCode !== 0) {
-        console.info(`⚠️ Proc crashed with code ${exitCode}. Restarting in 2s... 🚀`);
+        console.info(`⚠️ Proc crashed with code ${exitCode}. Restarting in 2s... 🚀`, getHumanReadableIndianTime());
         // We delay restart to prevent crash loops and allow the OS to clean up memory, file handles, or ports.
         isRecoveringProcOnCrash = true;
         setTimeout(() => { start(); isRecoveringProcOnCrash = false; }, 2_000);
@@ -93,7 +93,7 @@ function restartProcOnFileChange(reason) {
     isRestartingProcOnFileChange = true;
     console.debug("function - restartProcOnFileChange(..): 🚀 ~ reason:", reason);
     if (proc) {
-        console.info(`🔄 Restarting proc due to ${reason}...`);
+        console.info(`🔄 Restarting proc due to ${reason}...`, getHumanReadableIndianTime());
         if (isProcRunning()) {
             // Does not throw error when process was not running already [TESTED]
             proc?.kill();
@@ -116,3 +116,6 @@ process.on('SIGTERM', () => {
     proc?.kill();
     process.exit(0); // exiting explicit is necessary to terminate this child process unless script finishes naturally
 });
+
+function getHumanReadableIndianTime() { return getHumanReadableIndianTimeFromDate(new Date()); }
+function getHumanReadableIndianTimeFromDate(date) { return date.toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }); }; // Output: 20/2/2025, 9:07:18 pm
