@@ -6,7 +6,8 @@ const fs = require('fs');
 // Usage: ./wrp app.js --tag=proj1
 //      Optionaly, we pass `--tag=proj1` so that we can filter easily in process list (htop, top, etc)
 
-// Learn: Use command `tail -f .log` to view live logs.
+// & Please use command `tail -f .log` to view live logs because vscode shows delayed logs.
+//      To fix for vscode, the only reliable way is to close the log file with `cmd+w` and reopen it via `cmd+shift+t`.
 // Also, Using `.log` file extension helps vscode to show syntax highlights.
 const logFile = '.log';
 
