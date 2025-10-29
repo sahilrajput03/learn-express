@@ -97,7 +97,7 @@ function restartProcOnFileChange(reason) {
 }
 
 process.on('SIGTERM', () => {
-    console.log('Got SIGTERM(15), Terminating process gracefully.');
+    console.debug('Got SIGTERM(15), Terminating process gracefully.');
     // Necessary to kill proc on receiving sigterm otherwise it would be left orphaned.
     proc?.kill();
     process.exit(0); // exiting explicit is necessary to terminate this child process unless script finishes naturally
