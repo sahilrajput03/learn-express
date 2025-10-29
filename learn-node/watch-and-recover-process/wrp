@@ -39,7 +39,8 @@ function recoverProcOnCrash(exitCode) {
 
 function start() {
     // We pass comment suffix of `# wrp` so that when we search for `wrp` in htop, we get both wrp and its children proc as well.
-    proc = spawn(process.argv[2], [...process.argv.slice(3), '# wrp'], { stdio: ['ignore', 'pipe', 'pipe'] /* must be 'pipe' to access streams */ });
+    // Learn: We can not push logs to a file using `inherit` thus we are usin `pipe` below:
+    proc = spawn(process.argv[2], [...process.argv.slice(3), '# wrp'], { stdio: ['ignore', 'pipe', 'pipe'] /* must be 'pipe' to access streams */, env: { ...process.env, FORCE_COLOR: '1' /* Force color is necessary so that we see colored outputs. */ } });
     proc.on('exit', recoverProcOnCrash);
     // Necessary to create new stream each time otherwise previous stream stops working after proc has exited on crash or killed by our restart logic both. [TESTED]
     logStream = fs.createWriteStream(logFile, { flags: 'a' });
