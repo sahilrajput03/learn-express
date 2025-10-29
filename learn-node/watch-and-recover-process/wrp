@@ -6,6 +6,10 @@ const fs = require('fs');
 // Usage: ./wrp app.js --tag=proj1
 //      Optionaly, we pass `--tag=proj1` so that we can filter easily in process list (htop, top, etc)
 
+// Learn: Use command `tail -f .log` to view live logs.
+// Also, Using `.log` file extension helps vscode to show syntax highlights.
+const logFile = '.log';
+
 // Inspiration: https://chatgpt.com/c/6900c7c1-a108-8321-ae56-981d9bd2916c
 // Note: 1. All processes spawned are automatically killed when you press ctrl+c there are no orphan processes. [TESTED]
 // Note: 2. To know which processes are running you can use another terminal to run `pgrep -f app.js` (considering you passes `app.js` to wrp.js as argument).
@@ -16,6 +20,8 @@ let proc = null;
 function isProcRunning() { return proc.exitCode === null; };
 let isRestartingProcOnFileChange = false;
 let isRecoveringProcOnCrash = false;
+
+let logStream;
 
 if (0 /* Use 1=enable and 0=disable debug logs*/) { console.debug = (...arguments) => { console.log("\t🛑(debug)", ...arguments); }; } else { console.debug = () => { }; }
 if (1 /* Use 1=enable and 0=disable warn logs*/) { console.info = (...arguments) => { console.log("\t🟢(info) ", ...arguments); }; } else { console.info = () => { }; }
@@ -32,8 +38,18 @@ function recoverProcOnCrash(exitCode) {
 
 function start() {
     // We pass comment suffix of `# wrp` so that when we search for `wrp` in htop, we get both wrp and its children proc as well.
-    proc = spawn('node', [PROC_FILE, ...PROC_ARGS, '# wrp'], { stdio: 'inherit' });
+    proc = spawn('node', [PROC_FILE, ...PROC_ARGS, '# wrp'], { stdio: ['ignore', 'pipe', 'pipe'] /* must be 'pipe' to access streams */ });
     proc.on('exit', recoverProcOnCrash);
+    // Necessary to create new stream each time otherwise previous stream stops working after proc has exited on crash or killed by our restart logic both. [TESTED]
+    logStream = fs.createWriteStream(logFile, { flags: 'a' });
+    logStream.on('finish', () => { console.debug('Log stream closed'); });
+    // Pipe stdout and stderr to file
+    proc.stdout.pipe(logStream);
+    proc.stderr.pipe(logStream);
+    // We also log to console (optional)
+    proc.stdout.pipe(process.stdout);
+    proc.stderr.pipe(process.stderr);
+    // logStream.write('Hello world to stream.');
 }
 // Start the proc initially
 start();
@@ -43,6 +59,7 @@ let timeout;
 fs.watch('.', { recursive: true }, (_eventType, filename) => {
     if (filename.startsWith('.git/')) { return; } // ignore file saves in .git folder
     if (filename.startsWith('node_modules/')) { return; } // ignore file saves in node_modules folder
+    if (filename === logFile) { return; }
     // Learn: This ensures only one callback fires for rapid
     //        successive events. This is necessary because when any file is
     //        changed multiple events (2) are fired on macos [TESTED] probably
