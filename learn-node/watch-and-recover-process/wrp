@@ -14,7 +14,7 @@ const fs = require('fs');
 // & Please use command `tail -f .log` to view live logs because vscode shows delayed logs.
 //      To fix for vscode, the only reliable way is to close the log file with `cmd+w` and reopen it via `cmd+shift+t`.
 // Also, Using `.log` file extension helps vscode to show syntax highlights.
-const logFile = '.log';
+const LOG_FILE = '.log';
 
 // Inspiration: https://chatgpt.com/c/6900c7c1-a108-8321-ae56-981d9bd2916c
 // Note: 1. All processes spawned are automatically killed when you press ctrl+c there are no orphan processes. [TESTED]
@@ -46,7 +46,7 @@ function start() {
     proc = spawn(process.argv[2], [...process.argv.slice(3), '# wrp'], { stdio: ['ignore', 'pipe', 'pipe'] /* must be 'pipe' to access streams */, env: { ...process.env, FORCE_COLOR: '1' /* Force color is necessary so that we see colored outputs. */ } });
     proc.on('exit', recoverProcOnCrash);
     // Necessary to create new stream each time otherwise previous stream stops working after proc has exited on crash or killed by our restart logic both. [TESTED]
-    logStream = fs.createWriteStream(logFile, { flags: 'a' });
+    logStream = fs.createWriteStream(LOG_FILE, { flags: 'a' });
     logStream.on('finish', () => { console.debug('Log stream closed'); });
     // Pipe stdout and stderr to file
     proc.stdout.pipe(logStream);
@@ -64,7 +64,7 @@ let timeout;
 fs.watch('.', { recursive: true }, (_eventType, filename) => {
     if (filename.startsWith('.git/')) { return; } // ignore file saves in .git folder
     if (filename.startsWith('node_modules/')) { return; } // ignore file saves in node_modules folder
-    if (filename === logFile) { return; }
+    if (filename === LOG_FILE) { return; }
     if (filename.startsWith('.ignored')) { return; }
     // Learn: This ensures only one callback fires for rapid
     //        successive events. This is necessary because when any file is
