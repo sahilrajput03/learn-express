@@ -6,14 +6,12 @@ const fs = require('fs');
 // Why wrp? --- To have my own process manager like pm2 for server usage.
 // Why not use while loop in bash script to handle CRASH? --- (1) It is very unreliable and we can have orphan child processes and (2) I need a long term maintainable solution so using javascript is ideal.
 
-// USAGE: (I have added alias to .zshrc file --- alias wrp='~/Documents/github_repos/learn-express/learn-node/watch-and-recover-process/wrp')
-//          wrp node app.js --tag=proj1
-//          wrp npx ts-node --transpileOnly src/server.ts --tag=proj1
-// ! TESTING IN LINODE:
-// (LINODE) ✅ wrp npx ts-node --transpileOnly src/server.ts --tag=qr-prod-backend
 //      Optionaly, we pass `--tag=proj1` so that we can filter easily in process list (htop, top, etc)
-// ! BELOW COMMAND DOESN"T SEEM TO WORK FOR SOME REASON.
-// nohup ~/Documents/wrp npx ts-node --transpileOnly src/server.ts --tag=qr-prod-backend &
+// USAGE: (I have added alias to .zshrc file --- alias wrp='~/Documents/github_repos/learn-express/learn-node/watch-and-recover-process/wrp')
+//              wrp node app.js --tag=proj1
+//              wrp npx ts-node --transpileOnly src/server.ts --tag=proj1
+// (LINODE ✅)  nohup ~/Documents/wrp npx ts-node --transpileOnly src/server.ts --tag=qr-prod-backend > wrp.log 2>&1 &
+// (wrp logs)   tail -f wrp.log
 
 
 // & Please use command `tail -f .log` to view live logs because vscode shows delayed logs.
@@ -44,6 +42,7 @@ function recoverProcOnCrash(exitCode) {
         setTimeout(() => { start(); isRecoveringProcOnCrash = false; }, 2_000);
     } else { console.debug('Proc exited gracefully (exitCode=0). ✅'); }
 }
+console.log(process.argv.slice(2));
 
 function start() {
     // We pass comment suffix of `# wrp` so that when we search for `wrp` in htop, we get both wrp and its children proc as well.
@@ -70,6 +69,8 @@ fs.watch('.', { recursive: true }, (_eventType, filename) => {
     if (filename.startsWith('.git/')) { return; } // ignore file saves in .git folder
     if (filename.startsWith('node_modules/')) { return; } // ignore file saves in node_modules folder
     if (filename === LOG_FILE) { return; }
+    if (filename === "nohup.out") { return; }
+    if (filename === "wrp.log") { return; }
     if (filename.startsWith('.ignored')) { return; }
     // Learn: This ensures only one callback fires for rapid
     //        successive events. This is necessary because when any file is
