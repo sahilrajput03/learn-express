@@ -3,7 +3,7 @@
 const { spawn } = require('child_process');
 const fs = require('fs');
 
-// Why wrp (watch-recover-process)? --- To have my own process manager like pm2 for server usage.
+// Why wrp (watch-and-recover-process)? --- To have my own process manager like pm2 for server usage.
 //          Tags: My own implementation of nodemon which refreshes on crash as well.
 // Why not use while loop in bash script to handle CRASH? --- (1) It is very unreliable and we can have orphan child processes and (2) I need a long term maintainable solution so using javascript is ideal.
 
