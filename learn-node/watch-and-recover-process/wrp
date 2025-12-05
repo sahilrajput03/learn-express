@@ -20,6 +20,7 @@ const fs = require('fs');
 //          Also, Using `.log` file extension helps vscode to show syntax highlights.
 //      3. View wrp logs via: `tail -f wrp.log -n100` // & Logs
 //      4. View all processes via: wrpLs (alias for `pgrep -fa wrp`) // & List wrp processes
+//      5. Kill the process via kiling the parent PID via `kill PID` // ! Kill a process run by wrp
 const LOG_FILE = '.log';
 
 // Inspiration: https://chatgpt.com/c/6900c7c1-a108-8321-ae56-981d9bd2916c
