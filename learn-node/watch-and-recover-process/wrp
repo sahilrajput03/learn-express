@@ -13,7 +13,7 @@ const fs = require('fs');
 //              wrp node app.js --tag=proj1
 //              wrp npx ts-node --transpileOnly src/server.ts --tag=qr-prod-backend
 //              nohup ~/Documents/wrp npx ts-node --transpileOnly src/server.ts --tag=qr-prod-backend > wrp.log 2>&1 &
-//              nohup ~/Documents/wrp node sqlite3-sseMcpServer.js --tag=sqlite3-sseMcpServer > wrp.log 2>&1 &
+//              nohup ~/Documents/wrp nodemon sqlite3-sseMcpServer.js --tag=sqlite3-sseMcpServer > wrp.log 2>&1 &
 //      & Learn: `tail` Use optional -n (alias for `--lines`) -n100 to show last 100 lines instead of default last 10 lines.
 //      2. View app logs via: `tail -f .log -n100` to view live logs because vscode shows delayed logs. To fix for vscode, the only
 //          reliable way is to close the log file with `cmd+w` and reopen it via `cmd+shift+t`.
