@@ -19,7 +19,9 @@ const fs = require('fs');
 //          reliable way is to close the log file with `cmd+w` and reopen it via `cmd+shift+t`.
 //          Also, Using `.log` file extension helps vscode to show syntax highlights.
 //      3. View wrp logs via: `tail -f wrp.log -n100` // & Logs
-//      4. View all processes via: wrpLs (alias for `pgrep -fa wrp`) // & List wrp processes
+//   &  4. List wrp processes
+//              wrp.ls              (alias for `pgrep -fa /wrp`)
+//              wrp.ls.withKids     (alias for `pgrep -fa wrp`)
 //      5. Kill the process via kiling the parent PID via `kill PID` // ! Kill a process run by wrp
 const LOG_FILE = '.log';
 
