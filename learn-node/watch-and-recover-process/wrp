@@ -5,24 +5,26 @@ const fs = require('fs');
 
 // Why wrp (watch-and-recover-process)? --- To have my own process manager like pm2 for server usage.
 //          Tags: My own implementation of nodemon which refreshes on crash as well.
-// Why not use while loop in bash script to handle CRASH? --- (1) It is very unreliable and we can have orphan child processes and (2) I need a long term maintainable solution so using javascript is ideal.
+//      Q. Why not use while loop in bash script to handle CRASH? --- (1) It is very unreliable and we can have orphan child processes and (2) I need a long term maintainable solution so using javascript is ideal.
 
-//      Optionaly, we pass `--tag=proj1` so that we can filter easily in process list (htop, top, etc)
 // USAGE: (I have added alias to .zshrc file --- alias wrp='~/Documents/github_repos/learn-express/learn-node/watch-and-recover-process/wrp')
-//      1. Commands:
+//  &   1. Commands
 //              wrp node app.js --tag=proj1
 //              wrp npx ts-node --transpileOnly src/server.ts --tag=qr-prod-backend
 //              nohup ~/Documents/wrp npx ts-node --transpileOnly src/server.ts --tag=qr-prod-backend > wrp.log 2>&1 &
 //              nohup ~/Documents/wrp nodemon sqlite3-sseMcpServer.js --tag=sqlite3-sseMcpServer > wrp.log 2>&1 &
-//      & Learn: `tail` Use optional -n (alias for `--lines`) -n100 to show last 100 lines instead of default last 10 lines.
-//      2. View app logs via: `tail -f .log -n100` to view live logs because vscode shows delayed logs. To fix for vscode, the only
+//                      (Optionaly, we pass `--tag=proj1` so that we can filter easily in process list (htop, top, etc))
+//   &  2. View Logs
+//         - `tail -f .log -n100` (APP LOGS) (Learn: Vscode shows delayed logs, TESTED) --- To fix for vscode's issue, the only
 //          reliable way is to close the log file with `cmd+w` and reopen it via `cmd+shift+t`.
-//          Also, Using `.log` file extension helps vscode to show syntax highlights.
-//      3. View wrp logs via: `tail -f wrp.log -n100` // & Logs
-//   &  4. List wrp processes
+//              Tip: `tail` Use optional -n (alias for `--lines`) -n100 to show last 100 lines instead of default last 10 lines.
+//              Tip: Using `.log` file extension helps vscode to show syntax highlights.
+//         - `tail -f wrp.log -n100` (wrp logs)
+//   &  3. List wrp processes
 //              wrp.ls              (alias for `pgrep -fa /wrp`)
 //              wrp.ls.withKids     (alias for `pgrep -fa wrp`)
-//      5. Kill the process via kiling the parent PID via `kill PID` // ! Kill a process run by wrp
+//   !  4. Kill a wrp process by kiling the parent process via `kill PID`
+
 const LOG_FILE = '.log';
 
 // Inspiration: https://chatgpt.com/c/6900c7c1-a108-8321-ae56-981d9bd2916c
