@@ -1,5 +1,7 @@
 # Learn Web Push Notifications via Node
 
+*Tested on Poco M4 Pro 5G (Android).*
+
 **Quick Links:**
 - Inspiration - Push Notifications Using Node.js & Service Worker by Brad Traversy: [Click here](https://youtu.be/HlYFW2zaYQM)
     - [Github](https://github.com/bradtraversy/node_push_notifications)
