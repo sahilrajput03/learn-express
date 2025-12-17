@@ -1,4 +1,4 @@
-# Learn Push Notifications via Node
+# Learn Web Push Notifications via Node
 
 **Quick Links:**
 - Inspiration (source): Push Notifications Using Node.js & Service Worker by Brad Traversy: [Click here](https://youtu.be/HlYFW2zaYQM)
