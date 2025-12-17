@@ -4,7 +4,12 @@
 - Inspiration (source): Push Notifications Using Node.js & Service Worker by Brad Traversy: [Click here](https://youtu.be/HlYFW2zaYQM)
     - [Github](https://github.com/bradtraversy/node_push_notifications)
 - ❤️ My Github Repository - Simple Service Worker: [Click here][link-1]
-- Test Any notifications: [Click here][link-2]
+- MDN Docs: [Click here](link-3)
+- Test Notifications:
+    - [tests.peter.sh/notification-generator][link-2]
+	- [bennish.net/web-notifications][link-4] (Works on desktop, **NOT** on Android)
+ 	- [cleverpush.com/en/test-notifications][link-5] (Does **NOT** work on desktop, works on Android)
+  	- [pushalert.co/demo][link-6] (Works on desktop AND works on Android)
 
 ## Generate vapid keys:
 
@@ -18,3 +23,7 @@ Learn: To be able to send notification you only need to open url `localhost:5000
 
 [link-1]: https://github.com/sahilrajput03/learn-react/tree/main/simple_service_worker
 [link-2]: https://tests.peter.sh/notification-generator
+[link-3]: https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API
+[link-4]: https://www.bennish.net/web-notifications.html
+[link-5]: https://cleverpush.com/en/test-notifications
+[link-6]: https://pushalert.co/demo
