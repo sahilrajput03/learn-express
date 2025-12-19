@@ -2,13 +2,13 @@
 const publicVapidKey =
   "BJthRQ5myDgc7OSXzPCMftGw-n16F7zQBEN7EUD6XxcfTTvrLGWSIG7y_JxiWtVlCFua0S8MTB5rPziBqNx1qIo";
 
-// Check for service worker
+// Verifies that the browser supports Service Workers
 if ("serviceWorker" in navigator) {
-  send().catch(err => console.error('App Error?', err));
+  registerServiceWorkerAndPush().catch(err => console.error('App Error?', err));
 }
 
 // Register SW, Register Push, Send Push
-async function send() {
+async function registerServiceWorkerAndPush() {
   // Register Service Worker
   console.log("Registering service worker 🚀");
   const register = await navigator.serviceWorker.register("/worker.js", {
@@ -24,7 +24,9 @@ async function send() {
   });
   console.log("🚀 ~ subscription:", subscription);
   console.log("Push Registered ✅");
+}
 
+async function sendPushNotification() {
   // Send Push Notification
   console.log("Sending Test Push 🚀");
   const response = await axios.post('/subscribe', subscription);

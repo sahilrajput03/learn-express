@@ -17,10 +17,13 @@ app.use(bodyParser.json());
 // This identify who's sending the push notification
 webpush.setVapidDetails('mailto:test@test.com', PUBLIC_VAPID_KEY, PRIVATE_VAPID_KEY);
 
+let tempSubscription = null;
+
 // Subscribe Route
 app.post('/subscribe', (req, res) => {
 	// Get pushSubscription object
 	const subscription = req.body;
+	tempSubscription = subscription;
 
 	// SHAPE of subscription object (got from network requests in browser). This is different for every service worker registered @ see code in client.js file in `client` directory to know more!
 	//   {
@@ -34,18 +37,16 @@ app.post('/subscribe', (req, res) => {
 
 	// Send 201 - resource created
 	res.status(201).json({});
+});
 
-
-	// Send a notification
-	const payload = JSON.stringify({
-		title: 'This is title 1.',
-		body: "This is body 1.",
-		icon: "http://image.ibb.co/frYOFd/tmlogo.png",
-	});
+app.post('/send-push-notification', async (req, res) => {
+	const { subscription, notification } = req.body;
 	try {
-		webpush.sendNotification(subscription, payload);
+		webpush.sendNotification(subscription, JSON.stringify(notification));
+		res.send('ok');
 	} catch (err) {
 		console.error('Error sending notification?', err);
+		res.status(400).send('Failed to send notification.');
 	}
 });
 
