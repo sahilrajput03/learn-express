@@ -40,7 +40,7 @@ async function getTestPushNotification() {
     body: "Body 1",
     icon: "http://image.ibb.co/frYOFd/tmlogo.png",
   };
-  const response = await axios.post('/send-push-notification', { subscription, notification });
+  const response = await axios.post('/push-notification', { subscription, notification });
   console.log("✅ Push-Notification-API Succeeded.", response.data);
 }
 

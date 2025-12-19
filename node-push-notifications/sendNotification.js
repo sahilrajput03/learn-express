@@ -5,7 +5,7 @@ main();
 async function main() {
     try {
         const response = await axios.post(
-            'http://localhost:6001/send-push-notification',
+            'http://localhost:6001/push-notification',
             {
                 subscription: {
                     'endpoint': 'https://fcm.googleapis.com/fcm/send/eOpq9ss28NU:APA91bH-BSh9TFVpMWHoqKezg6SP2GAhpGJ3G1TcgJcogA_pWy9QakYDMWZyA4P1mhMVxswPrUT3J7PFl0lGxrCPe4K9QsNnWXa4w4Rly7xJkt8sF9wmDwAWQ8HY8TKGA1Xky-nfo1KB',

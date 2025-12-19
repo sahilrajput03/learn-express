@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 // This identify who's sending the push notification
 webpush.setVapidDetails('mailto:test@test.com', PUBLIC_VAPID_KEY, PRIVATE_VAPID_KEY);
 
-app.post('/send-push-notification', async (req, res) => {
+app.post('/push-notification', async (req, res) => {
 	const { subscription, notification } = req.body;
 	// console.log('subsciption?', subscription)
 	// Output:
