@@ -18,8 +18,8 @@ async function registerServiceWorkerAndCreatePushSubscription() {
   });
   console.log("✅ Service Worker Registered");
 
-  // Create Push Subscription
-  console.log("🚀 Creating a Push Subscription for the browser");
+  // Create Push Subscription for "Push Notifications"
+  console.log('🚀 Creating a Push Subscription for "Push Notifications" for the browser');
   const publicVapidKey =
     "BJthRQ5myDgc7OSXzPCMftGw-n16F7zQBEN7EUD6XxcfTTvrLGWSIG7y_JxiWtVlCFua0S8MTB5rPziBqNx1qIo";
   subscription = await register.pushManager.subscribe({
