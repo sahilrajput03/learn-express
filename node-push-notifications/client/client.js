@@ -12,32 +12,32 @@ var subscription;
 // Register SW & Create Push Subscription
 async function registerServiceWorkerAndCreatePushSubscription() {
   // Register Service Worker
-  console.log("Registering service worker 🚀");
+  console.log("🚀 Registering Service Worker");
   const register = await navigator.serviceWorker.register("/worker.js", {
     scope: "/"
   });
-  console.log("Service Worker Registered ✅");
+  console.log("✅ Service Worker Registered");
 
   // Create Push Subscription
-  console.log("Creating a Push Subscription for the browser 🚀");
+  console.log("🚀 Creating a Push Subscription for the browser");
   subscription = await register.pushManager.subscribe({
     userVisibleOnly: true,
     applicationServerKey: urlBase64ToUint8Array(publicVapidKey)
   });
-  console.log("🚀 ~ subscription:", subscription);
-  console.log("Push Subscription Created. ✅");
+  // console.log("🐞 subscription:", subscription);
+  console.log("✅ Push Subscription Created");
 }
 
 async function getTestPushNotification() {
   // Send Push Notification
-  console.log("Calling POST `/send-push-notification` to get Test Push Notification 🚀");
+  console.log("🚀 Calling Push-Notification-API to get Test Push Notification");
   const notification = {
     title: 'Title 1',
     body: "Body 1",
     icon: "http://image.ibb.co/frYOFd/tmlogo.png",
   };
   const response = await axios.post('/send-push-notification', { subscription, notification });
-  console.log("Push Sent ✅", response.data);
+  console.log("✅ Push-Notification-API Succeeded.", response.data);
 }
 
 const btn = document.createElement('button'); document.body.append(btn);
