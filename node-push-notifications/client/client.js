@@ -28,7 +28,7 @@ async function registerServiceWorkerAndPush() {
   console.log("Push Registered ✅");
 }
 
-async function sendPushNotification() {
+async function getTestPushNotification() {
   // Send Push Notification
   console.log("Sending Test Push Notification 🚀");
   const notification = {
@@ -41,8 +41,8 @@ async function sendPushNotification() {
 }
 
 const btn = document.createElement('button'); document.body.append(btn);
-btn.innerText = 'Send Push Notification';
-btn.onclick = sendPushNotification;
+btn.innerText = 'Get Test Push Notification';
+btn.onclick = getTestPushNotification;
 
 
 function urlBase64ToUint8Array(base64String) {
