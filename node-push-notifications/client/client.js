@@ -1,5 +1,7 @@
 // @ts-nocheck
 
+const d = document;
+
 // Verifies that the browser supports Service Workers
 if ("serviceWorker" in navigator) {
   registerServiceWorkerAndCreatePushSubscription().catch(err => console.error('App Error?', err));
@@ -42,7 +44,7 @@ async function getTestPushNotification() {
   console.log("✅ Push-Notification-API Succeeded.", response.data);
 }
 
-const btn = document.createElement('button'); document.body.append(btn);
+const btn = d.createElement('button'); d.body.append(btn);
 btn.innerText = 'Get Test Push Notification';
 btn.onclick = getTestPushNotification;
 
