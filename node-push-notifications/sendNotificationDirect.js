@@ -19,7 +19,11 @@ async function main() {
     };
 
     // Send a notification
-    const payload = JSON.stringify({ title: 'Push Test' });
+    const payload = JSON.stringify({
+        title: 'This is title 2.',
+        body: "This is body 2.",
+        icon: "http://image.ibb.co/frYOFd/tmlogo.png",
+    });
     try {
         webpush.sendNotification(subscription, payload);
     } catch (err) {

@@ -37,7 +37,11 @@ app.post('/subscribe', (req, res) => {
 
 
 	// Send a notification
-	const payload = JSON.stringify({ title: 'Push Test' });
+	const payload = JSON.stringify({
+		title: 'This is title 1.',
+		body: "This is body 1.",
+		icon: "http://image.ibb.co/frYOFd/tmlogo.png",
+	});
 	try {
 		webpush.sendNotification(subscription, payload);
 	} catch (err) {
