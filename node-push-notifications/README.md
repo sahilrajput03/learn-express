@@ -2,6 +2,8 @@
 
 *Tested on Poco M4 Pro 5G (Android).*
 
+**🚀 Start the server via `nodemon server.js`.**
+
 **Quick Links:**
 - Inspiration - Push Notifications Using Node.js & Service Worker by Brad Traversy: [Click here](https://youtu.be/HlYFW2zaYQM)
     - [Github](https://github.com/bradtraversy/node_push_notifications)
