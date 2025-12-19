@@ -22,18 +22,13 @@ async function send() {
     userVisibleOnly: true,
     applicationServerKey: urlBase64ToUint8Array(publicVapidKey)
   });
+  console.log("🚀 ~ subscription:", subscription);
   console.log("Push Registered ✅");
 
   // Send Push Notification
-  console.log("Sending Push 🚀");
-  await fetch("/subscribe", {
-    method: "POST",
-    body: JSON.stringify(subscription),
-    headers: {
-      "content-type": "application/json"
-    }
-  });
-  console.log("Push Sent ✅");
+  console.log("Sending Test Push 🚀");
+  const response = await axios.post('/subscribe', subscription);
+  console.log("Push Sent ✅", response.data);
 }
 
 function urlBase64ToUint8Array(base64String) {
