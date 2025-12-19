@@ -1,9 +1,9 @@
-curl 'http://localhost:5000/subscribe' \
+curl 'http://localhost:6001/subscribe' \
   -H 'Accept: */*' \
   -H 'Accept-Language: en,hi;q=0.9,fi;q=0.8' \
   -H 'Connection: keep-alive' \
-  -H 'Origin: http://localhost:5000' \
-  -H 'Referer: http://localhost:5000/' \
+  -H 'Origin: http://localhost:6001' \
+  -H 'Referer: http://localhost:6001/' \
   -H 'Sec-Fetch-Dest: empty' \
   -H 'Sec-Fetch-Mode: cors' \
   -H 'Sec-Fetch-Site: same-origin' \

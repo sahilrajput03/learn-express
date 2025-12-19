@@ -1,25 +1,25 @@
-const express = require('express')
-const webpush = require('web-push')
-const bodyParser = require('body-parser')
-const path = require('path')
+const express = require('express');
+const webpush = require('web-push');
+const bodyParser = require('body-parser');
+const path = require('path');
 
-const app = express()
+const app = express();
 
 // Set static path
-app.use(express.static(path.join(__dirname, 'client')))
+app.use(express.static(path.join(__dirname, 'client')));
 
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 
-const publicVapidKey = 'BJthRQ5myDgc7OSXzPCMftGw-n16F7zQBEN7EUD6XxcfTTvrLGWSIG7y_JxiWtVlCFua0S8MTB5rPziBqNx1qIo'
-const privateVapidKey = '3KzvKasA2SoCxsp0iIG_o9B0Ozvl1XDwI63JRKNIWBM'
+const publicVapidKey = 'BJthRQ5myDgc7OSXzPCMftGw-n16F7zQBEN7EUD6XxcfTTvrLGWSIG7y_JxiWtVlCFua0S8MTB5rPziBqNx1qIo';
+const privateVapidKey = '3KzvKasA2SoCxsp0iIG_o9B0Ozvl1XDwI63JRKNIWBM';
 
 // This identify who's sending the push notification
-webpush.setVapidDetails('mailto:test@test.com', publicVapidKey, privateVapidKey)
+webpush.setVapidDetails('mailto:test@test.com', publicVapidKey, privateVapidKey);
 
 // Subscribe Route
 app.post('/subscribe', (req, res) => {
 	// Get pushSubscription object
-	const subscription = req.body
+	const subscription = req.body;
 
 	// SHAPE of subscription object (got from network requests in browser). This is different for every service worker registered @ see code in client.js file in `client` directory to know more!
 	//   {
@@ -32,15 +32,15 @@ app.post('/subscribe', (req, res) => {
 	// }
 
 	// Send 201 - resource created
-	res.status(201).json({})
+	res.status(201).json({});
 
 	// Create payload
-	const payload = JSON.stringify({title: 'Push Test'})
+	const payload = JSON.stringify({ title: 'Push Test' });
 
 	// Pass object into sendNotification
-	webpush.sendNotification(subscription, payload).catch((err) => console.error(err))
-})
+	webpush.sendNotification(subscription, payload).catch((err) => console.error(err));
+});
 
-const port = 5000
+const port = 6001;
 
-app.listen(port, () => console.log(`Server started on port ${port}`))
+app.listen(port, () => console.log(`Server started on port ${port}`));

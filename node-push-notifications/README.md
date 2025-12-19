@@ -21,7 +21,7 @@ npx web-push generate-vapid-keys
 # Another way is to directly run `./node_modules/.bin/web-push generate-vapid-keys`
 ```
 
-Learn: To be able to send notification you only need to open url `localhost:5000` on the target device to receive notification. For more info check file `client/client.js`.
+Learn: To be able to send notification you only need to open url `localhost:6001` on the target device to receive notification. For more info check file `client/client.js`.
 
 
 [link-1]: https://github.com/sahilrajput03/learn-react/tree/main/simple_service_worker
