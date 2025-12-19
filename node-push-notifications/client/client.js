@@ -25,7 +25,7 @@ async function send() {
   console.log("Push Registered ✅");
 
   // Send Push Notification
-  console.log("Sending Push...");
+  console.log("Sending Push 🚀");
   await fetch("/subscribe", {
     method: "POST",
     body: JSON.stringify(subscription),
