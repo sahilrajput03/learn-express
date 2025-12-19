@@ -3,6 +3,7 @@ const axios = require('axios');
 
 main();
 async function main() {
+    // This request is captured from browser's network tab.
     const response = await axios.post(
         'http://localhost:6001/subscribe',
         {
