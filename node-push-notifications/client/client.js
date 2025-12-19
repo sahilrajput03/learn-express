@@ -1,10 +1,10 @@
 // @ts-nocheck
-const publicVapidKey =
-  "BJthRQ5myDgc7OSXzPCMftGw-n16F7zQBEN7EUD6XxcfTTvrLGWSIG7y_JxiWtVlCFua0S8MTB5rPziBqNx1qIo";
 
 // Verifies that the browser supports Service Workers
 if ("serviceWorker" in navigator) {
   registerServiceWorkerAndCreatePushSubscription().catch(err => console.error('App Error?', err));
+} else {
+  console.log('❌ Service Workers are not supported in this browser.');
 }
 
 var subscription;
@@ -20,6 +20,8 @@ async function registerServiceWorkerAndCreatePushSubscription() {
 
   // Create Push Subscription
   console.log("🚀 Creating a Push Subscription for the browser");
+  const publicVapidKey =
+    "BJthRQ5myDgc7OSXzPCMftGw-n16F7zQBEN7EUD6XxcfTTvrLGWSIG7y_JxiWtVlCFua0S8MTB5rPziBqNx1qIo";
   subscription = await register.pushManager.subscribe({
     userVisibleOnly: true,
     applicationServerKey: urlBase64ToUint8Array(publicVapidKey)
@@ -44,7 +46,7 @@ const btn = document.createElement('button'); document.body.append(btn);
 btn.innerText = 'Get Test Push Notification';
 btn.onclick = getTestPushNotification;
 
-
+// Utility Functions
 function urlBase64ToUint8Array(base64String) {
   const padding = "=".repeat((4 - base64String.length % 4) % 4);
   const base64 = (base64String + padding)
