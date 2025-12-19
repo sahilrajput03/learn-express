@@ -13,7 +13,7 @@ var subscription;
 async function registerServiceWorkerAndCreatePushSubscription() {
   // Register Service Worker
   console.log("🚀 Registering Service Worker");
-  const register = await navigator.serviceWorker.register("/worker.js", {
+  const register = await navigator.serviceWorker.register("/sw.js", {
     scope: "/"
   });
   console.log("✅ Service Worker Registered");
