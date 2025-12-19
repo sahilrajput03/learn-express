@@ -3,7 +3,7 @@ const express = require('express');
 const webpush = require('web-push');
 const bodyParser = require('body-parser');
 const path = require('path');
-require('dotenv').config();
+require('dotenv').config({ quiet: true });
 
 const { PUBLIC_VAPID_KEY, PRIVATE_VAPID_KEY } = process.env;
 
