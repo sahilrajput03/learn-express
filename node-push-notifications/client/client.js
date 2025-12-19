@@ -7,6 +7,8 @@ if ("serviceWorker" in navigator) {
   registerServiceWorkerAndPush().catch(err => console.error('App Error?', err));
 }
 
+var subscription;
+
 // Register SW, Register Push, Send Push
 async function registerServiceWorkerAndPush() {
   // Register Service Worker
@@ -18,7 +20,7 @@ async function registerServiceWorkerAndPush() {
 
   // Register Push
   console.log("Registering Push 🚀");
-  const subscription = await register.pushManager.subscribe({
+  subscription = await register.pushManager.subscribe({
     userVisibleOnly: true,
     applicationServerKey: urlBase64ToUint8Array(publicVapidKey)
   });
@@ -28,10 +30,20 @@ async function registerServiceWorkerAndPush() {
 
 async function sendPushNotification() {
   // Send Push Notification
-  console.log("Sending Test Push 🚀");
-  const response = await axios.post('/subscribe', subscription);
+  console.log("Sending Test Push Notification 🚀");
+  const notification = {
+    title: 'Title 1',
+    body: "Body 1",
+    icon: "http://image.ibb.co/frYOFd/tmlogo.png",
+  };
+  const response = await axios.post('/send-push-notification', { subscription, notification });
   console.log("Push Sent ✅", response.data);
 }
+
+const btn = document.createElement('button'); document.body.append(btn);
+btn.innerText = 'Send Push Notification';
+btn.onclick = sendPushNotification;
+
 
 function urlBase64ToUint8Array(base64String) {
   const padding = "=".repeat((4 - base64String.length % 4) % 4);

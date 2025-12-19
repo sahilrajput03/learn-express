@@ -19,13 +19,13 @@ async function main() {
     };
 
     // Send a notification
-    const payload = JSON.stringify({
-        title: 'This is title 2.',
-        body: "This is body 2.",
+    const notification = {
+        title: 'Title 2.',
+        body: "Body 2.",
         icon: "http://image.ibb.co/frYOFd/tmlogo.png",
-    });
+    };
     try {
-        webpush.sendNotification(subscription, payload);
+        webpush.sendNotification(subscription, JSON.stringify(notification));
     } catch (err) {
         console.error('Error sending notification?', err);
     }

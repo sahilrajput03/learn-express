@@ -17,15 +17,10 @@ app.use(bodyParser.json());
 // This identify who's sending the push notification
 webpush.setVapidDetails('mailto:test@test.com', PUBLIC_VAPID_KEY, PRIVATE_VAPID_KEY);
 
-let tempSubscription = null;
-
-// Subscribe Route
-app.post('/subscribe', (req, res) => {
-	// Get pushSubscription object
-	const subscription = req.body;
-	tempSubscription = subscription;
-
-	// SHAPE of subscription object (got from network requests in browser). This is different for every service worker registered @ see code in client.js file in `client` directory to know more!
+app.post('/send-push-notification', async (req, res) => {
+	const { subscription, notification } = req.body;
+	// console.log('subsciption?', subscription)
+	// Output:
 	//   {
 	//   "endpoint": "https://fcm.googleapis.com/fcm/send/dotnldXWqrk:APA91bGzN4T6VjR3VxfTg6mI9XoAiqszwFhWumJ4HdrR8Bw7Ol77TqsZucy1hTv9qIDMEMKIiXIZNE8offwgTg_APPpWQctRPg0OmOmQpVDvGJOgQzzZx-MzBHUbZE1tgm5YIMl5aVTx",
 	//   "expirationTime": null,
@@ -34,13 +29,6 @@ app.post('/subscribe', (req, res) => {
 	//       "auth": "_dVtFQVkQomkKNktJUxpVw"
 	//   }
 	// }
-
-	// Send 201 - resource created
-	res.status(201).json({});
-});
-
-app.post('/send-push-notification', async (req, res) => {
-	const { subscription, notification } = req.body;
 	try {
 		webpush.sendNotification(subscription, JSON.stringify(notification));
 		res.send('ok');

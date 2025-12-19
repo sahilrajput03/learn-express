@@ -16,8 +16,8 @@ async function main() {
                     }
                 },
                 notification: {
-                    title: 'This is title 1.',
-                    body: "This is body 1.",
+                    title: 'Title 3.',
+                    body: "Body 3.",
                     icon: "http://image.ibb.co/frYOFd/tmlogo.png",
                 }
             },
