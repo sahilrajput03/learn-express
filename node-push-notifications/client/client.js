@@ -4,13 +4,13 @@ const publicVapidKey =
 
 // Verifies that the browser supports Service Workers
 if ("serviceWorker" in navigator) {
-  registerServiceWorkerAndPush().catch(err => console.error('App Error?', err));
+  registerServiceWorkerAndCreatePushSubscription().catch(err => console.error('App Error?', err));
 }
 
 var subscription;
 
-// Register SW, Register Push, Send Push
-async function registerServiceWorkerAndPush() {
+// Register SW & Create Push Subscription
+async function registerServiceWorkerAndCreatePushSubscription() {
   // Register Service Worker
   console.log("Registering service worker 🚀");
   const register = await navigator.serviceWorker.register("/worker.js", {
@@ -18,19 +18,19 @@ async function registerServiceWorkerAndPush() {
   });
   console.log("Service Worker Registered ✅");
 
-  // Register Push
-  console.log("Registering Push 🚀");
+  // Create Push Subscription
+  console.log("Creating a Push Subscription for the browser 🚀");
   subscription = await register.pushManager.subscribe({
     userVisibleOnly: true,
     applicationServerKey: urlBase64ToUint8Array(publicVapidKey)
   });
   console.log("🚀 ~ subscription:", subscription);
-  console.log("Push Registered ✅");
+  console.log("Push Subscription Created. ✅");
 }
 
 async function getTestPushNotification() {
   // Send Push Notification
-  console.log("Sending Test Push Notification 🚀");
+  console.log("Calling POST `/send-push-notification` to get Test Push Notification 🚀");
   const notification = {
     title: 'Title 1',
     body: "Body 1",
