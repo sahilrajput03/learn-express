@@ -1,16 +1,26 @@
-const readline = require("readline").createInterface({
-    input: process.stdin,
-    output: process.stdout,
-});
+const readline = require("node:readline/promises");
 
-const questionText = 'Enter your name: ';
-const read = () => new Promise((resolve) => readline.question(questionText, resolve));
+// @ts-ignore
+async function ask(questionText) {
+    const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout,
+    });
+    const result = await rl.question(questionText);
+    rl.close();
+    return result;
+}
 
 const main = async () => {
-    const textFromStdin = await read();
-    readline.close(); // This is not redundant!
+    try {
+        const firstName = await ask("Enter your first name: ");
+        console.log(`✅ Hello, ${firstName.toUpperCase()}`);
 
-    console.log('\nHello, ', textFromStdin);
-    console.log("Nice to meet you ❤️.");
+        const lastName = await ask("Enter your last name: ");
+        console.log(`✅ Your last name is: ${lastName.toUpperCase()}`);
+        console.log("Bye ❤️.");
+    } catch (error) {
+        console.log('Error?', error);
+    }
 };
 main();
