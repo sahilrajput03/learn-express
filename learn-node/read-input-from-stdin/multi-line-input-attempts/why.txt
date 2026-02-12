@@ -1,0 +1,2 @@
+Because I wanted to implement multiple line input for e.g,
+when I need to paste some code. Please refer this file - /Users/apple/Documents/github_repos/learn-openai/tts-stt-google-genai/function-calling/cc-fc-vertex.js
