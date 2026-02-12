@@ -12,6 +12,7 @@ import { join } from 'path';
 async function ask(questionText) {
     console.log(questionText);
 
+    // Note: We are recursively deleting this directory later in this program.
     const tempDir = mkdtempSync(join(tmpdir(), 'cli-'));
     console.log("🚀 ~ tempDir?", tempDir);
     const tempFile = join(tempDir, 'input.txt');
