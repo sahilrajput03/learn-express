@@ -7,6 +7,7 @@ import { spawn, spawnSync } from 'node:child_process';
 // spawn("ls -la | grep txt", { shell: true }); // ✅ Works
 
 
+// ChatGPT: https://chatgpt.com/c/698f28a8-11bc-8322-a320-22fd0831e3ac
 //⭐️ What does `shell: true` do:
 //  1. Enables us to do pipes, redirects, chaining.
 //  2. spawn('ls -la', { shell: true }), Node internally does something like:
