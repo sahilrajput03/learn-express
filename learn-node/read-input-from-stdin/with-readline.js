@@ -8,6 +8,7 @@ async function ask(questionText) {
     const rl = readline.createInterface({
         input: process.stdin,
         output: process.stdout,
+        // terminal: true,  ChatGPT: https://chatgpt.com/c/6999dc30-acc4-83ab-8da0-7f58934273de
     });
     const result = await rl.question(questionText);
     rl.close();
