@@ -17,8 +17,8 @@ child.on('error', (err) => { console.error('|CHILD-FAILED-TO_SPAWN_PROCESS| Erro
 child.send({ hello: 'world' });
 
 // Handle stdout and stderr of child
-child.stdout.on('data', (data) => { console.log('|CHILD-STDOUT|:', data.toString()); });
-child.stderr.on('data', (data) => { console.log('|CHILD-STDERR|:', data.toString()); });
+child.stdout.on('data', (data) => { console.log('|CHILD-STDOUT|:', data.toString().trim()); });
+child.stderr.on('data', (data) => { console.log('|CHILD-STDERR|:', data.toString().trim()); });
 
 // Runs only when CHILD exits via `process.exit(exitCode?)` or any runtime exception in CHILD process
 // Triggered when the child process terminates (regardless of success or failure).
