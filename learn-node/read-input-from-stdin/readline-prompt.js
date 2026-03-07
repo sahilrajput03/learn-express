@@ -1,7 +1,7 @@
 // @ts-nocheck
 import readline from "node:readline";
 
-// Learn: Using `rl.setPrompt` instead of `rl.question` offers reliable
+// * Learn: Using `rl.setPrompt` instead of `rl.question` offers reliable
 //        implementation of prefill text.
 async function ask(questionText, prefillText) {
     await new Promise(res => setTimeout(res, 20));
