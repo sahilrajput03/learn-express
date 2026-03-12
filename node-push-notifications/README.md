@@ -5,13 +5,12 @@
 **🚀 Start the server via `nodemon server.js`.**
 
 **Quick Links:**
-- Inspiration - Push Notifications Using Node.js & Service Worker by Brad Traversy: [Click here](https://youtu.be/HlYFW2zaYQM)
-    - [Github](https://github.com/bradtraversy/node_push_notifications)
-- Implemented:
+- Inspiration - Push Notifications Using Node.js & Service Worker by Brad Traversy: [YouTube Video](https://youtu.be/HlYFW2zaYQM), [Github](https://github.com/bradtraversy/node_push_notifications)
+- **❤️ Implemented in My Projects:**
 	- ragatime.github.io project.
 - **❤️ MDN Docs:** [Click here](link-3)
 - Quora - How do push notificaitons work: [Click here](https://www.quora.com/How-do-push-notifications-work-for-desktop-and-mobile-applications)
-- Test Notifications:
+- **❤️ Test Notifications:**
     - [tests.peter.sh/notification-generator][link-2]
 	- [bennish.net/web-notifications][link-4] (Works on desktop, **NOT** on Android)
  	- [cleverpush.com/en/test-notifications][link-5] (Does **NOT** work on desktop, works on Android)
