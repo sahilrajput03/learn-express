@@ -4,13 +4,16 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"start": "nodemon server.ts"
+		"start": "nodemon server.ts",
+		"bcrypt": "nodemon bcrypt.ts",
+		"jwt": "nodemon jwt.ts"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
 		"@types/node": "^14.14.41",
+		"bcrypt": "^6.0.0",
 		"dotenv": "^8.2.0",
 		"express": "^4.17.1",
 		"jsonwebtoken": "^8.5.1"
