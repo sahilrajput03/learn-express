@@ -1,12 +1,6 @@
 # Readme
 
-Generating secrets:
-
-```bash
-node -e 'console.log(require("crypto").randomBytes(64).toString("hex"))'
-````
-
-What is this test-refresh-token branch does.
+## What is this test-refresh-token branch does.
 
 Before you implement any logic for your new server or frontend authentication, the foremost thing is that you must store both AT and RT in cookies and hence both are inaccessible by the frontend libraries^1.
 
