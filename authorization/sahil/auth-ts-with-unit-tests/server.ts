@@ -4,7 +4,7 @@ import posts from './data'
 import dotenv from 'dotenv'
 const { log } = console
 
-// const {sign: makeToken, verify: getToken} = jwt
+// & Run this file via: nr start
 
 dotenv.config() // This is not redundant.
 const { ACCESS_TOKEN_SECRET } = process.env
