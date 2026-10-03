@@ -1,6 +1,8 @@
 import dotenv from 'dotenv'
 import { sign as makeToken, verify as decryptToken } from 'jsonwebtoken'
 
+// & Run this file via: nr jwt
+
 dotenv.config() // This is not redundant.
 const { ACCESS_TOKEN_SECRET } = process.env
 
