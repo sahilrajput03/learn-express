@@ -1,8 +1,8 @@
 # Readme 
 
 **Sahil's Awesome Tests For Quick Revision:**
-- [❤️ bcrypt tests]()
-- [❤️ jwt tests]()
+- [❤️ bcrypt tests](./auth-with-unit-tests-ts/tests/bcrypt.test.ts)
+- [❤️ jwt tests](./auth-with-unit-tests-ts/tests/jwt.test.ts)
   - ⭐ Used in `qr-project`.
   - ⭐Example usage in FSO's Part 13: [Click here](https://github.com/sahilrajput03/learning_sql/blob/main/fso-part13/example/utils/middleware.js)
 
