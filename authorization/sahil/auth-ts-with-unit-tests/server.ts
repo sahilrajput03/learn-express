@@ -2,7 +2,6 @@ import express from 'express'
 import { sign as makeToken, verify as decryptToken } from 'jsonwebtoken'
 import posts from './data'
 import dotenv from 'dotenv'
-const { log } = console
 
 // & Run this file via: nr start
 
@@ -16,40 +15,28 @@ app.get('/posts', authenticateToken, (req, res) => {
 })
 
 app.post('/login', (req, res) => {
-	// authenticate user using bcrypt, easy-pasy.
-	const user = { name: req.body.username }
-
-	// const token = makeToken(user, ACCESS_TOKEN_SECRET) // original.
-	// be default HS256 encryption is used to make a new token if you don't pass algorithm to `jwt.sign` method, which is really good though.
-	const token = makeToken(user, ACCESS_TOKEN_SECRET, {
-		algorithm: 'none',
-	}) // original.
+	const tokenData = { name: req.body.username }
+	const token = makeToken(tokenData, ACCESS_TOKEN_SECRET)
 	res.json({ token })
 })
 
 function authenticateToken(req, res, next) {
 	const authHeader = req.headers.authorization
 	let token
-	if (authHeader) {
-		token = authHeader.split(' ')[1]
-	} else {
-		return res
-			.status(401)
-			.send('You forgot to provide the token in authorization header.')
-	}
+	if (!authHeader) { return res.status(401).send('You forgot to provide the token in authorization header.') }
+	token = authHeader.split(' ')[1]
 
 	let decryptedTokenData
 
 	try {
+		// Note: decryptToken (jwt.verify) throws error if token is invalid.
 		decryptedTokenData = decryptToken(token, ACCESS_TOKEN_SECRET)
-		// Since, getToken(jwt.verify) throws error if token is invalid, we must use try/catch around it.
 	} catch (error) {
-		log("can't decode token")
-		log(error)
+		console.log("❌ Error: Can't decode token.", { name: error.name, message: error.message })
 		return res.status(403).send('Invalid token')
 	}
 
-	log({ decryptedTokenData })
+	console.log({ decryptedTokenData })
 
 	req.user = decryptedTokenData
 

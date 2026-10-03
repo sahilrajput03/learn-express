@@ -1,10 +1,9 @@
+// @ts-nocheck
 const express = require("express");
-const jwt = require("jsonwebtoken");
+const { sign: makeToken, verify: decryptToken } = require("jsonwebtoken");
 const posts = require("./data.js");
 const dotenv = require("dotenv");
-const { log } = console;
 
-const { sign: makeToken, verify: decryptToken } = jwt;
 
 dotenv.config(); // This is not redundant.
 const { ACCESS_TOKEN_SECRET } = process.env;
@@ -17,37 +16,34 @@ app.get("/posts", authenticateToken, (req, res) => {
 });
 
 app.post("/login", (req, res) => {
-  // authenticate user using bcrypt, easy-pasy.
-  const user = { name: req.body.username };
-
-  const accessToken = makeToken(user, ACCESS_TOKEN_SECRET);
-  res.json({ accessToken });
+  const tokenData = { name: req.body.username };
+  const token = makeToken(tokenData, ACCESS_TOKEN_SECRET);
+  res.json({ token });
 });
 
 function authenticateToken(req, res, next) {
   const authHeader = req.headers.authorization;
   let token;
-  if (authHeader) {
-    token = authHeader.split(" ")[1];
-  } else {
-    return res.status(401).send("You forgot to provide the token in authorization header.");
-  }
+  if (!authHeader) { return res.status(401).send("You forgot to provide the token in authorization header."); }
+  token = authHeader.split(" ")[1];
 
   let decryptedTokenData;
 
   try {
+    // Note: decryptToken (jwt.verify) throws error if token is invalid.
     decryptedTokenData = decryptToken(token, ACCESS_TOKEN_SECRET);
-    // Since, getToken(jwt.verify) throws error if token is invalid, we must use try/catch around it.
   } catch (error) {
-    // log("can't decode token");
+    console.log("❌ Error: Can't decode token.", { name: error.name, message: error.message });
     return res.status(403).send("Invalid token");
   }
 
-  log({ decryptedTokenData });
+  console.log({ decryptedTokenData });
 
   req.user = decryptedTokenData;
 
   next();
 }
 
-app.listen(3000);
+app.listen(3000, () => {
+  console.log('Server is running on port 3000 🎉');
+});
