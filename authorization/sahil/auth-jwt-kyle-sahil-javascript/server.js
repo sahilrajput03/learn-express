@@ -4,7 +4,7 @@ const posts = require("./data.js");
 const dotenv = require("dotenv");
 const { log } = console;
 
-const { sign: makeToken, verify: getToken } = jwt;
+const { sign: makeToken, verify: decryptToken } = jwt;
 
 dotenv.config(); // This is not redundant.
 const { ACCESS_TOKEN_SECRET } = process.env;
@@ -33,19 +33,19 @@ function authenticateToken(req, res, next) {
     return res.status(401).send("You forgot to provide the token in authorization header.");
   }
 
-  let decodedToken;
+  let decryptedTokenData;
 
   try {
-    decodedToken = getToken(token, ACCESS_TOKEN_SECRET);
+    decryptedTokenData = decryptToken(token, ACCESS_TOKEN_SECRET);
     // Since, getToken(jwt.verify) throws error if token is invalid, we must use try/catch around it.
   } catch (error) {
     // log("can't decode token");
     return res.status(403).send("Invalid token");
   }
 
-  log({ decodedToken });
+  log({ decryptedTokenData });
 
-  req.user = decodedToken;
+  req.user = decryptedTokenData;
 
   next();
 }

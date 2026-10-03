@@ -27,8 +27,8 @@ const main = async () => {
 	// Output(changes on every execution): $2b$10$XLP4wLlXgILaXNOWJiJU6uusly/LQnl4DOe.cw3Eon003LQ0RWY/q
 
 	console.log('\n✅Correct token test:')
-	let decodedTokenData = await decryptToken(jwtToken, ACCESS_TOKEN_SECRET)
-	console.log("decodedTokenData?", decodedTokenData)
+	let decryptedTokenData = await decryptToken(jwtToken, ACCESS_TOKEN_SECRET)
+	console.log("decryptedTokenData?", decryptedTokenData)
 	// Output:
 	// {
 	//   username: 'sahilrajput03',
@@ -36,7 +36,7 @@ const main = async () => {
 	//   key1: 'value1',
 	//   iat: 1791039129 // * 'Note: the iat means time at which token was issued at.'
 	// }
-	const issuedAtDate = new Date(decodedTokenData.iat * 1000)
+	const issuedAtDate = new Date(decryptedTokenData.iat * 1000)
 	console.log('issuedAtDate?', issuedAtDate)
 	// Output: 2026-10-03T15:01:39.000Z
 	console.log('\tIndian time: ', issuedAtDate.toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }))
@@ -44,7 +44,7 @@ const main = async () => {
 
 	console.log('\n\n🔴Bad token test:')
 	try {
-		decodedTokenData = await decryptToken('any bod text', ACCESS_TOKEN_SECRET)
+		decryptedTokenData = await decryptToken('any bod text', ACCESS_TOKEN_SECRET)
 	} catch (error) {
 		console.log('❌ Decrypting token error:', { name: error.name, message: error.message })
 		// { name: 'JsonWebTokenError', message: 'jwt malformed' }
