@@ -8,7 +8,18 @@ const main = async () => {
 	const password = 'love is eternal'
 	const hashedPassword = await bcrypt.hash(password, saltRounds)
 	console.log('hashedPassword?', hashedPassword)
-	// Output (changes on every execution): $2b$10$XLP4wLlXgILaXNOWJiJU6uusly/LQnl4DOe.cw3Eon003LQ0RWY/q
+	// Note: The `hashedPassword` value changes on every execution
+	//       because bcrypt generates a new random salt every time you
+	//       hash a password. The `saltRounds = 10` controls the
+	//       computational cost/work factor, not the output. Before
+	//       hashing, bcrypt generates a random salt. It combines the
+	//       password + salt and produces the hash. Therefore, the
+	//       same password produces a different hash each execution.
+	//       The salt is stored inside the bcrypt hash itself, so
+	//       bcrypt can later extract it when verifying the password.
+	//       When checking a password, bcrypt uses the stored salt and
+	//       compares the resulting hash.
+	// Output: $2b$10$XLP4wLlXgILaXNOWJiJU6uusly/LQnl4DOe.cw3Eon003LQ0RWY/q
 
 	console.log('\nCorrect password test:')
 	const isAuthenticated1 = await bcrypt.compare(password, hashedPassword)
