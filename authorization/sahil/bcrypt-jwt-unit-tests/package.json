@@ -10,7 +10,9 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
+		"@types/node": "^26.6.4",
 		"bcrypt": "^5.0.1",
+		"dotenv": "^18.0.5",
 		"jsonwebtoken": "^8.5.1"
 	},
 	"devDependencies": {

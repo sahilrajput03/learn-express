@@ -1,24 +1,31 @@
+import dotenv from 'dotenv'
 import { sign as makeToken, verify as decryptToken } from 'jsonwebtoken'
-// `npm i jsonwebtoken`
+
+dotenv.config() // This is not redundant.
+const { ACCESS_TOKEN_SECRET } = process.env
 
 const projectDetails = {
-	projectName: 'name of your project',
-	// You must use the different project_name to identify the project so that anytime later seeing any token you would know which token corresponds to which project.
-	// Also, this is helpful if you are using same SECRET in another project, then you it would be easy to identify the the source of user.
+	// You must use the different project_name to identify the project
+	// so that anytime later seeing any token you would know which
+	// token corresponds to which project.
+	// Also, this is helpful if you are using same SECRET in another
+	// project, then you it would be easy to identify the the source
+	// of user.
+	projectName: 'My Project 1',
+	// Using a key `key_name` is useful to identify if you have a
+	// bunch of keys in your vault and you get to know which key can
+	// be used to decrypt the token.
 	key1: 'value1',
-	// You must change the key_name here if you change the SECRET for tokenization.
-	// Using key_name is useful to identify if you have a bunch of keys in your vault and you get to know which key can be used to decrypt the token.
 }
 
 const main = async () => {
-	const SECRET = 'some secret from .env file' // 10 is ok.
 	const username = { username: 'sahilrajput03', ...projectDetails, }
-	const jwtToken = await makeToken(username, SECRET)
+	const jwtToken = await makeToken(username, ACCESS_TOKEN_SECRET)
 	// console.log('Tokenized username?', jwtToken)
 	// Output(changes on every execution): $2b$10$XLP4wLlXgILaXNOWJiJU6uusly/LQnl4DOe.cw3Eon003LQ0RWY/q
 
 	console.log('\n✅Correct token test:')
-	let decodedTokenData = await decryptToken(jwtToken, SECRET)
+	let decodedTokenData = await decryptToken(jwtToken, ACCESS_TOKEN_SECRET)
 	console.log("decodedTokenData?", decodedTokenData)
 	// Output:
 	// {
@@ -35,7 +42,7 @@ const main = async () => {
 
 	console.log('\n\n🔴Bad token test:')
 	try {
-		decodedTokenData = await decryptToken('any bod text', SECRET)
+		decodedTokenData = await decryptToken('any bod text', ACCESS_TOKEN_SECRET)
 	} catch (error) {
 		console.log('❌ Decrypting token error:', { name: error.name, message: error.message })
 		// { name: 'JsonWebTokenError', message: 'jwt malformed' }
