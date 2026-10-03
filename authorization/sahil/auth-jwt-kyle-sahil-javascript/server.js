@@ -2,12 +2,13 @@ const express = require("express");
 const jwt = require("jsonwebtoken");
 const posts = require("./data.js");
 const dotenv = require("dotenv");
-const {log} = console;
+const { log } = console;
 
-const {sign: makeToken, verify: getToken} = jwt;
+const { sign: makeToken, verify: getToken } = jwt;
 
 dotenv.config(); // This is not redundant.
-const {ACCESS_TOKEN_SECRET} = process.env;
+const { ACCESS_TOKEN_SECRET } = process.env;
+
 const app = express();
 app.use(express.json());
 
@@ -17,10 +18,10 @@ app.get("/posts", authenticateToken, (req, res) => {
 
 app.post("/login", (req, res) => {
   // authenticate user using bcrypt, easy-pasy.
-  const user = {name: req.body.username};
+  const user = { name: req.body.username };
 
   const accessToken = makeToken(user, ACCESS_TOKEN_SECRET);
-  res.json({accessToken});
+  res.json({ accessToken });
 });
 
 function authenticateToken(req, res, next) {
@@ -42,7 +43,7 @@ function authenticateToken(req, res, next) {
     return res.status(403).send("Invalid token");
   }
 
-  log({decodedToken});
+  log({ decodedToken });
 
   req.user = decodedToken;
 
