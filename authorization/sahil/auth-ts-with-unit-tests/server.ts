@@ -3,6 +3,14 @@ import { sign as makeToken, verify as decryptToken } from 'jsonwebtoken'
 import posts from './data'
 import dotenv from 'dotenv'
 
+/* Imports for javscript project: */
+// const express = require("express");
+// const { sign: makeToken, verify: decryptToken } = require("jsonwebtoken");
+// const posts = require("./data.js");
+// const dotenv = require("dotenv");
+
+// Inspiration: https://github.com/WebDevSimplified/JWT-Authentication
+
 // & Run this file via: nr start
 
 dotenv.config() // This is not redundant.
